@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role: MyString
+  time: 2020-01-07 18:51:48
+  address: MyString
+  callback: false
+  status: false
+  notes: MyText
+  actor_id: 1
+  casting_office_id: 1
+  project_id: 1
+
+two:
+  role: MyString
+  time: 2020-01-07 18:51:48
+  address: MyString
+  callback: false
+  status: false
+  notes: MyText
+  actor_id: 1
+  casting_office_id: 1
+  project_id: 1
