@@ -5,7 +5,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.datetime :time
       t.string :address
       t.boolean :callback
-      t.boolean :status
+      t.string :booking_status
       t.text :notes
       t.integer :actor_id
       t.integer :casting_office_id

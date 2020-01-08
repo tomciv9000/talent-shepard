@@ -3,7 +3,7 @@ class CreateCastingOffices < ActiveRecord::Migration[6.0]
     create_table :casting_offices do |t|
       t.string :name
       t.string :email
-      t.string :phone_number
+      t.string :office_number
       t.string :location
       t.text :notes
 
