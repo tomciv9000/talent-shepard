@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def new
-      @user = User.new
+    if params[:agency_id] && !Agency.exists?(params[:agency_id])
+      redirect_to agencies_path, alert: "Agency not found."
+    else  
+      @user = User.new(agency_id: params[:agency_id])
+    end
   end
 
   def create

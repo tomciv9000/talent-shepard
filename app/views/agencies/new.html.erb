@@ -8,34 +8,6 @@
         <%= f.text_field :email %>
     <br>
     <br>
-    <div>
-    <h3>Create your User Account</h3>
-    <%= f.fields_for :users, @agency.users.build do |users_fields| %>
-        <div>
-        <%= users_fields.label :username, "Username:" %>
-        <%= users_fields.text_field :username %>
-        <div>
-        <%= users_fields.label :email, "Email:" %>
-        <%= users_fields.text_field :email %>
-        <div>
-        <%= users_fields.label :password, "Password:" %>
-        <%= users_fields.password_field :password %>
-        <div>
-        <%= users_fields.label :first_name, "First Name:" %>
-        <%= users_fields.text_field :first_name %>
-        <div>
-        <%= users_fields.label :last_name, "Last Name:" %>
-        <%= users_fields.text_field :last_name %>
-        
-        <br>
-        <br>
-        <div>
-        <%= users_fields.label :admin, "Administrator" %>
-        <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
-        <p><i>By default, the first user is an administrator.  This can be changed later.</i></p>
-        
-        
-        <% end %>
-    <div>
+    
     <%= f.submit "Create Account" %>
     <% end %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
 
-  resources :agencies, only: [:show, :index, :new] do
+  resources :agencies, only: [:new, :create, :show, :edit] do
     resources :users, only: [:index, :show, :new, :edit]
   end
 
