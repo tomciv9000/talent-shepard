@@ -10,8 +10,11 @@ module UsersHelper
         select_tag "user[agency_id]", options_from_collection_for_select(Agency.all, :id, :name), prompt: "Please select your Agency"
       else
         hidden_field_tag "user[agency_id]", user.agency_id
-        user.agency.name
       end
+    end
+
+    def agency_name
+        @user.agency.name if @user.agency
     end
 
     def logged_in?

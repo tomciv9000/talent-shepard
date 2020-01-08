@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
       @user = User.new(user_params)
       if @user.valid?
         @user.save
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    if User.find_by(id: params[:id]) && session[:user_id]
+    if User.find_by(id: params[:id]) #&& session[:user_id]
       @user = User.find_by(id: params[:id])
       render :show
     else

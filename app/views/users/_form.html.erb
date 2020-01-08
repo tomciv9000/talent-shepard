@@ -1,6 +1,7 @@
 <%= form_for @user do |f| %>
     <div>
     <%= f.label :agency, "Creating a user account for: " %>
+    <%= agency_name %>
     <%= agency_id_field(@user) %>
     <br>
     <br>
