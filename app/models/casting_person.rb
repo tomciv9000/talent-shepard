@@ -1,0 +1,2 @@
+class CastingPerson < ApplicationRecord
+end

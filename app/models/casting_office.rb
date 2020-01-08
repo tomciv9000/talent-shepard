@@ -1,0 +1,2 @@
+class CastingOffice < ApplicationRecord
+end
