@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
 
   def new
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
     else  
       @user = User.new(agency_id: params[:agency_id])
     end
+    #not nil when passed to new
   end
 
   def create

@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user do |f| %>
     <div>
     <%= f.label :agency, "Creating a user account for: " %>
     <%= agency_id_field(@user) %>
@@ -23,9 +23,14 @@
     <br>
     <br>
     <div>
-    <%= f.label :admin, "Administrator" %>
-    <%= f.check_box :admin, {checked: true, disabled:true}%>
-    <p><i>By default, the first user is an administrator.  This can be changed later.</i></p>
+    <% if first_user?(@user) %>
+        <%= f.label :admin, "Administrator" %>
+        <%= f.check_box :admin, {checked: true, disabled:true} %>
+        <p><i> "By default, the first user is an administrator.  This can be changed later."</i></p>
+    <% else %>
+        <%= f.label :admin, "Administrator" %>
+        <%= f.check_box :admin, {checked: false} %>
+    <% end %>
     <br>
     <br>
     

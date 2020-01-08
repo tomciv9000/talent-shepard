@@ -2425,3 +2425,683 @@ Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 1.3ms | Allocations: 830
   [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
   [1m[35m (24.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/agencies/1/users/new" for ::1 at 2020-01-08 15:25:51 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+            <%= f.label :admin, "Administr...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+            <%= f.check_box :admin, {checked: ...
+                ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+...checked: true, disabled:true}%>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            p><i>By default, the first user is an admini...
+                    ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...     p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/agencies/2/users/new" for ::1 at 2020-01-08 15:25:59 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"2"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 1354)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1656)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2613)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@user) do |f| %>
+    2:     <div>
+    3:     <%= f.label :agency, "Creating a user account for: " %>
+    4:     <%= agency_id_field(@user) %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-08 15:26:13 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1616ms (Views: 1590.2ms | ActiveRecord: 10.0ms | Allocations: 1380798)
+
+
+Started POST "/agencies" for ::1 at 2020-01-08 15:26:24 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"YtKD8gZbDiE+OopdglRpvx06No0eH/3oC82c55GfLi1y2ITfbxF/btkjUlABsrxRHE+T7aMrYFG2KMcU42iXkQ==", "agency"=>{"name"=>"Crap Town", "email"=>"crap@crap.com"}, "commit"=>"Create Account"}
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[36mAgency Create (9.2ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Crap Town"], ["email", "crap@crap.com"], ["created_at", "2020-01-08 20:26:24.535518"], ["updated_at", "2020-01-08 20:26:24.535518"]]
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+Redirected to http://localhost:3000/agencies/4/users/new
+Completed 302 Found in 25ms (ActiveRecord: 18.9ms | Allocations: 2926)
+
+
+Started GET "/agencies/4/users/new" for ::1 at 2020-01-08 15:26:24 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"4"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.3ms | Allocations: 974)
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1042)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1461)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@user) do |f| %>
+    2:     <div>
+    3:     <%= f.label :agency, "Creating a user account for: " %>
+    4:     <%= agency_id_field(@user) %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/4/users/new" for ::1 at 2020-01-08 15:34:03 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"4"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 1340)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1638)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2475)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @user do |f| %>
+    2:     <div>
+    3:     <%= f.label :agency, "Creating a user account for: " %>
+    4:     <%= agency_id_field(@user) %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/4/users/new" for ::1 at 2020-01-08 15:34:06 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"4"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.5ms | Allocations: 974)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1041)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1460)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @user do |f| %>
+    2:     <div>
+    3:     <%= f.label :agency, "Creating a user account for: " %>
+    4:     <%= agency_id_field(@user) %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-08 15:34:14 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 8051)
+
+
+Started POST "/agencies" for ::1 at 2020-01-08 15:34:20 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"0wzNg0+pbnE+UnzHWeKx6Eef2OhY/vl6mNrQT35Vd0fDBsquJuMfPtlLpMraBGQGRup9iOXKZMMlP4u8DKLO+w==", "agency"=>{"name"=>"testttttttt", "email"=>"test"}, "commit"=>"Create Account"}
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[36mAgency Create (3.9ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "testttttttt"], ["email", "test"], ["created_at", "2020-01-08 20:34:20.459293"], ["updated_at", "2020-01-08 20:34:20.459293"]]
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+Redirected to http://localhost:3000/agencies/5/users/new
+Completed 302 Found in 25ms (ActiveRecord: 16.4ms | Allocations: 2606)
+
+
+Started GET "/agencies/5/users/new" for ::1 at 2020-01-08 15:34:20 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"5"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.4ms | Allocations: 974)
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1042)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1457)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @user do |f| %>
+    2:     <div>
+    3:     <%= f.label :agency, "Creating a user account for: " %>
+    4:     <%= agency_id_field(@user) %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/5/users/new" for ::1 at 2020-01-08 15:44:46 -0500
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+            <%= f.label :admin, "Administr...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+            <%= f.check_box :admin, {checked: ...
+                ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+...checked: true, disabled:true}%>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            p><i>By default, the first user is an admini...
+                    ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...     p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/agencies/new" for ::1 at 2020-01-08 15:45:06 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 437)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 11364)
+
+
+Started POST "/agencies" for ::1 at 2020-01-08 15:45:11 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"K+8k5rdEVB9GT7VotfpxG99x5Xs9lHja+b6RgZlrE8E75SPL3g4lUKFWbWU2HKT13gRAG4Cg5WNEW8py65yqfQ==", "agency"=>{"name"=>"asdfasdfasd", "email"=>"asdfasdfasdfs"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[36mAgency Create (2.3ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "asdfasdfasd"], ["email", "asdfasdfasdfs"], ["created_at", "2020-01-08 20:45:11.663396"], ["updated_at", "2020-01-08 20:45:11.663396"]]
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+Redirected to http://localhost:3000/agencies/6/users/new
+Completed 302 Found in 10ms (ActiveRecord: 4.5ms | Allocations: 2719)
+
+
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:45:11 -0500
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+            <%= f.label :admin, "Administr...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+            <%= f.check_box :admin, {checked: ...
+                ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+...checked: true, disabled:true}%>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            p><i>By default, the first user is an admini...
+                    ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...     p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:46:13 -0500
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+            <%= f.label :admin, "Administr...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+            <%= f.check_box :admin, {checked: ...
+                ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+...checked: true, disabled:true}%>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            p><i>By default, the first user is an admini...
+                    ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...     p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/agencies/6/users/" for ::1 at 2020-01-08 15:46:43 -0500
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+            <%= f.label :admin, "Administr...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+            <%= f.check_box :admin, {checked: ...
+                ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+...checked: true, disabled:true}%>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            p><i>By default, the first user is an admini...
+                    ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...     p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:46:47 -0500
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+            <%= f.label :admin, "Administr...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+            <%= f.check_box :admin, {checked: ...
+                ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+...checked: true, disabled:true}%>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            p><i>By default, the first user is an admini...
+                    ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...     p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:29: syntax error, unexpected '<'
+app/helpers/users_helper.rb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/helpers/users_helper.rb:30: syntax error, unexpected '>'
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:48:22 -0500
+  
+SyntaxError (/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<', expecting end
+            <p><i>By default, the first us...
+            ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+            <p><i>By default, the first user is an admini...
+                     ^~~~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+...    <p><i>By default, the first user is an administrator.  T...
+...                          ^~~~~
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+...This can be changed later.</i></p>
+...                              ^
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+/Users/thattomwhite/Development/code/talent-shepherd/app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/users_helper.rb:31: syntax error, unexpected '<', expecting end
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:31: syntax error, unexpected '<', expecting end
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/helpers/users_helper.rb:31: syntax error, unexpected '<', expecting end
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
+app/helpers/users_helper.rb:31: syntax error, unexpected '<'
+app/helpers/users_helper.rb:37: unterminated regexp meets end of file
+app/helpers/users_helper.rb:37: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:2:in `<main>'
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:49:24 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:9:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 390.3ms | Allocations: 155619)
+  Rendered users/new.html.erb within layouts/application (Duration: 390.8ms | Allocations: 155686)
+Completed 500 Internal Server Error in 34691ms (ActiveRecord: 24.1ms | Allocations: 186109)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007f8ccec316f0>:0x00007f8ccec3af48>
+Did you mean?  @user):
+    23:     <br>
+    24:     <br>
+    25:     <div>
+    26:     <%= admin_status(user) %>
+    27:     <br>
+    28:     <br>
+    29:     
+  
+app/views/users/_form.html.erb:26
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:50:09 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:9:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 386.2ms | Allocations: 148666)
+  Rendered users/new.html.erb within layouts/application (Duration: 386.4ms | Allocations: 148733)
+Completed 500 Internal Server Error in 34806ms (ActiveRecord: 1.7ms | Allocations: 165440)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007f8ccec316f0>:0x00007f8ccdefce08>
+Did you mean?  @user):
+    23:     <br>
+    24:     <br>
+    25:     <div>
+    26:     <%= admin_status(user) %>
+    27:     <br>
+    28:     <br>
+    29:     
+  
+app/views/users/_form.html.erb:26
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:50:53 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:9:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 369.1ms | Allocations: 152080)
+  Rendered users/new.html.erb within layouts/application (Duration: 369.3ms | Allocations: 152147)
+Completed 500 Internal Server Error in 403ms (ActiveRecord: 14.2ms | Allocations: 162210)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007f8ccde0ce30>:0x00007f8ccde174e8>
+Did you mean?  @user):
+    23:     <br>
+    24:     <br>
+    25:     <div>
+    26:     <%= admin_status(user) %>
+    27:     <br>
+    28:     <br>
+    29:     
+  
+app/views/users/_form.html.erb:26
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:51:21 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:9:in `agency_id_field'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 6]]
+  ↳ app/helpers/users_helper.rb:22:in `first_user?'
+  Rendered users/_form.html.erb (Duration: 418.0ms | Allocations: 151141)
+  Rendered users/new.html.erb within layouts/application (Duration: 419.8ms | Allocations: 151439)
+Completed 500 Internal Server Error in 429ms (ActiveRecord: 2.4ms | Allocations: 153287)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f8cd4280d30>:0x00007f8cd42b3348>):
+    23:     <br>
+    24:     <br>
+    25:     <div>
+    26:     <%= admin_status(@user) %>
+    27:     <br>
+    28:     <br>
+    29:     
+  
+app/helpers/users_helper.rb:29:in `admin_status'
+app/views/users/_form.html.erb:26
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:56:09 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:9:in `agency_id_field'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 6]]
+  ↳ app/helpers/users_helper.rb:22:in `first_user?'
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 2596)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2891)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 1.1ms | Allocations: 11156)
+
+
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-08 15:58:17 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/users_helper.rb:9:in `agency_id_field'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 6]]
+  ↳ app/helpers/users_helper.rb:22:in `first_user?'
+  Rendered users/_form.html.erb (Duration: 13.3ms | Allocations: 5418)
+  Rendered users/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 5712)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 1.4ms | Allocations: 13875)
+
+
+Started GET "/users/new" for ::1 at 2020-01-08 15:58:31 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:10:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 3.7ms | Allocations: 1625)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1689)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.8ms | Allocations: 8408)
+
+
+Started POST "/users" for ::1 at 2020-01-08 16:00:05 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"KV2eEf2vmrG/LeNEgpBmjg7uDNY18oQRSyIlRaRjDVg5V5k8lOXr/lg0O0kBdrNgD5uptojGGaj2x3621pS05A==", "user"=>{"agency_id"=>"3", "username"=>"asdfasd", "email"=>"asdfasd", "password"=>"[FILTERED]", "first_name"=>"asdfasd", "last_name"=>"asdfasd", "admin"=>"1"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :admin[0m
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "asdfasd"], ["first_name", "asdfasd"], ["last_name", "asdfasd"], ["email", "asdfasd"], ["password_digest", "$2a$12$7wRie3JSxz7Mm0uSn/xQQO638SAS0EYU9WCrqBj9K1Qv.sss9Bt4S"], ["agency_id", 3], ["created_at", "2020-01-08 21:00:05.530016"], ["updated_at", "2020-01-08 21:00:05.530016"]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 273ms (ActiveRecord: 2.9ms | Allocations: 3714)
+
+
+Started GET "/users/3" for ::1 at 2020-01-08 16:00:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2815)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 4502)
+
+
+  
+ActionView::Template::Error (undefined method `account' for #<User:0x00007f8cd46dc708>):
+    1: <div>
+    2: <h3>Name: <%= full_name(@user) %></h3>
+    3: <p>Email: <%= @user.email %></p>
+    4: <p>Main Account: <%= @user.account.name %></p>
+    5:    <br>
+    6: <% if @user.confirmed == false %>
+    7:      <p>UNCONFRIMED</p>
+  
+app/views/users/show.html.erb:4
+app/controllers/users_controller.rb:27:in `show'

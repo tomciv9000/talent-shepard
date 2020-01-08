@@ -19,14 +19,19 @@ module UsersHelper
     end
 
     def first_user?(user)
-        if !user.agency.nil? && user.agency.users.count <= 1
+        !user.agency.nil? && user.agency.users.count <= 1
     end
 
-    def default_role(user)
+
+
+    def admin_status(user)
         if first_user?(user)
-            <%= f.label :admin, "Administrator" %>
-            <%= f.check_box :admin, {checked: true, disabled:true}%>
-            p><i>By default, the first user is an administrator.  This can be changed later.</i></p>
+            f.label :admin, "Administrator" 
+            f.check_box :admin, {checked: true, disabled:true}
+            "By default, the first user is an administrator.  This can be changed later."
+        else
+            f.label :admin, "Administrator" 
+            f.check_box :admin, {checked: false}
         end
     end
 end
