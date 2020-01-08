@@ -1,16 +1,13 @@
-require 'pry'
 class AgenciesController < ApplicationController
   def new
     @agency = Agency.new
   end
 
   def create
-    binding.pry
     @agency = Agency.new(agency_params)
       if @agency.valid?
         @agency.save
-        #session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        redirect_to new_agency_user_path(@agency)
       else
         redirect_to '/'
       end
