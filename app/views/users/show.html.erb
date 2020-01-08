@@ -1,10 +1,8 @@
-Name: <%= full_name(@user) %>
+<div>
+<h3>Name: <%= full_name(@user) %></h3>
+<p>Email: <%= @user.email %></p>
+<p>Main Account: <%= @user.account.name %></p>
    <br>
-Email: <%= @user.email %>
-
-   <br>
-Main Account: <%= @user.account.name %>
-   <br>
-   <% if @user.confirmed == false %>
-     UNCONFRIMED
-   <% end %>
+<% if @user.confirmed == false %>
+     <p>UNCONFRIMED</p>
+<% end %>
