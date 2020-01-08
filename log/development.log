@@ -111,3 +111,76 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 1739)
 
 
+  [1m[35m (27.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5912448997668417645)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAccounts (20200107231417)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "username" character varying, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (5.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200107231417"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20200107233411)
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "confirmed" boolean DEFAULT FALSE, "account_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200107233411"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActors (20200107234240)
+  [1m[35m (9.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "account_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200107234240"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAppointments (20200107235148)
+  [1m[35m (11.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200107235148"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProjects (20200107235458)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" timestamp, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200107235458"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCastingOffices (20200108000110)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200108000110"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCastingPeople (20200108000312)
+  [1m[35m (7.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "casting_people" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "office_role" character varying, "email" character varying, "direct_number" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200108000312"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20200108000447)
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200108000447"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-08 00:50:55.948102"], ["updated_at", "2020-01-08 00:50:55.948102"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5912448997668417645)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (7.2ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tavis Tylios"], ["created_at", "2020-01-08 00:54:03.449887"], ["updated_at", "2020-01-08 00:54:03.449887"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActor Create (2.1ms)[0m  [1m[32mINSERT INTO "actors" ("account_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["account_id", 1], ["created_at", "2020-01-08 00:54:19.487621"], ["updated_at", "2020-01-08 00:54:19.487621"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "account_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "test_user"], ["account_id", 1], ["created_at", "2020-01-08 00:54:24.099770"], ["updated_at", "2020-01-08 00:54:24.099770"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActor Update (29.0ms)[0m  [1m[33mUPDATE "actors" SET "first_name" = $1, "updated_at" = $2 WHERE "actors"."id" = $3[0m  [["first_name", "Tom"], ["updated_at", "2020-01-08 00:56:18.789860"], ["id", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCastingOffice Create (2.0ms)[0m  [1m[32mINSERT INTO "casting_offices" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mark Saks"], ["created_at", "2020-01-08 00:57:49.177713"], ["updated_at", "2020-01-08 00:57:49.177713"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Create (2.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "casting_office_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Get up!"], ["casting_office_id", 1], ["created_at", "2020-01-08 00:58:36.909558"], ["updated_at", "2020-01-08 00:58:36.909558"]]
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCastingPerson Create (2.0ms)[0m  [1m[32mINSERT INTO "casting_people" ("first_name", "casting_office_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Karen"], ["casting_office_id", 1], ["created_at", "2020-01-08 00:59:47.765996"], ["updated_at", "2020-01-08 00:59:47.765996"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCastingPerson Load (1.6ms)[0m  [1m[34mSELECT "casting_people".* FROM "casting_people" WHERE "casting_people"."casting_office_id" = $1 LIMIT $2[0m  [["casting_office_id", 1], ["LIMIT", 11]]
+  [1m[36mCastingPerson Load (0.5ms)[0m  [1m[34mSELECT "casting_people".* FROM "casting_people" WHERE "casting_people"."casting_office_id" = $1 ORDER BY "casting_people"."id" ASC LIMIT $2[0m  [["casting_office_id", 1], ["LIMIT", 1]]
