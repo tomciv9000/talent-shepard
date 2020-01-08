@@ -1,7 +1,7 @@
 <div>
 <h3>Name: <%= full_name(@user) %></h3>
 <p>Email: <%= @user.email %></p>
-<p>Main Account: <%= @user.account.name %></p>
+<p>Main Account: <%= @user.agency.name %></p>
    <br>
 <% if @user.confirmed == false %>
      <p>UNCONFRIMED</p>
