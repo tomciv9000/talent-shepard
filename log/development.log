@@ -1296,3 +1296,705 @@ Migrating to AddAdminToUsers (20200108165308)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5912448997668417645)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-01-08 12:13:32 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/thattomwhite/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/thattomwhite/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.4ms | Allocations: 316)
+Completed 200 OK in 21ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 1711)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:13:39 -0500
+  
+ActionController::RoutingError (uninitialized constant AgenciesController):
+  
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.2.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:15:53 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1283)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2413)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create Your Agency Account</h1>
+<%= form_for(@agency) do |f| %>
+    <div>
+    <%= f.label :name, 'Name of Agency' %>
+  
+    <%= f.text_field :name %>
+    
+    <div>
+    <%= f.label :email, 'Agency Email Address' %>
+    
+    <%= f.text_field :email %>
+    
+    <div>
+    <%= f.fields_for :users, @account.users.build do |users_fields| %>
+        <%= users_fields.label :name %>
+        <%= users_fields.text_field :name %>
+        <%= users_fields.label :password %>
+        <%= users_fields.password_field :password %>
+        <%= users_fields.label :first_name, "First Name" %>
+        <%= users_fields.text_field :first_name %>
+        <%= users_fields.label :last_name, "Last Name" %>
+        <%= users_fields.text_field :last_name %>
+        <%= users_fields.label :email %>
+        <%= users_fields.text_field :email %>
+        <%= users_fields.label :admin %>
+        <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
+    <div>
+    <%= f.submit "Create Account" %>
+<% end %>
+):
+1:    <h1>Create Your Agency Account</h1>
+2:    <%= form_for(@agency) do |f| %>
+3:        <div>
+4:        <%= f.label :name, 'Name of Agency' %>
+5:      
+6:        <%= f.text_field :name %>
+7:        
+8:        <div>
+9:        <%= f.label :email, 'Agency Email Address' %>
+10:        
+11:        <%= f.text_field :email %>
+12:        
+13:        <div>
+14:        <%= f.fields_for :users, @account.users.build do |users_fields| %>
+15:            <%= users_fields.label :name %>
+16:            <%= users_fields.text_field :name %>
+17:            <%= users_fields.label :password %>
+18:            <%= users_fields.password_field :password %>
+19:            <%= users_fields.label :first_name, "First Name" %>
+20:            <%= users_fields.text_field :first_name %>
+21:            <%= users_fields.label :last_name, "Last Name" %>
+22:            <%= users_fields.text_field :last_name %>
+23:            <%= users_fields.label :email %>
+24:            <%= users_fields.text_field :email %>
+25:            <%= users_fields.label :admin %>
+26:            <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
+27:        <div>
+28:        <%= f.submit "Create Account" %>
+29:    <% end %>
+  
+app/views/agencies/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:31: syntax error, unexpected end-of-input, expecting end
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:16:16 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1305)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2374)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create Your Agency Account</h1>
+<%= form_for(@agency) do |f| %>
+    <div>
+    <%= f.label :name, 'Name of Agency' %>
+  
+    <%= f.text_field :name %>
+    
+    <div>
+    <%= f.label :email, 'Agency Email Address' %>
+    
+    <%= f.text_field :email %>
+    
+    <div>
+    <%= f.fields_for :users, @account.users.build do |users_fields| %>
+        <%= users_fields.label :name %>
+        <%= users_fields.text_field :name %>
+        <%= users_fields.label :password %>
+        <%= users_fields.password_field :password %>
+        <%= users_fields.label :first_name, "First Name" %>
+        <%= users_fields.text_field :first_name %>
+        <%= users_fields.label :last_name, "Last Name" %>
+        <%= users_fields.text_field :last_name %>
+        <%= users_fields.label :email %>
+        <%= users_fields.text_field :email %>
+        <%= users_fields.label :admin %>
+        <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
+    <div>
+    <%= f.submit "Create Account" %>
+):
+1:    <h1>Create Your Agency Account</h1>
+2:    <%= form_for(@agency) do |f| %>
+3:        <div>
+4:        <%= f.label :name, 'Name of Agency' %>
+5:      
+6:        <%= f.text_field :name %>
+7:        
+8:        <div>
+9:        <%= f.label :email, 'Agency Email Address' %>
+10:        
+11:        <%= f.text_field :email %>
+12:        
+13:        <div>
+14:        <%= f.fields_for :users, @account.users.build do |users_fields| %>
+15:            <%= users_fields.label :name %>
+16:            <%= users_fields.text_field :name %>
+17:            <%= users_fields.label :password %>
+18:            <%= users_fields.password_field :password %>
+19:            <%= users_fields.label :first_name, "First Name" %>
+20:            <%= users_fields.text_field :first_name %>
+21:            <%= users_fields.label :last_name, "Last Name" %>
+22:            <%= users_fields.text_field :last_name %>
+23:            <%= users_fields.label :email %>
+24:            <%= users_fields.text_field :email %>
+25:            <%= users_fields.label :admin %>
+26:            <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
+27:        <div>
+28:        <%= f.submit "Create Account" %>
+  
+app/views/agencies/new.html.erb:30: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:30: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:30: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:30: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:30: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:30: syntax error, unexpected end-of-input, expecting end
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:18:14 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1324)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2396)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create Your Agency Account</h1>
+<%= form_for(@agency) do |f| %>
+    <div>
+    <%= f.label :name, 'Name of Agency' %>
+  
+    <%= f.text_field :name %>
+    
+    <div>
+    <%= f.label :email, 'Agency Email Address' %>
+    
+    <%= f.text_field :email %>
+    
+    <div>
+    <%= f.fields_for :users, @account.users.build do |users_fields| %>
+        <%= users_fields.label :name %>
+        <%= users_fields.text_field :name %>
+        <%= users_fields.label :password %>
+        <%= users_fields.password_field :password %>
+        <%= users_fields.label :first_name, "First Name" %>
+        <%= users_fields.text_field :first_name %>
+        <%= users_fields.label :last_name, "Last Name" %>
+        <%= users_fields.text_field :last_name %>
+        <%= users_fields.label :email %>
+        <%= users_fields.text_field :email %>
+        <%= users_fields.label :admin %>
+        <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
+        <% end %>
+    <div>
+    <%= f.submit "Create Account" %>
+
+):
+1:    <h1>Create Your Agency Account</h1>
+2:    <%= form_for(@agency) do |f| %>
+3:        <div>
+4:        <%= f.label :name, 'Name of Agency' %>
+5:      
+6:        <%= f.text_field :name %>
+7:        
+8:        <div>
+9:        <%= f.label :email, 'Agency Email Address' %>
+10:        
+11:        <%= f.text_field :email %>
+12:        
+13:        <div>
+14:        <%= f.fields_for :users, @account.users.build do |users_fields| %>
+15:            <%= users_fields.label :name %>
+16:            <%= users_fields.text_field :name %>
+17:            <%= users_fields.label :password %>
+18:            <%= users_fields.password_field :password %>
+19:            <%= users_fields.label :first_name, "First Name" %>
+20:            <%= users_fields.text_field :first_name %>
+21:            <%= users_fields.label :last_name, "Last Name" %>
+22:            <%= users_fields.text_field :last_name %>
+23:            <%= users_fields.label :email %>
+24:            <%= users_fields.text_field :email %>
+25:            <%= users_fields.label :admin %>
+26:            <%= users_fields.check_box :admin, {checked: true, disabled:true}%>
+27:            <% end %>
+28:        <div>
+29:        <%= f.submit "Create Account" %>
+  
+app/views/agencies/new.html.erb:32: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:32: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:32: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:32: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:32: syntax error, unexpected end-of-input, expecting end
+app/views/agencies/new.html.erb:32: syntax error, unexpected end-of-input, expecting end
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:19:06 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1329)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2398)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Create Your Agency Account</h1>
+    2: <%= form_for(@agency) do |f| %>
+    3:     <div>
+    4:     <%= f.label :name, 'Name of Agency' %>
+    5:   
+  
+app/views/agencies/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:19:39 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 167.0ms | Allocations: 73163)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 6.8ms | Allocations: 78736)
+
+
+  
+ActionView::Template::Error (undefined method `agencies_path' for #<#<Class:0x00007fa5bc940b10>:0x00007fa5bc94a890>
+Did you mean?  agencies_new_path):
+    1: <h1>Create Your Agency Account</h1>
+    2: <%= form_for(@agency) do |f| %>
+    3:     <div>
+    4:     <%= f.label :name, 'Name of Agency' %>
+    5:   
+  
+app/views/agencies/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:21:52 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2755)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 8.2ms | Allocations: 9626)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    11:     <%= f.text_field :email %>
+    12:     
+    13:     <div>
+    14:     <%= f.fields_for :users, @account.users.build do |users_fields| %>
+    15:         <%= users_fields.label :name %>
+    16:         <%= users_fields.text_field :name %>
+    17:         <%= users_fields.label :password %>
+  
+app/views/agencies/new.html.erb:14
+app/views/agencies/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:22:37 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 75.4ms | Allocations: 18155)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 34.1ms | Allocations: 19281)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x00007fc97ec1d500>):
+    13:     <div>
+    14:     <%= f.fields_for :users, @agency.users.build do |users_fields| %>
+    15:         <%= users_fields.label :name %>
+    16:         <%= users_fields.text_field :name %>
+    17:         <%= users_fields.label :password %>
+    18:         <%= users_fields.password_field :password %>
+    19:         <%= users_fields.label :first_name, "First Name" %>
+  
+app/views/agencies/new.html.erb:16
+app/views/agencies/new.html.erb:14
+app/views/agencies/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:23:10 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 5205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1524ms (Views: 1522.3ms | ActiveRecord: 0.0ms | Allocations: 1385891)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:25:45 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2090)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 9724)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:26:12 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2077)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 9678)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:27:06 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 9684)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:27:41 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2078)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 9684)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:29:37 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2080)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 9675)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:29:37 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 8288)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:30:05 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2080)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 9674)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:30:17 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2078)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 9673)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:30:17 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 8290)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:31:15 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2085)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 9675)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:31:42 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 8283)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:31:44 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1613)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 8280)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:31:48 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 9674)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:32:27 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 2084)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.0ms | Allocations: 9675)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:37:34 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 51.2ms | ActiveRecord: 0.0ms | Allocations: 9567)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:37:59 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 9689)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:38:21 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 9568)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:39:48 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1975)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 9568)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:40:57 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1977)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 9571)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:41:21 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1976)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 9569)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:41:33 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1977)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 9575)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:41:48 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1979)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 9567)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:41:50 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 8166)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:41:51 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1498)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 8166)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:42:02 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1980)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 9575)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:42:11 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1981)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 9578)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:42:52 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 9572)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:43:37 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1974)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 9564)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 12:44:47 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1639)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 9232)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-08 13:07:18 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- pry):
+  
+app/controllers/agencies_controller.rb:1:in `<main>'
+Started GET "/agencies/new" for ::1 at 2020-01-08 13:08:53 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 62.7ms | Allocations: 13171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1465ms (Views: 1413.7ms | ActiveRecord: 21.2ms | Allocations: 1394004)
+
+
+Started POST "/agencies" for ::1 at 2020-01-08 13:09:28 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"Vbq28OXWcl2uZ4Dq28qkUNDs70Q3VhxF5aeaqkkp4HRFsLHdjJwDEkl+WOdYLHG+0ZlKJIpigfxYQsFZO95ZyA==", "agency"=>{"name"=>"Davis Spylios", "email"=>"d@d.com", "users_attributes"=>{"0"=>{"username"=>"testuser", "email"=>"test@test.com", "password"=>"[FILTERED]", "first_name"=>"Tom", "last_name"=>"White"}}}, "commit"=>"Create Account"}
+Completed 500 Internal Server Error in 459263ms (ActiveRecord: 0.0ms | Allocations: 350023)
+
+
+  
+NameError (undefined local variable or method `agency_params' for #<AgenciesController:0x00007fc75f190658>
+Did you mean?  agency_path):
+  
+app/controllers/agencies_controller.rb:9:in `create'
+Started POST "/agencies" for ::1 at 2020-01-08 13:19:49 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"Vbq28OXWcl2uZ4Dq28qkUNDs70Q3VhxF5aeaqkkp4HRFsLHdjJwDEkl+WOdYLHG+0ZlKJIpigfxYQsFZO95ZyA==", "agency"=>{"name"=>"Davis Spylios", "email"=>"d@d.com", "users_attributes"=>{"0"=>{"username"=>"testuser", "email"=>"test@test.com", "password"=>"[FILTERED]", "first_name"=>"Tom", "last_name"=>"White"}}}, "commit"=>"Create Account"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 196739ms (ActiveRecord: 14.1ms | Allocations: 29659)
+
+
+Started GET "/" for ::1 at 2020-01-08 13:23:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/thattomwhite/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/thattomwhite/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.7ms | Allocations: 196)
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 1359)
+
+
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" ORDER BY "agencies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/agencies" for ::1 at 2020-01-08 13:24:28 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"Vbq28OXWcl2uZ4Dq28qkUNDs70Q3VhxF5aeaqkkp4HRFsLHdjJwDEkl+WOdYLHG+0ZlKJIpigfxYQsFZO95ZyA==", "agency"=>{"name"=>"Davis Spylios", "email"=>"d@d.com", "users_attributes"=>{"0"=>{"username"=>"testuser", "email"=>"test@test.com", "password"=>"[FILTERED]", "first_name"=>"Tom", "last_name"=>"White"}}}, "commit"=>"Create Account"}
+Completed 500 Internal Server Error in 62208ms (ActiveRecord: 0.0ms | Allocations: 7864)
+
+
+  
+Errno::EIO (Input/output error @ io_write - <STDOUT>):
+  
+app/controllers/agencies_controller.rb:8:in `create'
+Started GET "/agencies/new" for ::1 at 2020-01-08 13:25:52 -0500
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 67.4ms | Allocations: 13133)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1544ms (Views: 1495.9ms | ActiveRecord: 19.8ms | Allocations: 1393853)
+
+
+Started POST "/agencies" for ::1 at 2020-01-08 13:26:12 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"UN6YLmVr1PfYWPI9cgSw20VaISvFW9pDNUZslmexrOVA1J8DDCGluD9BKjDx4mU1RC+ES3hvR/qIozdlFUYVWQ==", "agency"=>{"name"=>"Test", "email"=>"test@test.com", "users_attributes"=>{"0"=>{"username"=>"me", "email"=>"me@me.com", "password"=>"[FILTERED]", "first_name"=>"Tom", "last_name"=>"Tahdg"}}}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (11.1ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test"], ["email", "test@test.com"], ["created_at", "2020-01-08 18:31:22.664793"], ["updated_at", "2020-01-08 18:31:22.664793"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "me"], ["first_name", "Tom"], ["last_name", "Tahdg"], ["email", "me@me.com"], ["password_digest", "$2a$12$oTdhul0OPevgny3k7Fp09uhORHceOSh4rmCWWCEbkYqDjSC5HDoLm"], ["agency_id", 2], ["created_at", "2020-01-08 18:31:22.680427"], ["updated_at", "2020-01-08 18:31:22.680427"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/email=me%2540me.com&first_name=Tom&last_name=Tahdg&password=test&username=me
+Completed 302 Found in 309952ms (ActiveRecord: 22.6ms | Allocations: 51716)
+
+
+Started GET "/users/email=me%2540me.com&first_name=Tom&last_name=Tahdg&password=test&username=me" for ::1 at 2020-01-08 13:31:22 -0500
+Processing by UsersController#show as 
+  Parameters: {"id"=>"email=me%40me"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 4.9ms | Allocations: 2524)
+
+
+Started GET "/" for ::1 at 2020-01-08 13:31:22 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/thattomwhite/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/thattomwhite/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.2ms | Allocations: 203)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 960)
+
+
+Started POST "/agencies" for ::1 at 2020-01-08 13:35:17 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"UN6YLmVr1PfYWPI9cgSw20VaISvFW9pDNUZslmexrOVA1J8DDCGluD9BKjDx4mU1RC+ES3hvR/qIozdlFUYVWQ==", "agency"=>{"name"=>"Test", "email"=>"test@test.com", "users_attributes"=>{"0"=>{"username"=>"me", "email"=>"me@me.com", "password"=>"[FILTERED]", "first_name"=>"Tom", "last_name"=>"Tahdg"}}}, "commit"=>"Create Account"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 831609ms (ActiveRecord: 21.4ms | Allocations: 36734)
+
+
