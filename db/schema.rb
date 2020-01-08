@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_162829) do
+ActiveRecord::Schema.define(version: 2020_01_08_164238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,14 @@ ActiveRecord::Schema.define(version: 2020_01_08_162829) do
     t.datetime "dob"
     t.string "location"
     t.text "notes"
-    t.integer "organization_id"
+    t.integer "agency_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "agencies", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,13 +81,6 @@ ActiveRecord::Schema.define(version: 2020_01_08_162829) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "organizations", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "media_type"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_162829) do
     t.string "email"
     t.string "password_digest"
     t.boolean "confirmed", default: false
-    t.integer "organization_id"
+    t.integer "agency_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

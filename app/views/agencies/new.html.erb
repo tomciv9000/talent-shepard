@@ -1,13 +1,7 @@
-<h1>New Organization Account</h1>
-<%= form_for(@account) do |f| %>
+<h1>Create Your Agency Account</h1>
+<%= form_for(@agency) do |f| %>
     <div>
-    <%= f.label :username %>
-  
-    <%= f.text_field :username %>
-  
-    <div>
-    <div>
-    <%= f.label :name, 'Organization' %>
+    <%= f.label :name, 'Name of Agency' %>
   
     <%= f.text_field :name %>
   
@@ -23,8 +17,8 @@
     
     <div>
     <%= f.fields_for :users, @account.users.build do |users_fields| %>
-        <%= users_fields.label :username %>
-        <%= users_fields.text_field :username %>
+        <%= users_fields.label :name %>
+        <%= users_fields.text_field :name %>
         <%= users_fields.label :password %>
         <%= users_fields.password_field :password %>
         <%= users_fields.label :first_name, "First Name" %>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
  
-  get 'organizations/new'
-  get 'organizations/create'
-  get 'organizations/edit'
+  get 'agencies/new'
+  get 'agencies/create'
+  get 'agencies/edit'
 
   
   resources :users, only: [:new, :create, :show, :edit]
