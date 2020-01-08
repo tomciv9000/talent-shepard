@@ -1,0 +1,10 @@
+Name: <%= full_name(@user) %>
+   <br>
+Email: <%= @user.email %>
+
+   <br>
+Main Account: <%= @user.account.name %>
+   <br>
+   <% if @user.confirmed == false %>
+     UNCONFRIMED
+   <% end %>
