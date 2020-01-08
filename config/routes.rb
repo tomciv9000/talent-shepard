@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
  
+  get 'accounts/new'
+  get 'accounts/create'
+  get 'accounts/edit'
   #root 'users#new'
   
   resources :users, only: [:new, :create, :show, :edit]
