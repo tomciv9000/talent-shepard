@@ -6,3 +6,6 @@
 <% if @user.confirmed == false %>
      <p>UNCONFRIMED USER</p>
 <% end %>
+<% if @user.admin == true %>
+     <p>ADMIN</p>
+<% end %>
