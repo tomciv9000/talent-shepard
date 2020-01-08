@@ -1,4 +1,4 @@
-<h1>New Account Signup</h1>
+<h1>New Organization Account</h1>
 <%= form_for(@account) do |f| %>
     <div>
     <%= f.label :username %>
@@ -25,6 +25,8 @@
     <%= f.fields_for :users, @account.users.build do |users_fields| %>
         <%= users_fields.label :username %>
         <%= users_fields.text_field :username %>
+        <%= users_fields.label :password %>
+        <%= users_fields.password_field :password %>
         <%= users_fields.label :first_name, "First Name" %>
         <%= users_fields.text_field :first_name %>
         <%= users_fields.label :last_name, "Last Name" %>
@@ -33,7 +35,10 @@
         <%= users_fields.text_field :email %>
         <%= users_fields.label :confirmed, "Confirmed" %>
         <%= users_fields.text_field :confirmed %>
-      <% end %>
+        ### possibly an admin checkbox instead of confirmed
+        the logic should be that if a user  is created
+        through the creation of account, that user is automatically confirmed
+        <% end %>
     <div>
     <%= f.submit "Create Account" %>
 <% end %>
