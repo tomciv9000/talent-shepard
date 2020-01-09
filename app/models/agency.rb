@@ -6,5 +6,3 @@ class Agency < ApplicationRecord
   
 
 end
-
-#  params[:agency][:users_attributes]["0"]

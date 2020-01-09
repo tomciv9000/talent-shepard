@@ -7,7 +7,7 @@ class User < ApplicationRecord
         !self.agency.nil? && self.agency.users.count == 0
     end
 
-    def agency_name
+    def agency_if_any
         self.agency.name if self.agency
     end
     

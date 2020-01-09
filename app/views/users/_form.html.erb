@@ -1,6 +1,6 @@
 <%= form_for @user do |f| %>
     
-    Agency: <%= @user.agency_name %>
+    Agency: <%= @user.agency_if_any %>
     <%= agency_id_field(@user) %>
     <br>
     <br>
@@ -20,17 +20,6 @@
     <%= f.label :last_name, "Last Name:" %>
     <%= f.text_field :last_name %>
     
-    <br>
-    <br>
-    
-    <%= user_role(@user) %>
-    <%= admin_field(@user) %>
-    <%= default_admin_check(@user) %>
-    <% if @user.first_user? %>
-        <p><i>By default, the first user is an administrator.  This can be changed later.</i></p>
-    <% end %>
-    <%=confirm_first_user(@user)%>
-    <br>
     <br>
     
     <%= f.submit "Create User" %>

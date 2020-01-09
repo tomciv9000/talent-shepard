@@ -7,11 +7,12 @@ class UsersController < ApplicationController
     else  
       @user = User.new(agency_id: params[:agency_id])
     end
-    #not nil when passed to new
+    binding.pry
   end
 
   def create
       @user = User.new(user_params)
+      @user.assign_defaults
       if @user.valid?
         @user.save
         session[:user_id] = @user.id

@@ -9,27 +9,38 @@ module UsersHelper
       end
     end
 
-    def admin_field(user)
-        check_box(nil, nil, {checked: true, disabled:true}) if user.first_user?
-        #disabled checkbox for first user
+    #def admin_field(user)
+    #    check_box(nil, nil, {checked: true, disabled:true}) if user.first_user?
+    #    #disabled checkbox for first user
+    #end
+
+    #def default_admin_check(user)
+    #    hidden_field_tag "user[admin]", "true" if user.first_user?
+    #end
+
+    #ef confirm_first_user(user)
+    #   hidden_field_tag "user[confirmed]", "true" if user.first_user?
+    #nd
+    #
+    #ef user_role(user)
+    #   if user.admin || user.first_user?
+    #       "Admin" 
+    #   else
+    #       "Standard User"
+    #   end
+    #nd
+    
+
+
+    ##### this is the flow of helpers required to reder forms
+
+    def assign_defaults
+        self.assign_attributes(:admin => true, :confirmed => "true") if self.first_user?
     end
 
-    def default_admin_check(user)
-        hidden_field_tag "user[admin]", "true" if user.first_user?
-    end
 
-    def confirm_first_user(user)
-        hidden_field_tag "user[confirmed]", "true" if user.first_user?
-    end
-    
-    def user_role(user)
-        if user.admin || user.first_user?
-            "Admin" 
-        else
-            "Standard User"
-        end
-    end
-    
+
+
 
 
 end
