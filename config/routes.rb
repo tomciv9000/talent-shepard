@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
- 
+
+  root 'static#home'
 
   resources :agencies, only: [:index, :new, :create, :show, :edit] do
     resources :users, only: [:index, :show, :new, :edit, :create]
@@ -13,6 +14,4 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
 
 
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
