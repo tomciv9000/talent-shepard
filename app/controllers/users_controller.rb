@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    binding.pry
     @user.assign_defaults
     if @user.valid?
       @user.save
