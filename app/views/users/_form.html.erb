@@ -25,8 +25,8 @@
     <div>
     Admin
     <%= admin_field(@user) %>
-    <%= first_admin(@user) %>
-    <% if first_user?(@user) %>
+    <%= default_admin_check(@user) %>
+    <% if @user.first_user? %>
         <p><i>By default, the first user is an administrator.  This can be changed later.</i></p>
     <% end %>
     <%=confirm_first_user(@user)%>

@@ -2,6 +2,7 @@ require 'pry'
 class UsersController < ApplicationController
 
   def new
+    binding.pry
     if params[:agency_id] && !Agency.exists?(params[:agency_id])
       redirect_to agencies_path, alert: "Agency not found."
     else  
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
       @user = User.new(user_params)
       if @user.valid?
         @user.save
