@@ -10,16 +10,8 @@ module UsersHelper
     end
 
     def admin_field(user)
-        if user.first_user?
-            #disabled checkbox for first user
-            check_box(nil, nil, {checked: true, disabled:true})
-        else
-            check_box "user[admin]", checked: false
-        end
-    end
-
-    def agency_name
-        @user.agency.name || nil
+        check_box(nil, nil, {checked: true, disabled:true}) if user.first_user?
+        #disabled checkbox for first user
     end
 
     def default_admin_check(user)
@@ -30,7 +22,13 @@ module UsersHelper
         hidden_field_tag "user[confirmed]", "true" if user.first_user?
     end
     
-
+    def user_role(user)
+        if user.admin || user.first_user?
+            "Admin" 
+        else
+            "Standard User"
+        end
+    end
     
 
 

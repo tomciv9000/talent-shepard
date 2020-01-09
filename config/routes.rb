@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
  
 
-  resources :agencies, only: [:new, :create, :show, :edit] do
-    resources :users, only: [:index, :show, :new, :edit]
+  resources :agencies, only: [:index, :new, :create, :show, :edit] do
+    resources :users, only: [:index, :show, :new, :edit, :create]
   end
 
   

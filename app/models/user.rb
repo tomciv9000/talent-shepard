@@ -8,6 +8,7 @@ class User < ApplicationRecord
     end
 
     def agency_name
-        @user.agency.name || nil
+        self.agency.name if self.agency
     end
+    
 end
