@@ -1,10 +1,6 @@
 <h3>Name: <%= full_name(@user) %></h3>
 <p>Email: <%= @user.email %></p>
-<p>Main Account: <%= @user.agency.name %></p>
+<p>Agency Account: <%= @user.agency.name %></p>
    <br>
-<% if @user.confirmed == false %>
-     <p>UNCONFRIMED USER</p>
-<% end %>
-<% if @user.admin == true %>
-     <p>ADMIN</p>
-<% end %>
+<%= @user.display_details %>
+     

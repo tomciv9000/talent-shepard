@@ -5897,3 +5897,249 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 56427ms (Views: 53.7ms | ActiveRecord: 13.7ms | Allocations: 50515)
 
 
+Started GET "/agencies/new" for ::1 at 2020-01-09 15:54:48 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1539ms (Views: 1505.1ms | ActiveRecord: 7.9ms | Allocations: 1381855)
+
+
+Started POST "/agencies" for ::1 at 2020-01-09 15:55:44 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"fZxUfZE0QHGu6ptho3kYbhfaO3MRNZaEHogTZOQCV6VtllNQ+H4xPknzQ2wgn82AFq+eE6wBCz2jbUiXlvXuGQ==", "agency"=>{"name"=>"Mary Martin's Girls", "email"=>"mary@mary.com"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[36mAgency Create (0.9ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mary Martin's Girls"], ["email", "mary@mary.com"], ["created_at", "2020-01-09 20:55:44.630650"], ["updated_at", "2020-01-09 20:55:44.630650"]]
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:9:in `create'
+Redirected to http://localhost:3000/agencies/6/users/new
+Completed 302 Found in 19ms (ActiveRecord: 13.2ms | Allocations: 2948)
+
+
+Started GET "/agencies/6/users/new" for ::1 at 2020-01-09 15:55:44 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"6"}
+  [1m[36mAgency Exists? (6.8ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `agency_if_any'
+  Rendered users/_form.html.erb (Duration: 25.6ms | Allocations: 3806)
+  Rendered users/new.html.erb within layouts/application (Duration: 32.6ms | Allocations: 4117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35289ms (Views: 76.8ms | ActiveRecord: 14.2ms | Allocations: 37607)
+
+
+Started POST "/users" for ::1 at 2020-01-09 15:56:49 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Og5it0GJ6hLuqZNlnfcgPerkYffBJXl8oHTQlrpQ0PkqBGWaKMObXQmwS2geEfXT65HEl3wR5MUdkYtlyKdpRQ==", "user"=>{"agency_id"=>"6", "username"=>"tom2", "email"=>"tom222", "password"=>"[FILTERED]", "first_name"=>"Gary", "last_name"=>"Smith"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 282ms (ActiveRecord: 7.5ms | Allocations: 9966)
+
+
+  
+NoMethodError (undefined method `assign_defaults' for #<User:0x00007fd41a0a9c40>
+Did you mean?  assign_attributes):
+  
+app/controllers/users_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2020-01-09 15:58:38 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Og5it0GJ6hLuqZNlnfcgPerkYffBJXl8oHTQlrpQ0PkqBGWaKMObXQmwS2geEfXT65HEl3wR5MUdkYtlyKdpRQ==", "user"=>{"agency_id"=>"6", "username"=>"tom2", "email"=>"tom222", "password"=>"[FILTERED]", "first_name"=>"Gary", "last_name"=>"Smith"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ (pry):2:in `create'
+Completed 500 Internal Server Error in 192708ms (ActiveRecord: 31.2ms | Allocations: 248916)
+
+
+  
+NoMethodError (undefined method `assign_defaults' for #<User:0x00007fd418b58a30>
+Did you mean?  assign_attributes):
+  
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2020-01-09 16:08:47 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Og5it0GJ6hLuqZNlnfcgPerkYffBJXl8oHTQlrpQ0PkqBGWaKMObXQmwS2geEfXT65HEl3wR5MUdkYtlyKdpRQ==", "user"=>{"agency_id"=>"6", "username"=>"tom2", "email"=>"tom222", "password"=>"[FILTERED]", "first_name"=>"Gary", "last_name"=>"Smith"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:7:in `first_user?'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 6]]
+  ↳ app/models/user.rb:7:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (7.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "confirmed", "agency_id", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "tom2"], ["first_name", "Gary"], ["last_name", "Smith"], ["email", "tom222"], ["password_digest", "$2a$12$W1y6rEl7YrFiC/RjuqlZzOSq4PYwbnKu7w6sI7bziXmIkldivVJ/2"], ["confirmed", true], ["agency_id", 6], ["created_at", "2020-01-09 21:08:48.271647"], ["updated_at", "2020-01-09 21:08:48.271647"], ["admin", true]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 361ms (ActiveRecord: 36.8ms | Allocations: 20478)
+
+
+Started GET "/users/7" for ::1 at 2020-01-09 16:08:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 16.4ms | Allocations: 3284)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.5ms | Allocations: 6384)
+
+
+  
+ActionView::Template::Error (undefined method `full_name' for #<User:0x00007ff436f699d8>):
+    1: <h3>Name: <%= @user.full_name %></h3>
+    2: <p>Email: <%= @user.email %></p>
+    3: <p>Agency Account: <%= @user.agency.name %></p>
+    4:    <br>
+  
+app/views/users/show.html.erb:1
+app/controllers/users_controller.rb:27:in `show'
+Started POST "/users" for ::1 at 2020-01-09 16:11:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Og5it0GJ6hLuqZNlnfcgPerkYffBJXl8oHTQlrpQ0PkqBGWaKMObXQmwS2geEfXT65HEl3wR5MUdkYtlyKdpRQ==", "user"=>{"agency_id"=>"6", "username"=>"tom2", "email"=>"tom222", "password"=>"[FILTERED]", "first_name"=>"Gary", "last_name"=>"Smith"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:7:in `first_user?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 6]]
+  ↳ app/models/user.rb:7:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "tom2"], ["first_name", "Gary"], ["last_name", "Smith"], ["email", "tom222"], ["password_digest", "$2a$12$kscWYlNjQfIbw8eQEUVgHOD9maqGdo7mbohJm87Q0a7XpHGiwPVvm"], ["agency_id", 6], ["created_at", "2020-01-09 21:11:58.816408"], ["updated_at", "2020-01-09 21:11:58.816408"]]
+  ↳ app/controllers/users_controller.rb:16:in `create'
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16:in `create'
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 309ms (ActiveRecord: 19.8ms | Allocations: 16549)
+
+
+Started GET "/users/8" for ::1 at 2020-01-09 16:11:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:3
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1840ms (Views: 1837.2ms | ActiveRecord: 0.7ms | Allocations: 1376993)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (44.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "talent_shepherd_development"[0m
+  [1m[35m (44.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "talent_shepherd_test"[0m
+  [1m[35m (208.8ms)[0m  [1m[35mCREATE DATABASE "talent_shepherd_development" ENCODING = 'unicode'[0m
+  [1m[35m (81.7ms)[0m  [1m[35mCREATE DATABASE "talent_shepherd_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors" CASCADE[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "agencies" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "agencies" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_offices" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_people" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "casting_people" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "office_role" character varying, "email" character varying, "direct_number" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" timestamp, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "confirmed" boolean DEFAULT FALSE, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "admin" boolean DEFAULT FALSE)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200108165308)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200107231417),
+(20200107233411),
+(20200107234240),
+(20200107235148),
+(20200107235458),
+(20200108000110),
+(20200108000312),
+(20200108000447),
+(20200108160124),
+(20200108161645),
+(20200108161910),
+(20200108162720),
+(20200108162829),
+(20200108164018),
+(20200108164226),
+(20200108164238);
+
+[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-09 21:17:57.755163"], ["updated_at", "2020-01-09 21:17:57.755163"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "3f93f9fab787231800bb2468c6fe6d2dcca35365"], ["created_at", "2020-01-09 21:17:57.764982"], ["updated_at", "2020-01-09 21:17:57.764982"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "agencies" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "agencies" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_offices" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_people" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "casting_people" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "office_role" character varying, "email" character varying, "direct_number" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" timestamp, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "confirmed" boolean DEFAULT FALSE, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "admin" boolean DEFAULT FALSE)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200108165308)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200107231417),
+(20200107233411),
+(20200107234240),
+(20200107235148),
+(20200107235458),
+(20200108000110),
+(20200108000312),
+(20200108000447),
+(20200108160124),
+(20200108161645),
+(20200108161910),
+(20200108162720),
+(20200108162829),
+(20200108164018),
+(20200108164226),
+(20200108164238);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-09 21:17:57.893775"], ["updated_at", "2020-01-09 21:17:57.893775"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-01-09 21:17:57.901035"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "3f93f9fab787231800bb2468c6fe6d2dcca35365"], ["created_at", "2020-01-09 21:17:57.906836"], ["updated_at", "2020-01-09 21:17:57.906836"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

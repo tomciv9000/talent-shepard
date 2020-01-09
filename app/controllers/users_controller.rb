@@ -7,19 +7,18 @@ class UsersController < ApplicationController
     else  
       @user = User.new(agency_id: params[:agency_id])
     end
-    binding.pry
   end
 
   def create
-      @user = User.new(user_params)
-      @user.assign_defaults
-      if @user.valid?
-        @user.save
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
-      else
-        redirect_to '/'
-      end
+    @user = User.new(user_params)
+    @user.assign_defaults
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      redirect_to '/'
+    end
   end
   
   def show
