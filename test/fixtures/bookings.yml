@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role: MyString
+  rate: MyString
+  contract_signed: false
+  accepted: false
+  actor_id: 1
+  project_id: 1
+
+two:
+  role: MyString
+  rate: MyString
+  contract_signed: false
+  accepted: false
+  actor_id: 1
+  project_id: 1
