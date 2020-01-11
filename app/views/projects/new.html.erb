@@ -1,0 +1,22 @@
+<%= form_for @project do |f| %>
+    
+    <%= f.label :name, "Project Title:" %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :media_type, "Media:" %>
+    <%= f.text_field :media_type %>
+    
+    <%= f.datetime_select(:start_date, prompt: {day: 'Choose day', month: 'Choose month', year: 'Choose year'}) %>
+    
+    <%= f.label :union, "Union:" %>
+    <%= f.text_field :union %>
+    
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_field :notes %>
+
+    <%= f.select_tag ":casting_office_id", options_from_collection_for_select(CastingOffice.all, :id, :name), prompt: "Please select Casting Office"
+    
+    <br>
+    
+    <%= f.submit "Create User" %>
+   <% end %>

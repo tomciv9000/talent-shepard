@@ -7623,3 +7623,439 @@ Please, check the "Autoloading and Reloading Constants" guide for solutions.
   [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "c2baa672e01a8c40fa8bfe00796eeed4d6cbed27"], ["created_at", "2020-01-11 18:42:38.226729"], ["updated_at", "2020-01-11 18:42:38.226729"]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-11 13:44:30 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1461ms (Views: 1453.2ms | ActiveRecord: 0.0ms | Allocations: 1376331)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-11 13:44:45 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 13.2ms | ActiveRecord: 8.7ms | Allocations: 13921)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-11 13:44:57 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 370)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 7166)
+
+
+Started POST "/agencies" for ::1 at 2020-01-11 13:45:07 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"pFe1gIyx/ZGxyXltYDrJdwSuRNQPO/fFwWMWm+o0+JnpZGKxMTLprZTO60Z5mNI4Kuutc3uQbkPNjspTZskUcg==", "agency"=>{"name"=>"Davis Spylios", "email"=>"test"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (1.1ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Davis Spylios"], ["email", "test"], ["created_at", "2020-01-11 18:45:07.726037"], ["updated_at", "2020-01-11 18:45:07.726037"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/agencies/1/users/new
+Completed 302 Found in 16ms (ActiveRecord: 7.7ms | Allocations: 2981)
+
+
+Started GET "/agencies/1/users/new" for ::1 at 2020-01-11 13:45:07 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"1"}
+  [1m[36mAgency Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `agency_if_any'
+  Rendered users/_form.html.erb (Duration: 10.7ms | Allocations: 3780)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 4084)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 22.8ms | ActiveRecord: 6.8ms | Allocations: 20591)
+
+
+Started POST "/users" for ::1 at 2020-01-11 13:45:17 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ruAxHupcqpj073vyuy6YYjldxIz7KTcp6/7V4A6asHDOxCTXZuw4J2Urr6CXUvWWCRE5xx44Crd/frrkqrTtIg==", "user"=>{"agency_id"=>"1", "username"=>"t", "email"=>"t", "password"=>"[FILTERED]", "first_name"=>"t", "last_name"=>"t"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (5.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "confirmed", "agency_id", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "t"], ["first_name", "t"], ["last_name", "t"], ["email", "t"], ["password_digest", "$2a$12$76uit9wl9X2O0Aiy5AJsDex1dqX1KUKN0ftymSvRK//TA4KLroHMC"], ["confirmed", true], ["agency_id", 1], ["created_at", "2020-01-11 18:45:50.004066"], ["updated_at", "2020-01-11 18:45:50.004066"], ["admin", true]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 32897ms (ActiveRecord: 20.6ms | Allocations: 28808)
+
+
+Started GET "/users/1" for ::1 at 2020-01-11 13:45:50 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 33.6ms | ActiveRecord: 1.3ms | Allocations: 10088)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:45:55 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (10.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 12.3ms | ActiveRecord: 13.7ms | Allocations: 8324)
+
+
+Started GET "/signout" for ::1 at 2020-01-11 13:46:01 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 7.2ms | Allocations: 1900)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:46:02 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 6797)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-11 13:46:05 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 379)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 7169)
+
+
+Started POST "/agencies" for ::1 at 2020-01-11 13:46:12 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"FSpiD+Wy234GGM4Vg6016V6b5Ke/3+RPM876zV8dljJYGbU+WDHPQiMfXD6aDy6mcN4NAMt0fck/IyYF0+B62Q==", "agency"=>{"name"=>"Gang Gang", "email"=>"gggg"}, "commit"=>"Create Account"}
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (2.0ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gang Gang"], ["email", "gggg"], ["created_at", "2020-01-11 18:46:12.446874"], ["updated_at", "2020-01-11 18:46:12.446874"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/agencies/2/users/new
+Completed 302 Found in 57ms (ActiveRecord: 6.0ms | Allocations: 2610)
+
+
+Started GET "/agencies/2/users/new" for ::1 at 2020-01-11 13:46:12 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"2"}
+  [1m[36mAgency Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `agency_if_any'
+  Rendered users/_form.html.erb (Duration: 4.5ms | Allocations: 1479)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1543)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 1.0ms | Allocations: 9006)
+
+
+Started POST "/users" for ::1 at 2020-01-11 13:46:17 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"HpQjmg9l3DzGdYaQlH1LctOBpAL3R8yeU8bRkBz1o55+sDZTg9VOg1exUsK4ASaG481ZSRJW8QDHRr6UuNv+zA==", "user"=>{"agency_id"=>"2", "username"=>"g", "email"=>"g", "password"=>"[FILTERED]", "first_name"=>"g", "last_name"=>"g"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "confirmed", "agency_id", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "g"], ["first_name", "g"], ["last_name", "g"], ["email", "g"], ["password_digest", "$2a$12$SR9D0GW1Z9YOZI/FI9pyJuD00Y77Hy4KowauEbeT50/wmU.NS9wu6"], ["confirmed", true], ["agency_id", 2], ["created_at", "2020-01-11 18:46:30.842844"], ["updated_at", "2020-01-11 18:46:30.842844"], ["admin", true]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 13528ms (ActiveRecord: 14.2ms | Allocations: 18964)
+
+
+Started GET "/users/2" for ::1 at 2020-01-11 13:46:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 30)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 13.6ms | ActiveRecord: 30.5ms | Allocations: 22590)
+
+
+Started GET "/signout" for ::1 at 2020-01-11 13:46:52 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms | Allocations: 1885)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:46:52 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 6995)
+
+
+Started GET "/users/new" for ::1 at 2020-01-11 13:46:54 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (7.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 11.6ms | Allocations: 1436)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1500)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 21.7ms | ActiveRecord: 7.3ms | Allocations: 8362)
+
+
+Started POST "/users" for ::1 at 2020-01-11 13:47:05 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"42/+KIVI+1ejLJaplJjIozl3WkCbdb9VVpLZK/GxPU+W2iuMmRd1lC+o/DnA3ug+GTTgYdr5U6QIawe7XH5rHA==", "user"=>{"agency_id"=>"2", "username"=>"afafafafaf", "email"=>"afafaf", "password"=>"[FILTERED]", "first_name"=>"afafa", "last_name"=>"afafa"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "afafafafaf"], ["first_name", "afafa"], ["last_name", "afafa"], ["email", "afafaf"], ["password_digest", "$2a$12$Z0tBBxDGe3if0aGkv6Okw.XQvd2wEB7e5K2zjP4FJZRqM4zsB7awm"], ["agency_id", 2], ["created_at", "2020-01-11 18:47:05.538255"], ["updated_at", "2020-01-11 18:47:05.538255"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 259ms (ActiveRecord: 2.6ms | Allocations: 4895)
+
+
+Started GET "/users/3" for ::1 at 2020-01-11 13:47:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 25)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 1.2ms | Allocations: 9749)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:47:12 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (9.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 15.0ms | ActiveRecord: 13.4ms | Allocations: 8308)
+
+
+Started GET "/signout" for ::1 at 2020-01-11 13:47:15 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (1.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 7.6ms | Allocations: 1820)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:47:15 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 6798)
+
+
+Started GET "/users/new" for ::1 at 2020-01-11 13:47:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (2.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 5.2ms | Allocations: 1359)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1423)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 2.8ms | Allocations: 8276)
+
+
+Started POST "/users" for ::1 at 2020-01-11 13:47:24 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"SwUCEH5KG/4XRfItLtg5r99/PHVWxBhZ6hb7wmE/pSQ+sNe0YhWVPZvBmL16nhky/zyGVBdI9Ki07yVSzPDzdw==", "user"=>{"agency_id"=>"1", "username"=>"Tom", "email"=>"Tom", "password"=>"[FILTERED]", "first_name"=>"tom", "last_name"=>"white"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "Tom"], ["first_name", "tom"], ["last_name", "white"], ["email", "Tom"], ["password_digest", "$2a$12$eCyZoV7t1lpyardEixFPw.2XL6rYixCKwZ./2TRKMrj24uiIR.ic2"], ["agency_id", 1], ["created_at", "2020-01-11 18:47:24.319715"], ["updated_at", "2020-01-11 18:47:24.319715"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 260ms (ActiveRecord: 3.9ms | Allocations: 4354)
+
+
+Started GET "/users/4" for ::1 at 2020-01-11 13:47:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 1.1ms | Allocations: 9753)
+
+
+Started GET "/signout" for ::1 at 2020-01-11 13:47:30 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (4.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 7.1ms | Allocations: 1825)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:47:30 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 6795)
+
+
+Started GET "/users/new" for ::1 at 2020-01-11 13:47:39 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 6.3ms | Allocations: 1359)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1423)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.7ms | Allocations: 8272)
+
+
+Started POST "/users" for ::1 at 2020-01-11 13:47:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"IDrpZ5dcwpZWH2xl0FZGSbqGGt37kuLl6GbZk6VOLElVjzzDiwNMVdqbBvWEEGbUmsWg/LoeDhS2nwcDCIF6Gg==", "user"=>{"agency_id"=>"2", "username"=>"q", "email"=>"q", "password"=>"[FILTERED]", "first_name"=>"q", "last_name"=>"q"}, "commit"=>"Create User"}
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "q"], ["first_name", "q"], ["last_name", "q"], ["email", "q"], ["password_digest", "$2a$12$Zp61z0giMm/.xJNwe6knJ.5E.vl.pMDsIWCrrWujy2YihljJmz7Ce"], ["agency_id", 2], ["created_at", "2020-01-11 18:47:48.651912"], ["updated_at", "2020-01-11 18:47:48.651912"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 261ms (ActiveRecord: 2.8ms | Allocations: 4353)
+
+
+Started GET "/users/5" for ::1 at 2020-01-11 13:47:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 9.5ms | ActiveRecord: 1.0ms | Allocations: 9750)
+
+
+Started GET "/signout" for ::1 at 2020-01-11 13:47:50 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 9.9ms | Allocations: 1824)
+
+
+Started GET "/" for ::1 at 2020-01-11 13:47:50 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 6800)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "agencies"[0m
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)

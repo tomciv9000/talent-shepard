@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :new, :edit, :create]
   end
 
+  resources :projects
+
   
   resources :users, only: [:new, :create, :show, :edit]
   
