@@ -1,9 +1,18 @@
 class ApplicationController < ActionController::Base
+    set_current_tenant_through_filter
     before_action :verified_user
+    before_action :find_current_tenant
     helper_method :current_user
 
 
     private
+
+    def find_current_tenant
+      if current_user
+        set_current_tenant(@current_user.agency)
+      end
+    end
+
 
     def verified_user
       redirect_to '/' unless user_is_authenticated

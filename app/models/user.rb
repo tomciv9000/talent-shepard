@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     belongs_to :agency
+    acts_as_tenant(:agency)
    
 
     def first_user?

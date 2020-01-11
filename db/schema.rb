@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_165308) do
+ActiveRecord::Schema.define(version: 2020_01_11_183839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 2020_01_08_165308) do
     t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "agency_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "role"
+    t.string "rate"
+    t.boolean "contract_signed"
+    t.boolean "accepted"
+    t.integer "actor_id"
+    t.integer "project_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "agency_id"
   end
 
   create_table "casting_offices", force: :cascade do |t|
@@ -59,18 +72,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_165308) do
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "casting_people", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "office_role"
-    t.string "email"
-    t.string "direct_number"
-    t.text "notes"
-    t.integer "casting_office_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "agency_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_165308) do
     t.integer "casting_office_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "agency_id"
   end
 
   create_table "users", force: :cascade do |t|

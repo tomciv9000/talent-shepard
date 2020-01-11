@@ -1,7 +1,8 @@
 class Actor < ApplicationRecord
-    has_many :representations
-    has_many :agencies, through: :representations
+    belongs_to :agency
     has_many :appointments
     has_many :casting_offices, through: :appointments
+    has_many :bookings
+    has_many :projects, through: :bookings
     has_many :comments, as: :commentable
 end

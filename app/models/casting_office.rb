@@ -1,4 +1,5 @@
 class CastingOffice < ApplicationRecord
+    belongs_to :agency
     has_many :casting_people
     has_many :projects
     has_many :appointments
