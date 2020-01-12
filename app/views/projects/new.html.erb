@@ -15,7 +15,10 @@
     <%= f.text_field :notes %>
 
     <%= f.select_tag ":casting_office_id", options_from_collection_for_select(CastingOffice.all, :id, :name), prompt: "Please select Casting Office"
-    
+    <%= f.fields_for :casting_office, User.new do |user_fields| %>
+        <%= user_fields.label :username %>
+        <%= user_fields.text_field :username %>
+      <% end %>
     <br>
     
     <%= f.submit "Create User" %>
