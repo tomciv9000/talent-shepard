@@ -1,12 +1,12 @@
 <%= form_for @project do |f| %>
-    
+    <%= f.hidden_field :agency_id %>
     <%= f.label :name, "Project Title:" %>
     <%= f.text_field :name %>
     
     <%= f.label :media_type, "Media:" %>
     <%= f.text_field :media_type %>
     
-    <%= f.datetime_select(:start_date, prompt: {day: 'Choose day', month: 'Choose month', year: 'Choose year'}) %>
+    <%= f.date_select(:start_date, prompt: {day: 'Choose day', month: 'Choose month', year: 'Choose year'}) %>
     
     <%= f.label :union, "Union:" %>
     <%= f.text_field :union %>
@@ -14,12 +14,15 @@
     <%= f.label :notes, "Notes:" %>
     <%= f.text_field :notes %>
 
-    <%= f.select_tag ":casting_office_id", options_from_collection_for_select(CastingOffice.all, :id, :name), prompt: "Please select Casting Office"
-    <%= f.fields_for :casting_office, User.new do |user_fields| %>
-        <%= user_fields.label :username %>
-        <%= user_fields.text_field :username %>
-      <% end %>
-    <br>
-    
+    <p>
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name %>
+    </p>
+
+    <%= f.fields_for :user, CastingOffice.new do |casting_office_fields| %>
+      <%= casting_office_fields.label :name %>
+      <%= casting_office_fields.text_field :name %>
+    <% end %>
+      <br>
+
     <%= f.submit "Create User" %>
-   <% end %>
+<% end %>
