@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    binding.pry
+
     if @project.valid?
       @project.save
       redirect_to project_path(@project)

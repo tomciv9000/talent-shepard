@@ -8766,3 +8766,166 @@ Processing by ProjectsController#new as HTML
 Completed 200 OK in 42ms (Views: 27.5ms | ActiveRecord: 5.6ms | Allocations: 13379)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/projects/new" for ::1 at 2020-01-12 18:36:08 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.6ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices"[0m
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 59.0ms | Allocations: 10913)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1641ms (Views: 1462.3ms | ActiveRecord: 28.9ms | Allocations: 1417583)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/projects/new" for ::1 at 2020-01-12 18:43:30 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.8ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices"[0m
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 53.5ms | Allocations: 10913)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1554ms (Views: 1349.2ms | ActiveRecord: 50.3ms | Allocations: 1417659)
+
+
+Started POST "/projects" for ::1 at 2020-01-12 18:43:46 -0500
+Processing by ProjectsController#create as HTML
+  Parameters: {"authenticity_token"=>"+JViKbdm2Yt+3G4E36lSthvbezqOaFM+mY1dT5P5FGmYsXfgO9ZLNO8Yulbz1T9CK5eGcWt5bqANDTJLN9dJOw==", "project"=>{"agency_id"=>"3", "name"=>"ffff", "media_type"=>"ffff", "start_date(1i)"=>"", "start_date(2i)"=>"", "start_date(3i)"=>"", "union"=>"ffff", "notes"=>"fffffff", "casting_office_id"=>"", "casting_office_attributes"=>{"agency_id"=>"3", "name"=>"Party City"}}, "commit"=>"Create Project"}
+  [1m[36mUser Load (22.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (2.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mCastingOffice Load (1.2ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."name" = $1 LIMIT $2[0m  [["name", "Party City"], ["LIMIT", 1]]
+  ↳ app/models/project.rb:15:in `casting_office_attributes='
+  [1m[36mCACHE Agency Load (0.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[35m (7.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mCastingOffice Create (1.1ms)[0m  [1m[32mINSERT INTO "casting_offices" ("name", "created_at", "updated_at", "agency_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Party City"], ["created_at", "2020-01-12 23:43:53.572864"], ["updated_at", "2020-01-12 23:43:53.572864"], ["agency_id", 3]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mProject Create (0.9ms)[0m  [1m[32mINSERT INTO "projects" ("name", "media_type", "union", "notes", "casting_office_id", "created_at", "updated_at", "agency_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "ffff"], ["media_type", "ffff"], ["union", "ffff"], ["notes", "fffffff"], ["casting_office_id", 3], ["created_at", "2020-01-12 23:43:53.638356"], ["updated_at", "2020-01-12 23:43:53.638356"], ["agency_id", 3]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 7064ms (ActiveRecord: 37.4ms | Allocations: 24478)
+
+
+Started GET "/projects/4" for ::1 at 2020-01-12 18:43:53 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 3], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 3], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:23:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 24.6ms | ActiveRecord: 2.1ms | Allocations: 10875)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-12 18:44:08 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices"[0m
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 45.6ms | Allocations: 8627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 172ms (Views: 50.5ms | ActiveRecord: 40.6ms | Allocations: 42479)
+
+
+Started POST "/projects" for ::1 at 2020-01-12 18:44:17 -0500
+Processing by ProjectsController#create as HTML
+  Parameters: {"authenticity_token"=>"J5vNmdqgdgm9/JHE5dOxaPWudkdpFCNwxW1xiQH99RZHv9hQVhDktiw4RZbJr9ycxeKLDIwFHu5R7R6NpdOoRA==", "project"=>{"agency_id"=>"3", "name"=>"fff", "media_type"=>"ffff", "start_date(1i)"=>"", "start_date(2i)"=>"", "start_date(3i)"=>"", "union"=>"ffff", "notes"=>"ffff", "casting_office_id"=>"2", "casting_office_attributes"=>{"agency_id"=>"3", "name"=>""}}, "commit"=>"Create Project"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[36mCastingOffice Exists? (10.2ms)[0m  [1m[34mSELECT 1 AS one FROM "casting_offices" WHERE "casting_offices"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[36mCACHE CastingOffice Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "casting_offices" WHERE "casting_offices"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[35m (32.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[36mProject Create (5.8ms)[0m  [1m[32mINSERT INTO "projects" ("name", "media_type", "union", "notes", "casting_office_id", "created_at", "updated_at", "agency_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "fff"], ["media_type", "ffff"], ["union", "ffff"], ["notes", "ffff"], ["casting_office_id", 2], ["created_at", "2020-01-12 23:44:17.894994"], ["updated_at", "2020-01-12 23:44:17.894994"], ["agency_id", 3]]
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/projects_controller.rb:14:in `create'
+Redirected to http://localhost:3000/projects/5
+Completed 302 Found in 73ms (ActiveRecord: 51.5ms | Allocations: 7733)
+
+
+Started GET "/projects/5" for ::1 at 2020-01-12 18:44:17 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (3.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  [1m[36mCACHE Project Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 3], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:23:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 47.2ms | ActiveRecord: 4.9ms | Allocations: 10628)
+
+
