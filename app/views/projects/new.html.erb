@@ -15,9 +15,9 @@
     <%= f.text_field :notes %>
 
     <p>
-      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name %>
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office or Add New'} %>
     </p>
-
+    f.collection_select(:country_id, @countries, :id, :name, {:prompt => 'Choose a Country...'}, { :class => 'select', :selected => params[:country_id])
     <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
       <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
       <%= casting_office_fields.label :name, "Casting Office" %>
