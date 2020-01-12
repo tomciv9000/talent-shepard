@@ -10,11 +10,10 @@ class Project < ApplicationRecord
     
     accepts_nested_attributes_for :casting_office
 
-    def casting_office_attributes=(name)
+    def casting_office_attributes=(casting_office_attributes)
         self.casting_office = CastingOffice.find_or_create_by(name: casting_office_attributes[:name]) unless casting_office_attributes[:name].blank?
+        self.casting_office.agency_id = casting_office_attributes[:agency_id]
     end
 
-end
 
-#params[:project]
-#=> <ActionController::Parameters {"agency_id"=>"", "name"=>"Breakfast at Tiffanys", "media_type"=>"Feature Film", "start_date(1i)"=>"2020", "start_date(2i)"=>"5", "start_date(3i)"=>"6", "union"=>"SAG-AFTRA", "notes"=>"Could be interesting.", "user"=>{"name"=>"Bowling-Mischia"}} permitted: false>
+end
