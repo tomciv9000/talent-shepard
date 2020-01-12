@@ -43,3 +43,12 @@ class ProjectsController < ApplicationController
 #    end
 #  end
 end
+
+
+#params[:project]
+#=> <ActionController::Parameters {"agency_id"=>"3", "name"=>"Mama's Family", "media_type"=>"TV series", "start_date(1i)"=>"2020", "start_date(2i)"=>"3", "start_date(3i)"=>"3", "union"=>"SAG-AFTRA", "notes"=>"testtttt", "casting_office_attributes"=>{"name"=>"Bowling-Mishia"}} permitted: false>
+#[6] pry(#<ProjectsController>)> params[:project][:name]
+#=> "Mama's Family"
+#
+#params[:project]["start_date(1i)"]
+#=> "2020"

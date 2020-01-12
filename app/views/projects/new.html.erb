@@ -18,11 +18,11 @@
       <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name %>
     </p>
 
-    <%= f.fields_for :user, CastingOffice.new do |casting_office_fields| %>
+    <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
       <%= casting_office_fields.label :name %>
       <%= casting_office_fields.text_field :name %>
     <% end %>
       <br>
 
-    <%= f.submit "Create User" %>
+    <%= f.submit "Create Project" %>
 <% end %>
