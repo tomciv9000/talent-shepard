@@ -1,0 +1,13 @@
+<h3> Projects for <%= current_agency.name %> </h3>
+  <% if current_agency.projects.empty? %>
+    <p>There are currently no open projects associated with your agency.<p>
+  <% else %>
+  
+  <% current_agency.projects.each do |project| %>
+    <div>
+        <h3><%= link_to project.name, project_path(project) %></h3>
+        <p><%= start_date(project) %></p>
+    </div>
+    <% end %>
+  <% end %>
+  <%= link_to "New Project!", new_project_path %>
