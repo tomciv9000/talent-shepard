@@ -21,7 +21,6 @@ class ProjectsController < ApplicationController
   def show
     if Project.find_by(id: params[:id])
       @project = Project.find_by(id: params[:id])
-      render :show
     else
       redirect_to '/'
     end

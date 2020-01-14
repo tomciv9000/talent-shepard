@@ -5,7 +5,8 @@
   
   <% current_agency.projects.each do |project| %>
     <div>
-        <h3><%= link_to project.name, project_path(project) %></h3>
+        <h4><%= link_to project.name, project_path(project) %></h4>
+        <p><%= project.notes %></p>
         <p><%= start_date(project) %></p>
     </div>
     <% end %>

@@ -4,5 +4,7 @@ module ApplicationHelper
         person.first_name + " " + person.last_name
     end
 
-    
+    def casting_office(project)
+        project.casting_office.name
+    end
 end
