@@ -1,11 +1,12 @@
 <%= form_with url: signin_path do |f| %>
-  <%= f.label_tag(:username, "Username:") %>
-  <%= f.text_field_tag(:username) %>
+  <%= f.label :username, "Username:" %>
+  <%= f.text_field :username %>
   <br>
-  <%= label_tag(:password, "Your password:") %>
-  <%= password_field_tag(:password) %>
+  <%= f.label :password, "Your password:" %>
+  <%= f.password_field :password %>
 
-  <%= submit_tag("Sign In") %>
+  <%= f.submit "Sign In" %>
 <% end %>
   
   
+
