@@ -4,3 +4,5 @@
 <p><%= start_date(@project) %></p>
 <p><%= @project.union %></p>
 <p><%= @project.notes %></p>
+
+<%= link_to "Create Appointment", new_project_appointment_path(@project) %>
