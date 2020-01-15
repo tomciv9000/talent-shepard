@@ -1,2 +1,10 @@
-<h1>Actors#show</h1>
-<p>Find me in app/views/actors/show.html.erb</p>
+<h1><%= full_name(@actor) %></h1>
+<p><%= union_status(@actor) %></p>
+<p><%= @project.media_type %></p>
+<p><%= birthdate(@actor) %></p>
+<p><%= @actor.email %></p>
+<p><%= @actor.gender_portrayal %></p>
+<p><%= @actor.location %></p>
+<p><%= @actor.notes %></p>
+
+<%= link_to "Create Appointment", new_actor_appointment_path(@actor) %>

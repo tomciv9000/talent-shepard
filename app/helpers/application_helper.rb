@@ -7,4 +7,5 @@ module ApplicationHelper
     def casting_office(project)
         project.casting_office.name
     end
+
 end

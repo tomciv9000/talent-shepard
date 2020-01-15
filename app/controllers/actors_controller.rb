@@ -19,6 +19,11 @@ class ActorsController < ApplicationController
   end
 
   def show
+    if Actor.find_by(id: params[:id])
+      @actor = Actor.find_by(id: params[:id])
+    else
+      redirect_to '/'
+    end
   end
 
   def index

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :actors
+ 
+  resources :actors do
+    resources :appointments
+  end
   
   root 'static#home'
 
