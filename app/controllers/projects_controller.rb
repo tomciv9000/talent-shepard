@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
 
   def new
       @project = Project.new
-      #(agency_id: @current_user.agency_id)
   end
 
   def create

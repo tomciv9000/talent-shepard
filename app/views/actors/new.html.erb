@@ -1,0 +1,51 @@
+<h3> Register New Actor </h3>
+
+<%= form_for @actor do |f| %>
+    <%= f.hidden_field :agency_id %>
+   <div>
+    <%= f.label :first_name, "First Name:" %>
+    <%= f.text_field :first_name %>
+    </div>
+
+    <div>
+    <%= f.label :last_name, "Last Name:" %>
+    <%= f.text_field :last_name %>
+    </div>
+
+    <div>
+    <%= f.date_select(:dob, prompt: {day: 'Choose day', month: 'Choose month', year: 'Choose year'}) %>
+    </div>
+
+    <div>
+    <%= f.label :email, "Email:" %>
+    <%= f.text_field :email %>
+    </div>
+
+    <div>
+    <%= f.label :gender_portrayal %>
+    <%= f.text_field :gender_portrayal %>
+    </div>
+
+    <div>
+    <%= f.label :sag_aftra, "SAG-AFTRA" %>
+    <%= f.check_box :sag_aftra %>
+    </div>
+
+    <div>
+    <%= f.label :aea, "AEA" %>
+    <%= f.check_box :aea %>
+    </div>
+
+    <div>
+    <%= f.label :location, "Location:" %>
+    <%= f.text_field :location %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes, cols: 40, rows: 15 %>
+    <div>
+      <br>
+
+    <%= f.submit "Register Actor" %>
+<% end %>

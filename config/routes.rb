@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :actors
+  
   root 'static#home'
 
   resources :agencies, only: [:index, :new, :create, :show, :edit] do
