@@ -11163,3 +11163,103 @@ These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
  (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/actors/new" for ::1 at 2020-01-15 00:46:27 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActorsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 4773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1668ms (Views: 1531.5ms | ActiveRecord: 22.5ms | Allocations: 1420214)
+
+
+Started POST "/actors" for ::1 at 2020-01-15 00:47:20 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"WeS9JJf1c6oEM5G+II+O/cK4FRx3HSWzUvLDIcbUBx85wKjtG0XhFZX3RewM8+MJ8vToV5IMGC3GcqwlYvpaTQ==", "actor"=>{"agency_id"=>"1", "first_name"=>"David", "last_name"=>"Copperfield", "dob(1i)"=>"2025", "dob(2i)"=>"11", "dob(3i)"=>"17", "email"=>"nope@nope.com", "gender_portrayal"=>"Female", "sag_aftra"=>"1", "aea"=>"1", "location"=>"New York", "notes"=>"Can be testy at times, was willing to move."}, "commit"=>"Register Actor"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[36mActor Create (6.4ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "email", "gender_portrayal", "sag_aftra", "aea", "dob", "location", "notes", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["first_name", "David"], ["last_name", "Copperfield"], ["email", "nope@nope.com"], ["gender_portrayal", "Female"], ["sag_aftra", true], ["aea", true], ["dob", "2025-11-17 00:00:00"], ["location", "New York"], ["notes", "Can be testy at times, was willing to move."], ["agency_id", 1], ["created_at", "2020-01-15 05:48:31.946892"], ["updated_at", "2020-01-15 05:48:31.946892"]]
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+Redirected to http://localhost:3000/actors/2
+Completed 302 Found in 71121ms (ActiveRecord: 24.4ms | Allocations: 26292)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/actors/2" for ::1 at 2020-01-15 00:48:52 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1890)
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 20.5ms | Allocations: 33845)
+
+
+  
+ActionView::Template::Error (undefined method `media_type' for nil:NilClass):
+    1: <h1><%= full_name(@actor) %></h1>
+    2: <p><%= union_status(@actor) %></p>
+    3: <p><%= @project.media_type %></p>
+    4: <p><%= birthdate(@actor) %></p>
+    5: <p><%= @actor.email %></p>
+    6: <p><%= @actor.gender_portrayal %></p>
+  
+app/views/actors/show.html.erb:3
+Started GET "/actors/2" for ::1 at 2020-01-15 00:49:29 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `find_current_tenant'
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1519ms (Views: 1498.7ms | ActiveRecord: 5.0ms | Allocations: 1382028)
+
+

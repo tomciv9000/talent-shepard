@@ -7,7 +7,6 @@ class ActorsController < ApplicationController
   end
 
   def create
-    binding.pry
     @actor = Actor.new(actor_params)
 
     if @actor.valid?
