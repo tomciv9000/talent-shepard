@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
     set_current_tenant_through_filter
+    
     before_action :verified_user
     before_action :find_current_tenant
+    
     helper_method :current_user
     helper_method :current_agency
 

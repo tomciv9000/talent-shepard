@@ -1,6 +1,8 @@
 require 'pry'
 class UsersController < ApplicationController
   skip_before_action :verified_user, only: [:new, :create]
+  before_action :find_user_or_redirect, :only => [:show, :edit, ]
+  #before_filter :find_post, :only => [:show, :edit, :update, :destroy]
 
   def new
     if params[:agency_id] && !Agency.exists?(params[:agency_id])
@@ -22,13 +24,26 @@ class UsersController < ApplicationController
     end
   end
   
-  def show
-    if User.find_by(id: params[:id]) #&& session[:user_id]
-      @user = User.find_by(id: params[:id])
-      render :show
-    else
-      redirect_to '/'
-    end
+  #def show
+  #  if User.find_by(id: params[:id])
+  #    @user = User.find_by(id: params[:id])
+  #  else
+  #    redirect_to '/'
+  #  end
+  #end
+
+  #def edit
+  #  if User.find_by(id: params[:id])
+  #    @user = User.find_by(id: params[:id])
+  #  else
+  #    redirect_to '/'
+  #  end
+  #end
+
+  def update
+    @attraction = Attraction.find(params[:id])
+    @attraction.update(attraction_params)
+    redirect_to attraction_path(@attraction)
   end
 
 
@@ -36,6 +51,14 @@ class UsersController < ApplicationController
 
   def user_params
       params.require(:user).permit(:username, :first_name, :last_name, :email, :confirmed, :agency_id, :password, :admin)
+  end
+
+  def find_user_or_redirect
+    if User.find_by(id: params[:id])
+      @user = User.find_by(id: params[:id])
+    else
+      redirect_to '/'
+    end
   end
 
 end
