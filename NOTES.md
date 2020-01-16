@@ -6,4 +6,5 @@ talk about collection_select and preselected values being passed in based on the
 
 talk about multi-tenant application
 
+possibly update all form_for to form_with
 
