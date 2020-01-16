@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'casting_offices/new'
+  get 'casting_offices/show'
+  get 'casting_offices/edit'
   root 'static#home'
 
   resources :actors do
