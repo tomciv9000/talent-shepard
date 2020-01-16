@@ -15767,3 +15767,111 @@ Processing by AppointmentsController#new as HTML
 Completed 200 OK in 50ms (Views: 40.2ms | ActiveRecord: 2.7ms | Allocations: 17925)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/actors" for ::1 at 2020-01-16 16:23:37 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1517ms (Views: 1431.0ms | ActiveRecord: 15.0ms | Allocations: 1397000)
+
+
+Started GET "/actors/new" for ::1 at 2020-01-16 16:23:43 -0500
+Processing by ActorsController#new as HTML
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 24.8ms | ActiveRecord: 14.2ms | Allocations: 28309)
+
+
+Started POST "/actors" for ::1 at 2020-01-16 16:24:21 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"EsbTdP4Mjvh4hNymyZ0mLIsXeWaEpKpl6gacIJb1Ap5QgD4u6hRQX0/X6XVrbhNNywke8WjdqyPcbA4dSFImBQ==", "actor"=>{"agency_id"=>"1", "first_name"=>"Tommy", "last_name"=>"Whyte", "dob(2i)"=>"11", "dob(3i)"=>"16", "dob(1i)"=>"1981", "email"=>"netflix@gmail.com", "gender_portrayal"=>"male", "sag_aftra"=>"1", "aea"=>"1", "location"=>"NYC", "notes"=>"note ta note"}, "commit"=>"Register Actor"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[36mActor Create (0.8ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "email", "gender_portrayal", "sag_aftra", "aea", "dob", "location", "notes", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["first_name", "Tommy"], ["last_name", "Whyte"], ["email", "netflix@gmail.com"], ["gender_portrayal", "male"], ["sag_aftra", true], ["aea", true], ["dob", "1981-11-16 00:00:00"], ["location", "NYC"], ["notes", "note ta note"], ["agency_id", 1], ["created_at", "2020-01-16 21:24:21.520811"], ["updated_at", "2020-01-16 21:24:21.520811"]]
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+Redirected to http://localhost:3000/actors/4
+Completed 302 Found in 25ms (ActiveRecord: 10.2ms | Allocations: 5195)
+
+
+Started GET "/actors/4" for ::1 at 2020-01-16 16:24:21 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 305)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 14.4ms | ActiveRecord: 1.4ms | Allocations: 12913)
+
+
+Started GET "/" for ::1 at 2020-01-16 16:24:31 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 98)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 16.2ms | ActiveRecord: 2.1ms | Allocations: 11696)
+
+
+Started GET "/" for ::1 at 2020-01-16 16:25:12 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 96)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 17.5ms | ActiveRecord: 1.3ms | Allocations: 12304)
+
+
+Started GET "/actors/new" for ::1 at 2020-01-16 16:25:21 -0500
+Processing by ActorsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3623)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 31.8ms | ActiveRecord: 1.5ms | Allocations: 15266)
+
+
