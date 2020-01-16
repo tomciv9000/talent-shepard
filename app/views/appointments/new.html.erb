@@ -5,12 +5,12 @@
     
     <div>
     <%= f.label :actor_id, "Actor:" %>
-    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+    <%= f.collection_select :actor_id, Actor.all, :id, :full_name, {:prompt => '-- Select Actor --'}%>
     </div>
 
     <div>
     <%= f.label :project_id, "Project:" %>
-    <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, {selected: @appointment.project_id || nil}) %> 
+    <%= f.collection_select :project_id, Project.all, :id, :name, {:prompt => '-- Select Project --'}%> 
     </div>
  
     

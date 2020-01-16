@@ -13862,3 +13862,1908 @@ Processing by AppointmentsController#new as HTML
 Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 1.8ms | Allocations: 15997)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-16 15:25:23 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1507ms (Views: 1374.6ms | ActiveRecord: 56.2ms | Allocations: 1396979)
+
+
+Started GET "/actors" for ::1 at 2020-01-16 15:25:42 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 93)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 32.0ms | ActiveRecord: 2.4ms | Allocations: 11754)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-16 15:25:50 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 318)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 12.2ms | ActiveRecord: 6.7ms | Allocations: 24351)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:25:58 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 45.9ms | Allocations: 19415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 51.2ms | ActiveRecord: 17.5ms | Allocations: 41072)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:30:33 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 5362)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 21.4ms | ActiveRecord: 1.6ms | Allocations: 17646)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:30:36 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 4909)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 1.3ms | Allocations: 16019)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-16 15:30:41 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 15.3ms | ActiveRecord: 6.1ms | Allocations: 13296)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-16 15:30:43 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 93)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 17.0ms | ActiveRecord: 0.9ms | Allocations: 12500)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:30:50 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 4913)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 37.7ms | ActiveRecord: 1.9ms | Allocations: 16001)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:31:21 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 23.8ms | Allocations: 6109)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.5ms | Allocations: 8966)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:31:23 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1305)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 3410)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:prompt => 'Select Actor'}) %> 
+    </div>
+
+    <div>
+    <%= f.label :project_id, "Project:" %>
+    <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, {:prompt => 'Select Project}) %> 
+    </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+      <br>
+
+    <%= f.submit "Make Appointment" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id, "Actor:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:prompt => 'Select Actor'}) %> 
+9:        </div>
+10:    
+11:        <div>
+12:        <%= f.label :project_id, "Project:" %>
+13:        <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, {:prompt => 'Select Project}) %> 
+14:        </div>
+15:     
+16:        
+17:        <div>
+18:        <%= f.label :role, "Role:" %>
+19:        <%= f.text_field :role %>
+20:        </div>
+21:    
+22:    
+23:        <div>
+24:        <%= f.datetime_select(:time, prompt: true ) %>
+25:        </div>
+26:        
+27:        <div>
+28:        <%= f.label :address, "Address:" %>
+29:        <%= f.text_field :address %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :callback, "Callback:" %>
+34:        <%= f.check_box :callback %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :booking_status %>
+39:        <%= f.text_field :booking_status %>
+40:        </div>
+41:    
+42:        <div>
+43:        <%= f.label :notes, "Notes:" %>
+44:        <%= f.text_area :notes %>
+45:        <div>
+46:    
+47:          <br>
+48:    
+49:        <%= f.submit "Make Appointment" %>
+50:    <% end %>
+  
+app/views/appointments/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/views/appointments/new.html.erb:20: unknown regexp options - dv
+app/views/appointments/new.html.erb:23: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:25: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:30: unknown regexp options - dv
+app/views/appointments/new.html.erb:32: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:40: unknown regexp options - dv
+app/views/appointments/new.html.erb:42: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:52: unterminated string meets end of file
+app/views/appointments/new.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/views/appointments/new.html.erb:20: unknown regexp options - dv
+app/views/appointments/new.html.erb:23: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:25: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:30: unknown regexp options - dv
+app/views/appointments/new.html.erb:32: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:40: unknown regexp options - dv
+app/views/appointments/new.html.erb:42: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:52: unterminated string meets end of file
+app/views/appointments/new.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/views/appointments/new.html.erb:20: unknown regexp options - dv
+app/views/appointments/new.html.erb:23: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:25: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:30: unknown regexp options - dv
+app/views/appointments/new.html.erb:32: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:40: unknown regexp options - dv
+app/views/appointments/new.html.erb:42: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:52: unterminated string meets end of file
+app/views/appointments/new.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/views/appointments/new.html.erb:20: unknown regexp options - dv
+app/views/appointments/new.html.erb:23: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:25: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:30: unknown regexp options - dv
+app/views/appointments/new.html.erb:32: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:40: unknown regexp options - dv
+app/views/appointments/new.html.erb:42: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:52: unterminated string meets end of file
+app/views/appointments/new.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/views/appointments/new.html.erb:20: unknown regexp options - dv
+app/views/appointments/new.html.erb:23: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:25: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:30: unknown regexp options - dv
+app/views/appointments/new.html.erb:32: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:40: unknown regexp options - dv
+app/views/appointments/new.html.erb:42: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:52: unterminated string meets end of file
+app/views/appointments/new.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/views/appointments/new.html.erb:20: unknown regexp options - dv
+app/views/appointments/new.html.erb:23: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:25: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:30: unknown regexp options - dv
+app/views/appointments/new.html.erb:32: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:40: unknown regexp options - dv
+app/views/appointments/new.html.erb:42: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:52: unterminated string meets end of file
+app/views/appointments/new.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:32:02 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (2.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 5363)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 38.2ms | ActiveRecord: 5.5ms | Allocations: 17655)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:32:04 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 4906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 28.0ms | ActiveRecord: 1.5ms | Allocations: 15991)
+
+
+Started GET "/actors" for ::1 at 2020-01-16 15:32:07 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (3.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 25.6ms | ActiveRecord: 4.4ms | Allocations: 11657)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-16 15:32:11 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 25.3ms | ActiveRecord: 1.0ms | Allocations: 12855)
+
+
+Started GET "/actors/new" for ::1 at 2020-01-16 15:32:18 -0500
+Processing by ActorsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2672)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 13877)
+
+
+Started POST "/actors" for ::1 at 2020-01-16 15:32:36 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"XSl5ptwUIneJVeuV3x1Dc9ruPzUa9LDuKAIZ7xi0zNU9DWxvUKSwyBiRP8fzYS6H6qLCfv/ljXC8gnbrvJqRhw==", "actor"=>{"agency_id"=>"1", "first_name"=>"Eugene", "last_name"=>"Thomas", "dob(1i)"=>"2022", "dob(2i)"=>"6", "dob(3i)"=>"10", "email"=>"test", "gender_portrayal"=>"test", "sag_aftra"=>"1", "aea"=>"0", "location"=>"NYC", "notes"=>""}, "commit"=>"Register Actor"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[36mActor Create (10.7ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "email", "gender_portrayal", "sag_aftra", "aea", "dob", "location", "notes", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["first_name", "Eugene"], ["last_name", "Thomas"], ["email", "test"], ["gender_portrayal", "test"], ["sag_aftra", true], ["aea", false], ["dob", "2022-06-10 00:00:00"], ["location", "NYC"], ["notes", ""], ["agency_id", 1], ["created_at", "2020-01-16 20:32:36.561806"], ["updated_at", "2020-01-16 20:32:36.561806"]]
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+Redirected to http://localhost:3000/actors/3
+Completed 302 Found in 33ms (ActiveRecord: 20.3ms | Allocations: 5169)
+
+
+Started GET "/actors/3" for ::1 at 2020-01-16 15:32:36 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (6.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 96)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 12.2ms | ActiveRecord: 6.9ms | Allocations: 12509)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:32:41 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (7.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (2.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 4958)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 34.5ms | ActiveRecord: 12.4ms | Allocations: 16053)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:32:45 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 4950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 20.0ms | ActiveRecord: 1.2ms | Allocations: 16032)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:32:47 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 1.4ms | Allocations: 16028)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:32:49 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.9ms | ActiveRecord: 1.8ms | Allocations: 16025)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:24 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 5411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 1.4ms | Allocations: 17701)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:27 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 4951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 19.6ms | ActiveRecord: 1.0ms | Allocations: 16027)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:28 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.9ms | Allocations: 16025)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:29 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 16.1ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 30.6ms | ActiveRecord: 5.8ms | Allocations: 16029)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:30 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 1.2ms | Allocations: 16027)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:32 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 1.0ms | Allocations: 16032)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:33 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 1.4ms | Allocations: 16025)
+
+
+Started GET "/actors/3/appointments/new" for ::1 at 2020-01-16 15:33:50 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"3"}
+Redirected to http://localhost:3000/
+Filter chain halted as :verified_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/" for ::1 at 2020-01-16 15:33:50 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 9961)
+
+
+Started GET "/signin" for ::1 at 2020-01-16 15:33:53 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2164)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 12033)
+
+
+Started POST "/signin" for ::1 at 2020-01-16 15:33:57 -0500
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"YDGhACPTY1pPgspbpNYS3zeh64fuB3RW4PYt6qVf1rxJnQYnexQnYQPZtaYVirOjbczG08MHNjOLy2ZUooR9Sg==", "username"=>"tomciv9000", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "tomciv9000"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 247ms (ActiveRecord: 1.2ms | Allocations: 1347)
+
+
+Started GET "/users/1" for ::1 at 2020-01-16 15:33:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 250)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 16.2ms | ActiveRecord: 1.8ms | Allocations: 13312)
+
+
+Started GET "/actors" for ::1 at 2020-01-16 15:34:01 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (5.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 26.5ms | ActiveRecord: 10.9ms | Allocations: 11655)
+
+
+Started GET "/actors/4" for ::1 at 2020-01-16 15:34:06 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (1.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 6.3ms | Allocations: 2635)
+
+
+Started GET "/" for ::1 at 2020-01-16 15:34:06 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 28.8ms | ActiveRecord: 2.1ms | Allocations: 10987)
+
+
+Started GET "/actors/5" for ::1 at 2020-01-16 15:34:17 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 2.8ms | Allocations: 2606)
+
+
+Started GET "/" for ::1 at 2020-01-16 15:34:17 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 18.8ms | ActiveRecord: 1.1ms | Allocations: 10976)
+
+
+Started GET "/actors" for ::1 at 2020-01-16 15:34:20 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 13.3ms | ActiveRecord: 8.6ms | Allocations: 10979)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-16 15:34:22 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (2.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 17.1ms | ActiveRecord: 3.8ms | Allocations: 12853)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:34:24 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 4979)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 25.1ms | ActiveRecord: 9.9ms | Allocations: 16070)
+
+
+Started GET "/actors/1/appointments/new" for ::1 at 2020-01-16 15:34:38 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 26.6ms | ActiveRecord: 1.9ms | Allocations: 16028)
+
+
+Started GET "/actors/2" for ::1 at 2020-01-16 15:34:44 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 94)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 17.0ms | ActiveRecord: 1.8ms | Allocations: 12502)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:34:48 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (6.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (1.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 26.5ms | ActiveRecord: 11.6ms | Allocations: 16033)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:35:17 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5406)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 25.5ms | ActiveRecord: 1.9ms | Allocations: 17695)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:38:53 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5406)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.3ms | ActiveRecord: 1.3ms | Allocations: 17693)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:38:55 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 4955)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 1.4ms | Allocations: 16036)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:38:56 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 18.4ms | ActiveRecord: 1.2ms | Allocations: 16035)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:38:57 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 47.3ms | ActiveRecord: 1.2ms | Allocations: 16034)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:38:58 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 4953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 25.1ms | ActiveRecord: 1.2ms | Allocations: 16032)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:39:32 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1349)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.3ms | Allocations: 4202)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+    </div>
+
+    <div>
+    <%= f.label :project_id, "Project:" %>
+    <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, :prompt => true, {:selected => @appointment.project_id || nil}) %> 
+    </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+      <br>
+
+    <%= f.submit "Make Appointment" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id, "Actor:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+9:        </div>
+10:    
+11:        <div>
+12:        <%= f.label :project_id, "Project:" %>
+13:        <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, :prompt => true, {:selected => @appointment.project_id || nil}) %> 
+14:        </div>
+15:     
+16:        
+17:        <div>
+18:        <%= f.label :role, "Role:" %>
+19:        <%= f.text_field :role %>
+20:        </div>
+21:    
+22:    
+23:        <div>
+24:        <%= f.datetime_select(:time, prompt: true ) %>
+25:        </div>
+26:        
+27:        <div>
+28:        <%= f.label :address, "Address:" %>
+29:        <%= f.text_field :address %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :callback, "Callback:" %>
+34:        <%= f.check_box :callback %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :booking_status %>
+39:        <%= f.text_field :booking_status %>
+40:        </div>
+41:    
+42:        <div>
+43:        <%= f.label :notes, "Notes:" %>
+44:        <%= f.text_area :notes %>
+45:        <div>
+46:    
+47:          <br>
+48:    
+49:        <%= f.submit "Make Appointment" %>
+50:    <% end %>
+  
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting =>
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting =>
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting =>
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting =>
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting =>
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting =>
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:43:05 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1344)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.2ms | Allocations: 4196)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+    </div>
+
+    <div>
+    <%= f.label :project_id, "Project:" %>
+    <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, prompt: true %> 
+    </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+      <br>
+
+    <%= f.submit "Make Appointment" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id, "Actor:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+9:        </div>
+10:    
+11:        <div>
+12:        <%= f.label :project_id, "Project:" %>
+13:        <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, prompt: true %> 
+14:        </div>
+15:     
+16:        
+17:        <div>
+18:        <%= f.label :role, "Role:" %>
+19:        <%= f.text_field :role %>
+20:        </div>
+21:    
+22:    
+23:        <div>
+24:        <%= f.datetime_select(:time, prompt: true ) %>
+25:        </div>
+26:        
+27:        <div>
+28:        <%= f.label :address, "Address:" %>
+29:        <%= f.text_field :address %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :callback, "Callback:" %>
+34:        <%= f.check_box :callback %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :booking_status %>
+39:        <%= f.text_field :booking_status %>
+40:        </div>
+41:    
+42:        <div>
+43:        <%= f.label :notes, "Notes:" %>
+44:        <%= f.text_area :notes %>
+45:        <div>
+46:    
+47:          <br>
+48:    
+49:        <%= f.submit "Make Appointment" %>
+50:    <% end %>
+  
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:43:09 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1331)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.2ms | Allocations: 3433)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+    </div>
+
+    <div>
+    <%= f.label :project_id, "Project:" %>
+    <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, prompt: true %> 
+    </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+      <br>
+
+    <%= f.submit "Make Appointment" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id, "Actor:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+9:        </div>
+10:    
+11:        <div>
+12:        <%= f.label :project_id, "Project:" %>
+13:        <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, prompt: true %> 
+14:        </div>
+15:     
+16:        
+17:        <div>
+18:        <%= f.label :role, "Role:" %>
+19:        <%= f.text_field :role %>
+20:        </div>
+21:    
+22:    
+23:        <div>
+24:        <%= f.datetime_select(:time, prompt: true ) %>
+25:        </div>
+26:        
+27:        <div>
+28:        <%= f.label :address, "Address:" %>
+29:        <%= f.text_field :address %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :callback, "Callback:" %>
+34:        <%= f.check_box :callback %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :booking_status %>
+39:        <%= f.text_field :booking_status %>
+40:        </div>
+41:    
+42:        <div>
+43:        <%= f.label :notes, "Notes:" %>
+44:        <%= f.text_area :notes %>
+45:        <div>
+46:    
+47:          <br>
+48:    
+49:        <%= f.submit "Make Appointment" %>
+50:    <% end %>
+  
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting ')'
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:43:30 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 5405)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 25.9ms | ActiveRecord: 2.5ms | Allocations: 17694)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:43:31 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 23.0ms | ActiveRecord: 1.1ms | Allocations: 16034)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:43:33 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4952)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 19.4ms | ActiveRecord: 1.5ms | Allocations: 16031)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:44:46 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 5408)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 1.1ms | Allocations: 17693)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:44:48 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4955)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 18.5ms | ActiveRecord: 1.6ms | Allocations: 16035)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:44:50 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.6ms | ActiveRecord: 1.1ms | Allocations: 16032)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:45:17 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 106.5ms | Allocations: 27538)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 208479ms (Views: 68.6ms | ActiveRecord: 82.7ms | Allocations: 81918)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:48:56 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 81.5ms | Allocations: 29845)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89673ms (Views: 91.1ms | ActiveRecord: 44.7ms | Allocations: 80105)
+
+
+Started GET "/actors/2/appointments/new" for ::1 at 2020-01-16 15:50:31 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"actor_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (3.1ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 5412)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21582ms (Views: 31.8ms | ActiveRecord: 5.1ms | Allocations: 32428)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:51:07 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (17.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 4950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21276ms (Views: 46.6ms | ActiveRecord: 19.8ms | Allocations: 34445)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:51:59 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 66.6ms | Allocations: 27976)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 151ms (Views: 71.4ms | ActiveRecord: 34.0ms | Allocations: 62512)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:52:02 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 1.2ms | Allocations: 16024)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:52:04 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 23.3ms | ActiveRecord: 1.1ms | Allocations: 16024)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:52:31 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 5401)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 28.1ms | ActiveRecord: 1.0ms | Allocations: 17685)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:52:32 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 25.9ms | ActiveRecord: 1.0ms | Allocations: 16028)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:52:33 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (4.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4950)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 69.7ms | ActiveRecord: 5.6ms | Allocations: 16025)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:52:34 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 4948)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 2.1ms | Allocations: 16019)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:54:29 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 5410)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 27.8ms | ActiveRecord: 1.5ms | Allocations: 17696)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:54:30 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4951)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 22.1ms | ActiveRecord: 1.1ms | Allocations: 16027)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:54:31 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.9ms | ActiveRecord: 1.3ms | Allocations: 16024)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:54:31 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.2ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 27.5ms | ActiveRecord: 1.7ms | Allocations: 16023)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:58:21 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1349)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms | Allocations: 4194)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+    </div>
+
+    <div>
+    <%= f.label :project_id, "Project:" %>
+    <%= f.collection_select :project_id, Project.all, :id, :name, {:prompt => '-- Select Project --'}) %> 
+    </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+      <br>
+
+    <%= f.submit "Make Appointment" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id, "Actor:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+9:        </div>
+10:    
+11:        <div>
+12:        <%= f.label :project_id, "Project:" %>
+13:        <%= f.collection_select :project_id, Project.all, :id, :name, {:prompt => '-- Select Project --'}) %> 
+14:        </div>
+15:     
+16:        
+17:        <div>
+18:        <%= f.label :role, "Role:" %>
+19:        <%= f.text_field :role %>
+20:        </div>
+21:    
+22:    
+23:        <div>
+24:        <%= f.datetime_select(:time, prompt: true ) %>
+25:        </div>
+26:        
+27:        <div>
+28:        <%= f.label :address, "Address:" %>
+29:        <%= f.text_field :address %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :callback, "Callback:" %>
+34:        <%= f.check_box :callback %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :booking_status %>
+39:        <%= f.text_field :booking_status %>
+40:        </div>
+41:    
+42:        <div>
+43:        <%= f.label :notes, "Notes:" %>
+44:        <%= f.text_area :notes %>
+45:        <div>
+46:    
+47:          <br>
+48:    
+49:        <%= f.submit "Make Appointment" %>
+50:    <% end %>
+  
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting end
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting end-of-input
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting end
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting end-of-input
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting end
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting end-of-input
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting end
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting end-of-input
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting end
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting end-of-input
+app/views/appointments/new.html.erb:13: syntax error, unexpected ')', expecting end
+app/views/appointments/new.html.erb:52: syntax error, unexpected end, expecting end-of-input
+Started GET "/appointments/new" for ::1 at 2020-01-16 15:58:42 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (3.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 29.8ms | Allocations: 7925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 42.5ms | ActiveRecord: 4.4ms | Allocations: 20121)
+
+
+Started GET "/projects" for ::1 at 2020-01-16 16:00:21 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3967)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 50.2ms | ActiveRecord: 1.3ms | Allocations: 15499)
+
+
+Started GET "/projects/5" for ::1 at 2020-01-16 16:00:23 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (6.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:21:in `show'
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mCastingOffice Load (7.1ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8:in `casting_office'
+  Rendered projects/show.html.erb within layouts/application (Duration: 24.8ms | Allocations: 7205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 22.3ms | ActiveRecord: 28.4ms | Allocations: 19672)
+
+
+Started GET "/projects/5/appointments/new" for ::1 at 2020-01-16 16:00:25 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 4982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 23.6ms | ActiveRecord: 7.3ms | Allocations: 16077)
+
+
+Started GET "/appointments/new" for ::1 at 2020-01-16 16:13:40 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 5523)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 40.2ms | ActiveRecord: 2.7ms | Allocations: 17925)
+
+
