@@ -6,4 +6,9 @@ class Actor < ApplicationRecord
     has_many :bookings
     has_many :projects, through: :bookings
     has_many :comments, as: :commentable
+
+    def full_name
+        self.first_name + " " + self.last_name
+    end
+
 end

@@ -6,7 +6,7 @@
     <%= f.label :media_type, "Media:" %>
     <%= f.text_field :media_type %>
     
-    <%= f.date_select(:start_date, prompt: {day: 'Choose day', month: 'Choose month', year: 'Choose year'}) %>
+    <%= f.date_select(:start_date, prompt: true) %>
     
     <%= f.label :union, "Union:" %>
     <%= f.text_field :union %>

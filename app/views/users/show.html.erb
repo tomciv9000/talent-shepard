@@ -1,6 +1,8 @@
-<h3>Name: <%= full_name(@user) %></h3>
-<p>Email: <%= @user.email %></p>
-<p>Agency Account: <%= @user.agency.name %></p>
-   <br>
+<h3><%= full_name(@user) %></h3>
+<p><%= @user.email %></p>
+
+<br>
 <%= @user.display_details %>
+<br>
+<%= edit_if_allowed(@user) %>
      

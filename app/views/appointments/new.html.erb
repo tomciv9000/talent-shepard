@@ -1,2 +1,50 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, {:selected => @appointment.actor_id || nil}) %> 
+    </div>
+
+    <div>
+    <%= f.label :project_id, "Project:" %>
+    <%= f.select :project_id, options_from_collection_for_select(Project.all, :id, :name, {selected: @appointment.project_id || nil}) %> 
+    </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+      <br>
+
+    <%= f.submit "Make Appointment" %>
+<% end %>

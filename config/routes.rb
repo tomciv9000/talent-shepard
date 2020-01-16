@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     resources :appointments
   end
   
+  resources :casting_offices
+  resources :bookings
   resources :users
+  resources :appointments, only: [:index, :new, :create, :show, :edit]
   
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'

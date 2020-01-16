@@ -12188,3 +12188,1677 @@ These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
  (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/projects/new" for ::1 at 2020-01-15 23:12:39 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 53.3ms | Allocations: 11046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1985ms (Views: 1838.8ms | ActiveRecord: 40.0ms | Allocations: 1419667)
+
+
+Started GET "/users/2" for ::1 at 2020-01-15 23:12:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (2.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 262)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 16.2ms | ActiveRecord: 9.5ms | Allocations: 13235)
+
+
+Started GET "/users/3" for ::1 at 2020-01-15 23:13:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user_or_redirect rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 2.3ms | Allocations: 2669)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:13:08 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 18.7ms | ActiveRecord: 3.5ms | Allocations: 11583)
+
+
+Started GET "/users/3" for ::1 at 2020-01-15 23:13:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user_or_redirect rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms | Allocations: 2627)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:13:14 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 30.5ms | ActiveRecord: 1.0ms | Allocations: 10864)
+
+
+Started GET "/users/2" for ::1 at 2020-01-15 23:13:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (6.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 19.8ms | ActiveRecord: 10.9ms | Allocations: 12393)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:13:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (2.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user_or_redirect rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 3.9ms | Allocations: 2645)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:13:19 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 27.8ms | ActiveRecord: 2.8ms | Allocations: 10869)
+
+
+Started GET "/users/2" for ::1 at 2020-01-15 23:13:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (4.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 78)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 14.7ms | ActiveRecord: 12.0ms | Allocations: 12379)
+
+
+Started GET "/signout" for ::1 at 2020-01-15 23:13:34 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 1904)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:13:34 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 9366)
+
+
+Started GET "/users/new" for ::1 at 2020-01-15 23:13:35 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered users/_form.html.erb (Duration: 17.6ms | Allocations: 1893)
+  Rendered users/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 2195)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 33.0ms | ActiveRecord: 0.6ms | Allocations: 11752)
+
+
+Started POST "/users" for ::1 at 2020-01-15 23:13:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"/9/0bPqbS6k86LqCg8gYYc7tYFDNeGlPf/tRpZWThV6KaiHI5sTFarBs0BLXjjj87q7acYz0hb4hAo81OFzTDQ==", "user"=>{"agency_id"=>"2", "username"=>"user2", "email"=>"aa", "password"=>"[FILTERED]", "first_name"=>"aa", "last_name"=>"aa"}, "commit"=>"Submit User"}
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (24.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:8:in `first_user?'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (12.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "email", "password_digest", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "user2"], ["first_name", "aa"], ["last_name", "aa"], ["email", "aa"], ["password_digest", "$2a$12$uj5OJWyjilLqtvgOOKoVVeRln1xuL9drpClInkrkIoLrw9cQh1vfi"], ["agency_id", 2], ["created_at", "2020-01-16 04:13:52.146382"], ["updated_at", "2020-01-16 04:13:52.146382"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 356ms (ActiveRecord: 45.1ms | Allocations: 5812)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:13:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 25.5ms | ActiveRecord: 1.6ms | Allocations: 12390)
+
+
+Started GET "/users/2" for ::1 at 2020-01-15 23:14:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 35)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 29.6ms | ActiveRecord: 1.3ms | Allocations: 12357)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:14:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 22.3ms | ActiveRecord: 1.7ms | Allocations: 12377)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:16:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 262)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 19.6ms | ActiveRecord: 13.4ms | Allocations: 26336)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:17:11 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 22.3ms | ActiveRecord: 18.5ms | Allocations: 25181)
+
+
+Started GET "/users/4/edit" for ::1 at 2020-01-15 23:18:03 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (5.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 1117)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1421)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 22.3ms | ActiveRecord: 6.9ms | Allocations: 13839)
+
+
+Started PATCH "/users/4" for ::1 at 2020-01-15 23:18:44 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"rYLbJaewvZsd9lKWZ/p0XZQ7Q/lwlWIx2lTeFeW1GR7iseUaHgAKqOWhS3J9vpKO2NKTUOPqO6QSOZ//7EQ1dQ==", "user"=>{"agency_id"=>"2", "username"=>"user2", "email"=>"aa", "password"=>"[FILTERED]", "first_name"=>"aa", "last_name"=>"aa"}, "commit"=>"Submit User", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:45:in `update'
+  [1m[36mUser Update (3.9ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$12$HQJnAa/36AKxe1RtEy6iHOxQ.70wJP1gI83MpRGafBpO5YnNsXXie"], ["updated_at", "2020-01-16 04:18:44.780697"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:45:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:45:in `update'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 285ms (ActiveRecord: 6.2ms | Allocations: 5264)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:18:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 0.8ms | Allocations: 12384)
+
+
+Started GET "/users/4/edit" for ::1 at 2020-01-15 23:18:50 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (11.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 708)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 16.5ms | ActiveRecord: 14.8ms | Allocations: 13074)
+
+
+Started PATCH "/users/4" for ::1 at 2020-01-15 23:18:53 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"4XuFDjUDWMI5aoaKcjMfJNt6QzSSUKCgO71CyiBDktWuSLsxjLPv8cE9n25od/n3l5OTnQEv+TXz0AMgKbK+vg==", "user"=>{"agency_id"=>"2", "username"=>"user2", "email"=>"aa", "password"=>"[FILTERED]", "first_name"=>"aa", "last_name"=>"aa"}, "commit"=>"Submit User", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:44:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:45:in `update'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$12$64TYBRZ5hPWFoqlOuUlCPuNIIhkLhOMAKcxAV8iWatLlT2SRyxqS6"], ["updated_at", "2020-01-16 04:18:54.098749"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:45:in `update'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:45:in `update'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 282ms (ActiveRecord: 5.2ms | Allocations: 5093)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:18:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 14.5ms | ActiveRecord: 2.7ms | Allocations: 12381)
+
+
+Started GET "/signout" for ::1 at 2020-01-15 23:18:58 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 1903)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:18:58 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 10070)
+
+
+Started GET "/signin" for ::1 at 2020-01-15 23:19:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2129)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 11947)
+
+
+Started POST "/signin" for ::1 at 2020-01-15 23:19:05 -0500
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fPAVKTZGSIVNlcLXsBgZ/cPHmCt0G20hLXZMPCAAXPm5/37qv0KdwhnvRiiy0lVkB0SkO4kwD/tUlDk0L4H88A==", "username"=>"user2", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user2"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 200 OK in 253ms (ActiveRecord: 0.3ms | Allocations: 1227)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:19:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 90)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 31.3ms | ActiveRecord: 1.3ms | Allocations: 12395)
+
+
+Started GET "/signout" for ::1 at 2020-01-15 23:19:44 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 14.8ms | Allocations: 1841)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:19:44 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 9373)
+
+
+Started GET "/signin" for ::1 at 2020-01-15 23:20:53 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1904)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms | Allocations: 11137)
+
+
+Started POST "/signin" for ::1 at 2020-01-15 23:20:59 -0500
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"gdIjVtNTN4SuH4WCU3Jxs1bAp2aBFDghEfsIYSAti+RE3UiVWlfiw/plAX1RuD0qkkObdnw/WvtoGX1pL6wr7Q==", "username"=>"tomciv9000", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "tomciv9000"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 249ms (ActiveRecord: 0.4ms | Allocations: 1226)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:20:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 17.0ms | ActiveRecord: 5.0ms | Allocations: 12377)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:24:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 259)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 17.8ms | ActiveRecord: 11.4ms | Allocations: 26410)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:25:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 14.1ms | ActiveRecord: 1.1ms | Allocations: 13615)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:28:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 229)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 13.9ms | ActiveRecord: 0.9ms | Allocations: 13612)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:28:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 233)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 17.9ms | ActiveRecord: 1.8ms | Allocations: 13617)
+
+
+Started GET "/users/4" for ::1 at 2020-01-15 23:29:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user_or_redirect rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms | Allocations: 2626)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:29:22 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 17.6ms | ActiveRecord: 1.5ms | Allocations: 11576)
+
+
+Started GET "/users/1" for ::1 at 2020-01-15 23:29:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (2.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `find_user_or_redirect'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."agency_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `find_user_or_redirect'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 88)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 14.0ms | ActiveRecord: 8.7ms | Allocations: 12398)
+
+
+Started GET "/" for ::1 at 2020-01-15 23:29:36 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 16.1ms | ActiveRecord: 14.5ms | Allocations: 10876)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-15 23:48:36 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 500 Internal Server Error in 2159ms (ActiveRecord: 18.5ms | Allocations: 1544825)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `appointments_path' for #<#<Class:0x00007f9d559915c0>:0x00007f9d559991f8>):
+    18:     <% end %>
+    19:     <% if current_user %>
+    20:       <%= link_to "Projects | ", projects_path %>
+    21:       <%= link_to "Appointments | ", appointments_path %>
+    22:       <%= link_to "Actors | ", actors_path %>
+    23:       <%= link_to "Casting Offices | ", casting_offices_path %>
+    24:       <%= link_to "Bookings |    ", bookings_path %>
+  
+app/views/layouts/application.html.erb:21
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-16 01:02:58 -0500
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 500 Internal Server Error in 2066ms (ActiveRecord: 14.7ms | Allocations: 1544914)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `casting_offices_path' for #<#<Class:0x00007fb869878c68>:0x00007fb868092c98>
+Did you mean?  casting_office):
+    20:       <%= link_to "Projects | ", projects_path %>
+    21:       <%= link_to "Appointments | ", appointments_path %>
+    22:       <%= link_to "Actors | ", actors_path %>
+    23:       <%= link_to "Casting Offices | ", casting_offices_path %>
+    24:       <%= link_to "Bookings |    ", bookings_path %>
+    25:       <%= link_to "#{current_user.username} |", user_path(current_user) %>
+    26:       <%= link_to "Log Out", signout_path %>
+  
+app/views/layouts/application.html.erb:23
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-16 01:03:54 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1449ms (Views: 1328.0ms | ActiveRecord: 15.1ms | Allocations: 1397089)
+
+
+Started GET "/" for ::1 at 2020-01-16 01:04:25 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 12315)
+
+
+Started GET "/projects" for ::1 at 2020-01-16 01:04:37 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (6.7ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 9673)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 29.1ms | ActiveRecord: 13.4ms | Allocations: 27649)
+
+
+Started GET "/projects/1" for ::1 at 2020-01-16 01:04:39 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (2.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:21:in `show'
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.1ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8:in `casting_office'
+  Rendered projects/show.html.erb within layouts/application (Duration: 42.4ms | Allocations: 7257)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 45.7ms | ActiveRecord: 9.5ms | Allocations: 19738)
+
+
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-16 01:04:42 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3917)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 18.6ms | Allocations: 16205)
+
+
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-16 01:06:28 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1287)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 15.7ms | Allocations: 25865)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id "Role:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, selected: @appointment.actor || nil) 
+   </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+    <div>
+    <%= f.label :sag_aftra, "SAG-AFTRA" %>
+    <%= f.check_box :sag_aftra %>
+    </div>
+
+    <div>
+    <%= f.label :aea, "AEA" %>
+    <%= f.check_box :aea %>
+    </div>
+
+    <div>
+    <%= f.label :location, "Location:" %>
+    <%= f.text_field :location %>
+    </div>
+
+    
+      <br>
+
+    <%= f.submit "Register Actor" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id "Role:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, selected: @appointment.actor || nil) 
+9:       </div>
+10:     
+11:        
+12:        <div>
+13:        <%= f.label :role, "Role:" %>
+14:        <%= f.text_field :role %>
+15:        </div>
+16:    
+17:    
+18:        <div>
+19:        <%= f.datetime_select(:time, prompt: true ) %>
+20:        </div>
+21:        
+22:        <div>
+23:        <%= f.label :address, "Address:" %>
+24:        <%= f.text_field :address %>
+25:        </div>
+26:    
+27:        <div>
+28:        <%= f.label :callback, "Callback:" %>
+29:        <%= f.check_box :callback %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :booking_status %>
+34:        <%= f.text_field :booking_status %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :notes, "Notes:" %>
+39:        <%= f.text_area :notes %>
+40:        <div>
+41:    
+42:        <div>
+43:        <%= f.label :sag_aftra, "SAG-AFTRA" %>
+44:        <%= f.check_box :sag_aftra %>
+45:        </div>
+46:    
+47:        <div>
+48:        <%= f.label :aea, "AEA" %>
+49:        <%= f.check_box :aea %>
+50:        </div>
+51:    
+52:        <div>
+53:        <%= f.label :location, "Location:" %>
+54:        <%= f.text_field :location %>
+55:        </div>
+56:    
+57:        
+58:          <br>
+59:    
+60:        <%= f.submit "Register Actor" %>
+61:    <% end %>
+  
+app/views/appointments/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-16 01:07:20 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1361)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 4236)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h3>Audition Appointment</h3>
+
+<%= form_for @appointment do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+    <div>
+    <%= f.label :actor_id, "Actor:" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, selected: @appointment.actor || nil) 
+   </div>
+ 
+    
+    <div>
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role %>
+    </div>
+
+
+    <div>
+    <%= f.datetime_select(:time, prompt: true ) %>
+    </div>
+    
+    <div>
+    <%= f.label :address, "Address:" %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div>
+    <%= f.label :callback, "Callback:" %>
+    <%= f.check_box :callback %>
+    </div>
+
+    <div>
+    <%= f.label :booking_status %>
+    <%= f.text_field :booking_status %>
+    </div>
+
+    <div>
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_area :notes %>
+    <div>
+
+    <div>
+    <%= f.label :sag_aftra, "SAG-AFTRA" %>
+    <%= f.check_box :sag_aftra %>
+    </div>
+
+    <div>
+    <%= f.label :aea, "AEA" %>
+    <%= f.check_box :aea %>
+    </div>
+
+    <div>
+    <%= f.label :location, "Location:" %>
+    <%= f.text_field :location %>
+    </div>
+
+    
+      <br>
+
+    <%= f.submit "Register Actor" %>
+<% end %>
+):
+1:    <h3>Audition Appointment</h3>
+2:    
+3:    <%= form_for @appointment do |f| %>
+4:        <%= f.hidden_field :agency_id %>
+5:        
+6:        <div>
+7:        <%= f.label :actor_id, "Actor:" %>
+8:        <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :full_name, selected: @appointment.actor || nil) 
+9:       </div>
+10:     
+11:        
+12:        <div>
+13:        <%= f.label :role, "Role:" %>
+14:        <%= f.text_field :role %>
+15:        </div>
+16:    
+17:    
+18:        <div>
+19:        <%= f.datetime_select(:time, prompt: true ) %>
+20:        </div>
+21:        
+22:        <div>
+23:        <%= f.label :address, "Address:" %>
+24:        <%= f.text_field :address %>
+25:        </div>
+26:    
+27:        <div>
+28:        <%= f.label :callback, "Callback:" %>
+29:        <%= f.check_box :callback %>
+30:        </div>
+31:    
+32:        <div>
+33:        <%= f.label :booking_status %>
+34:        <%= f.text_field :booking_status %>
+35:        </div>
+36:    
+37:        <div>
+38:        <%= f.label :notes, "Notes:" %>
+39:        <%= f.text_area :notes %>
+40:        <div>
+41:    
+42:        <div>
+43:        <%= f.label :sag_aftra, "SAG-AFTRA" %>
+44:        <%= f.check_box :sag_aftra %>
+45:        </div>
+46:    
+47:        <div>
+48:        <%= f.label :aea, "AEA" %>
+49:        <%= f.check_box :aea %>
+50:        </div>
+51:    
+52:        <div>
+53:        <%= f.label :location, "Location:" %>
+54:        <%= f.text_field :location %>
+55:        </div>
+56:    
+57:        
+58:          <br>
+59:    
+60:        <%= f.submit "Register Actor" %>
+61:    <% end %>
+  
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:15: unknown regexp options - dv
+app/views/appointments/new.html.erb:15: unmatched close parenthesis: /div>
+app/views/appointments/new.html.erb:18: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:20: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:25: unknown regexp options - dv
+app/views/appointments/new.html.erb:27: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:35: unknown regexp options - dv
+app/views/appointments/new.html.erb:37: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:40: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:45: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:50: unknown regexp options - dv
+app/views/appointments/new.html.erb:52: syntax error, unexpected '<'
+app/views/appointments/new.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/appointments/new.html.erb:63: unterminated regexp meets end of file
+app/views/appointments/new.html.erb:63: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-16 01:08:18 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (5.8ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb within layouts/application (Duration: 63.9ms | Allocations: 23720)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 12.2ms | Allocations: 26571)
+
+
+  
+ActionView::Template::Error (undefined method `sag_aftra' for #<Appointment:0x00007fc4aaeb0a48>):
+    41: 
+    42:     <div>
+    43:     <%= f.label :sag_aftra, "SAG-AFTRA" %>
+    44:     <%= f.check_box :sag_aftra %>
+    45:     </div>
+    46: 
+    47:     <div>
+  
+app/views/appointments/new.html.erb:44
+app/views/appointments/new.html.erb:3
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-16 01:09:16 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 4418)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 26.9ms | ActiveRecord: 1.1ms | Allocations: 16709)
+
+
+Started GET "/actors" for ::1 at 2020-01-16 01:09:40 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 90)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 11635)
+
+
+Started GET "/appointments" for ::1 at 2020-01-16 01:09:41 -0500
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (3.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.2ms | Allocations: 3798)
+
+
+  
+NameError (uninitialized constant AppointmentsController::Post):
+  
+app/controllers/appointments_controller.rb:23:in `index'
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-16 01:15:09 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.9ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 61.3ms | Allocations: 29567)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 164ms (Views: 66.9ms | ActiveRecord: 14.6ms | Allocations: 63350)
+
+
+Started GET "/projects" for ::1 at 2020-01-16 01:15:12 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 22.4ms | ActiveRecord: 10.0ms | Allocations: 14820)
+
+
+Started GET "/projects" for ::1 at 2020-01-16 01:15:13 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (8.9ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1864)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 24.8ms | ActiveRecord: 12.6ms | Allocations: 12891)
+
+
+Started GET "/projects/2" for ::1 at 2020-01-16 01:15:15 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (4.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mProject Load (3.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:21:in `show'
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.1ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8:in `casting_office'
+  Rendered projects/show.html.erb within layouts/application (Duration: 19.4ms | Allocations: 7137)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 20.1ms | ActiveRecord: 21.2ms | Allocations: 19599)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:15:17 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (4.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5807)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 21.7ms | ActiveRecord: 10.5ms | Allocations: 16900)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:15:24 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (1.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 5798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 25.5ms | ActiveRecord: 13.7ms | Allocations: 16877)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:16:14 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:16:44 -0500
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 197.4ms | Allocations: 31702)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 512512ms (Views: 226.8ms | ActiveRecord: 40.4ms | Allocations: 202512)
+
+
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (2.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (1.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (2.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 195.7ms | Allocations: 29443)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3864ms (Views: 196.9ms | ActiveRecord: 73.6ms | Allocations: 72106)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:25:10 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.5ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 135.8ms | Allocations: 32753)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34900ms (Views: 1682.2ms | ActiveRecord: 35.4ms | Allocations: 1459875)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:25:52 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 92.1ms | Allocations: 29413)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 182ms (Views: 94.0ms | ActiveRecord: 36.6ms | Allocations: 62922)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:25:54 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5803)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 22.2ms | ActiveRecord: 2.6ms | Allocations: 16909)
+
+
+Started GET "/projects/2" for ::1 at 2020-01-16 01:26:02 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:21:in `show'
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8:in `casting_office'
+  Rendered projects/show.html.erb within layouts/application (Duration: 22.9ms | Allocations: 7231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 23.1ms | ActiveRecord: 11.3ms | Allocations: 20142)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:26:05 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (3.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (2.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  [1m[36mProject Load (3.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 19.0ms | Allocations: 5812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 27.3ms | ActiveRecord: 10.7ms | Allocations: 16936)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:26:49 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 5363)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 21.4ms | ActiveRecord: 1.4ms | Allocations: 17656)
+
+
+Started GET "/projects/2/appointments/new" for ::1 at 2020-01-16 01:26:51 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `find_current_tenant'
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/appointments/new.html.erb:13
+  Rendered appointments/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4912)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 1.8ms | Allocations: 15997)
+
+

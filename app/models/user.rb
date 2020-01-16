@@ -18,11 +18,11 @@ class User < ApplicationRecord
     
     def display_details
         if self.admin 
-          "ADMIN"
+          "ADMIN - #{self.agency.name}"
         elsif self.confirmed
-          "AUTHORIZED USER"
+          "AUTHORIZED USER - #{self.agency.name}" 
         else
-          "UNCONFIRMED USER"
+          "UNCONFIRMED USER - #{self.agency.name}"
         end
     end
     
