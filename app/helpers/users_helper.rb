@@ -8,6 +8,12 @@ module UsersHelper
     end
   end
 
+  def edit_if_allowed(user)
+    if user.id == current_user.id || current_user.admin
+      link_to "Edit User Details", edit_user_path(user)
+    end
+  end
+
     #def admin_field(user)
     #    check_box(nil, nil, {checked: true, disabled:true}) if user.first_user?
     #    #disabled checkbox for first user
