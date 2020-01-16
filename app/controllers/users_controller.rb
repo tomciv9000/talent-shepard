@@ -41,9 +41,9 @@ class UsersController < ApplicationController
   #end
 
   def update
-    @attraction = Attraction.find(params[:id])
-    @attraction.update(attraction_params)
-    redirect_to attraction_path(@attraction)
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
 

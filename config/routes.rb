@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   end
   
   resources :agencies, only: [:index, :new, :create, :show, :edit] do
-    resources :users, only: [:index, :show, :new, :edit, :create]
+    resources :users
   end
 
   resources :projects do
     resources :appointments
   end
   
-  resources :users, only: [:new, :create, :show, :edit]
+  resources :users
   
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
