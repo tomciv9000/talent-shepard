@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins, path: 'admins'
+  devise_for :admins, controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations' }
   
-  devise_for :users, path: 'users'
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   get 'casting_offices/new'
   get 'casting_offices/show'
   get 'casting_offices/edit'
