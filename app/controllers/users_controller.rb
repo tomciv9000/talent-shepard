@@ -1,6 +1,6 @@
 require 'pry'
-class OriginalUsersController < ApplicationController
-  skip_before_action :verified_user, only: [:new, :create]
+class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create]
   before_action :find_user_or_redirect, :only => [:show, :edit, ]
   #before_filter :find_post, :only => [:show, :edit, :update, :destroy]
 

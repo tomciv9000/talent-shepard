@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-
+#### verified user is replaced by authenticate_user! from devise
   #  def verified_user
   #    redirect_to '/' unless user_is_authenticated
   #  end

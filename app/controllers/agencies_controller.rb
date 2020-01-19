@@ -1,5 +1,5 @@
 class AgenciesController < ApplicationController
-  skip_before_action :verified_user, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create]
   
   def new
     @agency = Agency.new
