@@ -14,7 +14,7 @@
     <% if !current_user %>
       <%= link_to "Register New Agency |  ", new_agency_path %>
       <%= link_to "Sign Up |  ", new_user_path %>
-      <%= link_to "Log in", signin_path %>
+      <%= link_to('Login', new_user_session_path) %>
     <% end %>
     <% if current_user %>
       <%= link_to "Projects |  ", projects_path %>
@@ -22,8 +22,8 @@
       <%= link_to "Actors |  ", actors_path %>
       <%= link_to "Casting Offices |  ", casting_offices_path %>
       <%= link_to "Bookings |  ", bookings_path %>
-      <%= link_to "#{current_user.username}'s Account |  ", user_path(current_user) %>
-      <%= link_to "Log Out", signout_path %>
+      <%= link_to "#{current_user.first_name}'s Account |  ", user_path(current_user) %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     <% end %>
   </nav>
   <div class="container">

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
   
-  
-  devise_for :users
   root to: 'static#home'
 
   resources :actors do
@@ -22,9 +21,9 @@ Rails.application.routes.draw do
   resources :users
   resources :appointments, only: [:index, :new, :create, :show, :edit]
   
-  get '/signin' => 'sessions#new'
-  post '/signin' => 'sessions#create'
-  get '/signout' => 'sessions#destroy'
+  #get '/signin' => 'sessions#new'
+  #post '/signin' => 'sessions#create'
+  #get '/signout' => 'sessions#destroy'
 
 
 end
