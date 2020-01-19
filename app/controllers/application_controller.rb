@@ -1,19 +1,31 @@
 class ApplicationController < ActionController::Base
     set_current_tenant_through_filter
     
+    before_action :configure_permitted_parameters, if: :devise_controller?
+
     before_action :authenticate_user!
     before_action :find_current_tenant
     
     helper_method :current_user
     helper_method :current_agency
 
-    private
 
-    def find_current_tenant
-      if current_user
-        set_current_tenant(@current_user.agency)
-      end
+    
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:agency_id, :first_name, :last_name])
+  end
+
+
+  private
+
+  def find_current_tenant
+    if current_user
+      set_current_tenant(@current_user.agency)
     end
+  end
 
 #### verified user is replaced by authenticate_user! from devise
   #  def verified_user
