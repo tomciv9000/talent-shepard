@@ -9,7 +9,8 @@ class AgenciesController < ApplicationController
     @agency = Agency.new(agency_params)
       if @agency.valid?
         @agency.save
-        redirect_to new_agency_user_path(@agency)
+        session[:agency_id] = @agency.id
+        redirect_to new_user_registration_path
       else
         redirect_to '/'
       end

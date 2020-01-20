@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     set_current_tenant_through_filter
     
-    before_action :configure_permitted_parameters, if: :devise_controller?
+    #before_action :configure_permitted_parameters, if: :devise_controller?
 
     before_action :authenticate_user!
     before_action :find_current_tenant
@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
 
     
 
-  protected
+  #protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:agency_id, :first_name, :last_name])
-  end
+ # def configure_permitted_parameters
+   # devise_parameter_sanitizer.permit(:sign_up, keys: [:agency_id, :first_name, :last_name])
+  #end
 
 
   private

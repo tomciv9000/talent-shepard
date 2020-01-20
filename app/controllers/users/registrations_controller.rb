@@ -1,18 +1,30 @@
 # frozen_string_literal: true
-
+require 'pry'
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+   before_action :configure_sign_up_params, only: [:create]
+   before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @user = User.new(agency_id: session[:agency_id])
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+    binding.pry
+    super
+  #  binding.pry
+  #  @user = User.new(params[:user])
+  #  @user.assign_defaults
+  #
+  #  if @user.valid?
+  #    @user.save
+  #    session[:user_id] = @user.id
+  #    redirect_to user_path(@user)
+  #  else
+  #    redirect_to '/'
+  #  end
+   end
 
   # GET /resource/edit
   # def edit
@@ -38,17 +50,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+   protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+   def configure_sign_up_params
+     devise_parameter_sanitizer.permit(:sign_up, keys: [:agency_id, :first_name, :last_name])
+   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+   def configure_account_update_params
+     devise_parameter_sanitizer.permit(:account_update, keys: [:agency_id, :first_name, :last_name])
+   end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

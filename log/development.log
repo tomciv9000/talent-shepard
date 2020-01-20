@@ -18609,3 +18609,1478 @@ Processing by StaticController#home as HTML
 Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.0ms | Allocations: 11924)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-19 16:37:40 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 4.3ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1342ms (Views: 1328.0ms | ActiveRecord: 0.0ms | Allocations: 1382147)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-19 16:37:47 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.8ms | Allocations: 640)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 4770)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 37.4ms | ActiveRecord: 19.7ms | Allocations: 26358)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-19 16:37:54 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 214)
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 539)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 35.9ms | Allocations: 9714)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 54.1ms | ActiveRecord: 6.1ms | Allocations: 21385)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-19 16:39:00 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 11736)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-19 16:39:02 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.4ms | Allocations: 12528)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-19 16:39:06 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1069)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 11707)
+
+
+Started GET "/users/password/new" for ::1 at 2020-01-19 16:39:08 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 141)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1002)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 12244)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-19 16:39:18 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (26.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 84)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 33.3ms | Allocations: 1917)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 26.5ms | Allocations: 12515)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-19 22:48:26 -0500
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1427ms (Views: 1418.8ms | ActiveRecord: 0.0ms | Allocations: 1381323)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-19 22:48:38 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 17.1ms | ActiveRecord: 8.0ms | Allocations: 17327)
+
+
+Started POST "/agencies" for ::1 at 2020-01-19 22:49:10 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"RH58ZrmiPMazLy0nzonrDkiMypoc+8SI6+h8gT7JxGTkeB7prf1YxcKxVz0X+PWDrdOypX2O71CPLx4gfRyL9A==", "agency"=>{"name"=>"Harry Balscraks", "email"=>"ddd@ddd.com"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (7.1ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Harry Balscraks"], ["email", "ddd@ddd.com"], ["created_at", "2020-01-20 03:49:10.333123"], ["updated_at", "2020-01-20 03:49:10.333123"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/agencies/2/users/new
+Completed 302 Found in 23ms (ActiveRecord: 15.1ms | Allocations: 3076)
+
+
+Started GET "/agencies/2/users/new" for ::1 at 2020-01-19 22:49:10 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"agency_id"=>"2"}
+  [1m[36mAgency Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `new'
+  Rendering users/new.html.erb within layouts/application
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `agency_if_any'
+  Rendered users/_form.html.erb (Duration: 11.2ms | Allocations: 3780)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 4083)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 23.8ms | ActiveRecord: 6.8ms | Allocations: 25041)
+
+
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" ORDER BY "agencies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" ORDER BY "agencies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" ORDER BY "agencies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" ORDER BY "agencies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/agencies/new" for ::1 at 2020-01-19 23:09:53 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1335ms (Views: 1308.6ms | ActiveRecord: 7.3ms | Allocations: 1387485)
+
+
+Started POST "/agencies" for ::1 at 2020-01-19 23:10:14 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"nuiJJY+hBJY41F8Swa0uQAtxR0enonQj/fr2QfcWme4kXwX8VRNmbUcW6wQ1YCjwVnoYAN4I1KZ4oda/AOgw2A==", "agency"=>{"name"=>"Jimmy John's", "email"=>"john@hon.com"}, "commit"=>"Create Account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (0.8ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jimmy John's"], ["email", "john@hon.com"], ["created_at", "2020-01-20 04:10:14.501720"], ["updated_at", "2020-01-20 04:10:14.501720"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 21ms (ActiveRecord: 13.2ms | Allocations: 3046)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-19 23:10:14 -0500
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mAgency Load (1.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):2:in `new'
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 3]]
+  ↳ (pry):4:in `new'
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 731)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 22.6ms | Allocations: 7289)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 915138ms (Views: 72.7ms | ActiveRecord: 9.1ms | Allocations: 59595)
+
+
+Started POST "/users" for ::1 at 2020-01-19 23:27:26 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"cUvU1RrqPtdFaqBns9daDC4JfzmOJhQsD+7VjK8TprHL/FgMwFhcLDqoFHFHGly8cwIgfveMtKmKtfVyWO0Phw==", "user"=>{"agency_id"=>"3", "email"=>"test1@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"111111", "password_confirmation"=>"111111"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 0.0ms | Allocations: 110062)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Users::RegistrationsController:0x00007fe91a1e1f80>
+Did you mean?  user_path):
+  
+app/controllers/users/registrations_controller.rb:15:in `create'
+Started POST "/users" for ::1 at 2020-01-19 23:28:18 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"cUvU1RrqPtdFaqBns9daDC4JfzmOJhQsD+7VjK8TprHL/FgMwFhcLDqoFHFHGly8cwIgfveMtKmKtfVyWO0Phw==", "user"=>{"agency_id"=>"3", "email"=>"test1@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"111111", "password_confirmation"=>"111111"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 287797ms (ActiveRecord: 8.4ms | Allocations: 252105)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<Users::RegistrationsController:0x00007fe919093940>
+Did you mean?  user_path):
+  
+app/controllers/users/registrations_controller.rb:16:in `create'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-19 23:35:08 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1367ms (Views: 1358.5ms | ActiveRecord: 0.0ms | Allocations: 1381328)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-19 23:35:12 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 16.5ms | ActiveRecord: 8.5ms | Allocations: 17326)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-19 23:36:44 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 603)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 12405)
+
+
+Started POST "/agencies" for ::1 at 2020-01-19 23:36:52 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"0TL9b+qQ01SddegdZksCGAYO+WA+TNmjguvC5qIGDpRrhXG2MCKxr+K3XAuShgSoWwWmJ0fmeSYHsOIYVfinog==", "agency"=>{"name"=>"Test2", "email"=>"test@test.net"}, "commit"=>"Register Agency"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (0.9ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test2"], ["email", "test@test.net"], ["created_at", "2020-01-20 04:36:52.359307"], ["updated_at", "2020-01-20 04:36:52.359307"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 18ms (ActiveRecord: 13.0ms | Allocations: 3037)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-19 23:36:52 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 214)
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 732)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 16.4ms | Allocations: 7706)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 45.6ms | ActiveRecord: 5.4ms | Allocations: 28625)
+
+
+Started POST "/users" for ::1 at 2020-01-19 23:37:04 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"s6x9qdvxsJ65iZMxty5/E+pMfo0VYgLUkWScZOgbQCwJG/FwAUPSZcZLJydD43mjt0chymzIolEUP7yaH+XpGg==", "user"=>{"agency_id"=>"4", "email"=>"eugene.white@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"f2rP8JU5", "password_confirmation"=>"f2rP8JU5"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 453372ms (ActiveRecord: 0.0ms | Allocations: 22278)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users/registrations_controller.rb:15:in `create'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-20 00:09:24 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Before process_action callback :authenticate_user! has not been defined):
+  
+app/controllers/static_controller.rb:2:in `<class:StaticController>'
+app/controllers/static_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-01-20 00:09:27 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1354ms (Views: 1352.3ms | ActiveRecord: 0.0ms | Allocations: 1380495)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:09:32 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 10309)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:09:34 -0500
+  
+ArgumentError (Before process_action callback :authenticate_user! has not been defined):
+  
+app/controllers/agencies_controller.rb:2:in `<class:AgenciesController>'
+app/controllers/agencies_controller.rb:1:in `<main>'
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:09:43 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1114)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2187)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h3>Register New Agency</h3>
+    2: <%= form_for(@agency) do |f| %>
+    3:     
+    4:     <div>
+    5:         <%= f.label :name, 'Name:' %>
+  
+app/views/agencies/new.html.erb:2
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:09:45 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 883)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1307)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h3>Register New Agency</h3>
+    2: <%= form_for(@agency) do |f| %>
+    3:     
+    4:     <div>
+    5:         <%= f.label :name, 'Name:' %>
+  
+app/views/agencies/new.html.erb:2
+Started GET "/" for ::1 at 2020-01-20 00:09:52 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 10310)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:09:53 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 882)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1306)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h3>Register New Agency</h3>
+    2: <%= form_for(@agency) do |f| %>
+    3:     
+    4:     <div>
+    5:         <%= f.label :name, 'Name:' %>
+  
+app/views/agencies/new.html.erb:2
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-20 00:13:10 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Before process_action callback :authenticate_user! has not been defined):
+  
+app/controllers/static_controller.rb:2:in `<class:StaticController>'
+app/controllers/static_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-01-20 00:16:56 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1638ms (Views: 1632.7ms | ActiveRecord: 0.0ms | Allocations: 1381372)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:17:00 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 20.2ms | ActiveRecord: 9.3ms | Allocations: 17349)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:18:53 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 438)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 44.9ms | ActiveRecord: 5.2ms | Allocations: 15581)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:18:55 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 10715)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:18:56 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 10537)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:18:57 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 10714)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:19:14 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 437)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 12.7ms | ActiveRecord: 5.8ms | Allocations: 15606)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:19:15 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 10713)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:19:16 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 10544)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:19:18 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 10712)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:19:19 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 370)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 10724)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:19:19 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 10353)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:19:20 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 10350)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:19:20 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 10354)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:19:21 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms | Allocations: 10718)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 00:19:28 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"uxmMSWVBFMdkgAFy+HXAO5Uk/KO2clcNpY2s4Lewhr0bH+7GcR5wxBUee2ghBN62cHuEnNcHfNXBSs5B9GXJLQ==", "agency"=>{"name"=>"Fart", "email"=>"fart"}, "commit"=>"Register Agency"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (1.2ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fart"], ["email", "fart"], ["created_at", "2020-01-20 05:19:28.277950"], ["updated_at", "2020-01-20 05:19:28.277950"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 14ms (ActiveRecord: 7.8ms | Allocations: 3067)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:19:28 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 214)
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 732)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 25.9ms | Allocations: 7709)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 40.4ms | ActiveRecord: 5.5ms | Allocations: 28663)
+
+
+Started POST "/users" for ::1 at 2020-01-20 00:19:47 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"DEsVqJSxg1hrgm66P3wxe0662xTFf5LARLE/hGE0ivy2/JlxTgPhoxRA2qzLsTfLE7GEU7zVMkXB6h96lsojyg==", "user"=>{"agency_id"=>"5", "email"=>"test@test.org", "first_name"=>"afaf", "last_name"=>"afaf", "password"=>"111111", "password_confirmation"=>"111111"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.org"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "afaf"], ["last_name", "afaf"], ["agency_id", 5], ["created_at", "2020-01-20 05:19:47.761496"], ["updated_at", "2020-01-20 05:19:47.761496"], ["email", "test@test.org"], ["encrypted_password", "$2a$11$DBk5rcmsyMmXsgyR15k2sOa3E1U5mRcldXTcNKMbEt4X.s.QFE6wy"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 5]]
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 170ms (ActiveRecord: 17.1ms | Allocations: 9836)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:19:47 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.1ms | ActiveRecord: 0.6ms | Allocations: 12076)
+
+
+Started GET "/users/edit" for ::1 at 2020-01-20 00:19:55 -0500
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1956)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 44.9ms | ActiveRecord: 7.3ms | Allocations: 14760)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Update (17.7ms)[0m  [1m[33mUPDATE "users" SET "admin" = $1, "confirmed" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["admin", true], ["confirmed", true], ["updated_at", "2020-01-20 05:22:08.940628"], ["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 5]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 5]]
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (3000.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "talent_shepherd_development"[0m
+  [1m[35m (48.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "talent_shepherd_test"[0m
+  [1m[35m (205.9ms)[0m  [1m[35mCREATE DATABASE "talent_shepherd_development" ENCODING = 'unicode'[0m
+  [1m[35m (78.0ms)[0m  [1m[35mCREATE DATABASE "talent_shepherd_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors" CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "agencies" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "agencies" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "role" character varying, "rate" character varying, "contract_signed" boolean, "accepted" boolean, "actor_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_offices" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" date, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "admin" boolean DEFAULT FALSE, "confirmed" boolean DEFAULT FALSE, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200119200027)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200107231417),
+(20200107233411),
+(20200107234240),
+(20200107235148),
+(20200107235458),
+(20200108000110),
+(20200108000312),
+(20200108000447),
+(20200108160124),
+(20200108161645),
+(20200108161910),
+(20200108162720),
+(20200108162829),
+(20200108164018),
+(20200108164226),
+(20200108164238),
+(20200108165308),
+(20200109230908),
+(20200110002215),
+(20200111183157),
+(20200111183430),
+(20200111183738),
+(20200111183757),
+(20200111183819),
+(20200111183839),
+(20200112221442),
+(20200118182553),
+(20200118182556),
+(20200118182557),
+(20200118182727),
+(20200119082724),
+(20200119082757),
+(20200119170633),
+(20200119200025),
+(20200119200026);
+
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-20 05:23:14.162311"], ["updated_at", "2020-01-20 05:23:14.162311"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "1d9268adb4f723bd96f5204f04026ef9c65ea492"], ["created_at", "2020-01-20 05:23:14.170827"], ["updated_at", "2020-01-20 05:23:14.170827"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "agencies" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "agencies" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "role" character varying, "rate" character varying, "contract_signed" boolean, "accepted" boolean, "actor_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_offices" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" date, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "admin" boolean DEFAULT FALSE, "confirmed" boolean DEFAULT FALSE, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200119200027)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200107231417),
+(20200107233411),
+(20200107234240),
+(20200107235148),
+(20200107235458),
+(20200108000110),
+(20200108000312),
+(20200108000447),
+(20200108160124),
+(20200108161645),
+(20200108161910),
+(20200108162720),
+(20200108162829),
+(20200108164018),
+(20200108164226),
+(20200108164238),
+(20200108165308),
+(20200109230908),
+(20200110002215),
+(20200111183157),
+(20200111183430),
+(20200111183738),
+(20200111183757),
+(20200111183819),
+(20200111183839),
+(20200112221442),
+(20200118182553),
+(20200118182556),
+(20200118182557),
+(20200118182727),
+(20200119082724),
+(20200119082757),
+(20200119170633),
+(20200119200025),
+(20200119200026);
+
+[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-20 05:23:14.311405"], ["updated_at", "2020-01-20 05:23:14.311405"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-01-20 05:23:14.319034"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "1d9268adb4f723bd96f5204f04026ef9c65ea492"], ["created_at", "2020-01-20 05:23:14.325826"], ["updated_at", "2020-01-20 05:23:14.325826"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-20 00:23:31 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1343ms (Views: 1321.0ms | ActiveRecord: 8.7ms | Allocations: 1383646)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:23:33 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 10356)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:23:35 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 18.2ms | ActiveRecord: 6.0ms | Allocations: 17205)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 00:23:42 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"vpgIuMfRyXxAprimZ+B4tZIlkS76wUXzpoN3vHIFIuwenmo3046tfzE4wry+kWY4d3rpEZu0bivCRBUdMdBtfA==", "agency"=>{"name"=>"Davis Spylios", "email"=>"dsm@dsm.com"}, "commit"=>"Register Agency"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (0.9ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Davis Spylios"], ["email", "dsm@dsm.com"], ["created_at", "2020-01-20 05:23:42.968448"], ["updated_at", "2020-01-20 05:23:42.968448"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 14ms (ActiveRecord: 7.1ms | Allocations: 3050)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:23:42 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 214)
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 732)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 20.0ms | Allocations: 7372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 34.3ms | ActiveRecord: 0.3ms | Allocations: 27397)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:28:22 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 205)
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 493)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3397)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.3ms | Allocations: 16129)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:28:23 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2059)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.5ms | Allocations: 12597)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:28:24 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 79)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2058)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 12612)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:29:25 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 205)
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 4.1ms | Allocations: 493)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 3390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.4ms | Allocations: 16098)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:29:26 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 84)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2059)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 51.5ms | ActiveRecord: 0.3ms | Allocations: 12601)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:31:40 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 205)
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 493)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 3390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.2ms | Allocations: 16102)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:31:42 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2070)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.3ms | Allocations: 12630)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:31:43 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2049)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms | Allocations: 12594)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:35:37 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1658ms (Views: 1630.7ms | ActiveRecord: 7.8ms | Allocations: 1387501)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 00:35:47 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"2PuTXiNZwvWJHqBix/JPgYK3TNUo+HaAbMTWyH2b27x4/fHRNwam9viA2ngeg1EMZ+g06kmNXVgIA7RpPk6ULA==", "agency"=>{"name"=>"Fart", "email"=>"fart@fart.net"}, "commit"=>"Register Agency"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (1.2ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fart"], ["email", "fart@fart.net"], ["created_at", "2020-01-20 05:35:47.096528"], ["updated_at", "2020-01-20 05:35:47.096528"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 23ms (ActiveRecord: 13.4ms | Allocations: 3071)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:35:47 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 214)
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 18.4ms | Allocations: 6761)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 35.8ms | ActiveRecord: 6.6ms | Allocations: 27730)
+
+
+Started POST "/users" for ::1 at 2020-01-20 00:36:06 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"ghduT8VgKXOY0urzo9GxHAh0AK0JaYR4typNKSSbBnE4oOKWH9JLiOcQXuVXHLesVX9f6nDDJP0ycW3X02WvRw==", "user"=>{"agency_id"=>"2", "email"=>"eugene.thomas@gmail.com", "first_name"=>"Tom", "last_name"=>"White", "password"=>"aaaaaa", "password_confirmation"=>"aaaaaa"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.thomas@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Tom"], ["last_name", "White"], ["agency_id", 2], ["created_at", "2020-01-20 05:36:06.284843"], ["updated_at", "2020-01-20 05:36:06.284843"], ["email", "eugene.thomas@gmail.com"], ["encrypted_password", "$2a$11$xhrrmrJOhM4/RiskeXLqpenC6ahaQgONVl7EVvs74syoJSsm2/l2G"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 172ms (ActiveRecord: 11.0ms | Allocations: 12435)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:36:06 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 0.6ms | Allocations: 12872)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started DELETE "/users/sign_out" for ::1 at 2020-01-20 00:39:06 -0500
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"88toH/6e2p9/NH87n0pFFKrYcLxWT60N0MLR2Hr5BGdJfOTGJCy4ZAD2yy1rh0Ok99Mv+y/lDYhVmfEmjQetUQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "admin" = $1, "confirmed" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["admin", true], ["confirmed", true], ["updated_at", "2020-01-20 05:39:06.695490"], ["id", 1]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 89ms (ActiveRecord: 26.3ms | Allocations: 21752)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:39:06 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 10548)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:39:09 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 436)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 10985)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 00:39:17 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"nz2NkfNKfS2UrBn6D754Hp7yZu/RVmPeaguv8SEq4wHOSha5r2kWPaI9ja5g/INjkdl4ekboxOlxNVpXMGLpaA==", "agency"=>{"name"=>"TTTTTTT", "email"=>"ttttt"}, "commit"=>"Register Agency"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (1.4ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "TTTTTTT"], ["email", "ttttt"], ["created_at", "2020-01-20 05:39:17.810211"], ["updated_at", "2020-01-20 05:39:17.810211"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 20ms (ActiveRecord: 10.7ms | Allocations: 2825)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:39:17 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1972)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.6ms | Allocations: 12795)
+
+
+Started POST "/users" for ::1 at 2020-01-20 00:39:32 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"ft7PZ2dhpwbhwWSZLW+CpF43CDmCtFB+zJ2HBUmYE51FbG7d8wIT/7YaN3WAdO45NFlG+qzjJafNjvw0KlrFIw==", "user"=>{"agency_id"=>"3", "email"=>"nerd@nerd.com", "first_name"=>"Nerd", "last_name"=>"nerd", "password"=>"nnnnnn", "password_confirmation"=>"nnnnnn"}, "commit"=>"Sign up"}
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nerd@nerd.com"], ["LIMIT", 1]]
+  ↳ (pry):7:in `create'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):7:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 3]]
+  ↳ (pry):8:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nerd@nerd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mCACHE Agency Load (0.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 3]]
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Nerd"], ["last_name", "nerd"], ["agency_id", 3], ["created_at", "2020-01-20 05:44:46.533822"], ["updated_at", "2020-01-20 05:44:46.533822"], ["email", "nerd@nerd.com"], ["encrypted_password", "$2a$11$/V8xX4hKh/50EHuxG73hXeM9VfS1Uj2.uV2J/jINgwdzcMtkuMM72"]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 314101ms (ActiveRecord: 3.3ms | Allocations: 56284)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:44:46 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 55.5ms | ActiveRecord: 19.8ms | Allocations: 25698)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-01-20 00:46:26 -0500
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hgvtKOvLZb2bt2cILJcuV0FlLA28A8gQPEdCy1MSWMa9uUySf6jRRMxsNOSBjELKKwtizpJUvck9VDn6MNCOeA=="}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 3]]
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.7ms | Allocations: 6422)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:46:26 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 10364)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:46:28 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 435)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 10967)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 00:46:30 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"j+0oysIVV4PpxhfArWJrUgjXvsp74eV5P1Bjp1ewXPTfE/KGrDB/en/OTZhXszZZJmBLjYc7IjQy5jWjOlIYtg==", "agency"=>{"name"=>"f", "email"=>"f"}, "commit"=>"Register Agency"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (0.8ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "f"], ["email", "f"], ["created_at", "2020-01-20 05:46:30.572578"], ["updated_at", "2020-01-20 05:46:30.572578"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 13ms (ActiveRecord: 4.1ms | Allocations: 2820)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:46:30 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 12795)
+
+
+Started POST "/users" for ::1 at 2020-01-20 00:46:50 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"ASS6h62jN1N2v+Ak167M/2gAlsJnUkule5vm10rvRH6fThsCb1txlgq1H66OuVJD3FUDiJN0um2QPNUP9wrIiA==", "user"=>{"agency_id"=>"4", "email"=>"a@a.com", "first_name"=>"t", "last_name"=>"t", "password"=>"llllll", "password_confirmation"=>"llllll"}, "commit"=>"Sign up"}
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (pry):16:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 4]]
+  ↳ (pry):17:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mCACHE Agency Load (0.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 4]]
+  ↳ app/models/user.rb:14:in `first_user?'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "admin", "confirmed", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "t"], ["last_name", "t"], ["admin", true], ["confirmed", true], ["agency_id", 4], ["created_at", "2020-01-20 05:53:53.354028"], ["updated_at", "2020-01-20 05:53:53.354028"], ["email", "a@a.com"], ["encrypted_password", "$2a$11$X56ICav96rQAt5eRPg4NRe9uSx4QlHnf4bBH7FfzztjYBCfwF27P."]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 422617ms (ActiveRecord: 6.2ms | Allocations: 99991)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:53:53 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (2.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 20.6ms | ActiveRecord: 22.0ms | Allocations: 25687)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (58.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "talent_shepherd_development"[0m
+  [1m[35m (44.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "talent_shepherd_test"[0m
+  [1m[35m (184.1ms)[0m  [1m[35mCREATE DATABASE "talent_shepherd_development" ENCODING = 'unicode'[0m
+  [1m[35m (88.5ms)[0m  [1m[35mCREATE DATABASE "talent_shepherd_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "agencies" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "agencies" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "role" character varying, "rate" character varying, "contract_signed" boolean, "accepted" boolean, "actor_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_offices" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" date, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "admin" boolean DEFAULT FALSE, "confirmed" boolean DEFAULT FALSE, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200119200027)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200107231417),
+(20200107233411),
+(20200107234240),
+(20200107235148),
+(20200107235458),
+(20200108000110),
+(20200108000312),
+(20200108000447),
+(20200108160124),
+(20200108161645),
+(20200108161910),
+(20200108162720),
+(20200108162829),
+(20200108164018),
+(20200108164226),
+(20200108164238),
+(20200108165308),
+(20200109230908),
+(20200110002215),
+(20200111183157),
+(20200111183430),
+(20200111183738),
+(20200111183757),
+(20200111183819),
+(20200111183839),
+(20200112221442),
+(20200118182553),
+(20200118182556),
+(20200118182557),
+(20200118182727),
+(20200119082724),
+(20200119082757),
+(20200119170633),
+(20200119200025),
+(20200119200026);
+
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-20 05:54:36.719429"], ["updated_at", "2020-01-20 05:54:36.719429"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "1d9268adb4f723bd96f5204f04026ef9c65ea492"], ["created_at", "2020-01-20 05:54:36.728174"], ["updated_at", "2020-01-20 05:54:36.728174"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "actors" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "actors" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "gender_portrayal" character varying, "sag_aftra" boolean, "aea" boolean, "dob" timestamp, "location" character varying, "notes" text, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "agencies" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "agencies" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "role" character varying, "time" timestamp, "address" character varying, "callback" boolean, "booking_status" character varying, "notes" text, "actor_id" integer, "casting_office_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "bookings" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" bigserial primary key, "role" character varying, "rate" character varying, "contract_signed" boolean, "accepted" boolean, "actor_id" integer, "project_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "casting_offices" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "casting_offices" ("id" bigserial primary key, "name" character varying, "email" character varying, "office_number" character varying, "location" character varying, "notes" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "commentable_id" integer, "commentable_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "projects" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "media_type" character varying, "start_date" date, "union" character varying, "notes" text, "casting_office_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "agency_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "first_name" character varying, "last_name" character varying, "admin" boolean DEFAULT FALSE, "confirmed" boolean DEFAULT FALSE, "agency_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200119200027)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200107231417),
+(20200107233411),
+(20200107234240),
+(20200107235148),
+(20200107235458),
+(20200108000110),
+(20200108000312),
+(20200108000447),
+(20200108160124),
+(20200108161645),
+(20200108161910),
+(20200108162720),
+(20200108162829),
+(20200108164018),
+(20200108164226),
+(20200108164238),
+(20200108165308),
+(20200109230908),
+(20200110002215),
+(20200111183157),
+(20200111183430),
+(20200111183738),
+(20200111183757),
+(20200111183819),
+(20200111183839),
+(20200112221442),
+(20200118182553),
+(20200118182556),
+(20200118182557),
+(20200118182727),
+(20200119082724),
+(20200119082757),
+(20200119170633),
+(20200119200025),
+(20200119200026);
+
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-20 05:54:36.869324"], ["updated_at", "2020-01-20 05:54:36.869324"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-01-20 05:54:36.875939"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "1d9268adb4f723bd96f5204f04026ef9c65ea492"], ["created_at", "2020-01-20 05:54:36.881374"], ["updated_at", "2020-01-20 05:54:36.881374"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -8,6 +8,8 @@ module UsersHelper
     end
   end
 
+
+
   def edit_if_allowed(user)
     if user.id == current_user.id || current_user.admin
       link_to "Edit #{full_name(user)}'s Details", edit_user_path(user)
