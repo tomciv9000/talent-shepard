@@ -18,9 +18,6 @@ class User < ApplicationRecord
         self.agency.name if self.agency
     end
 
-    #def assign_defaults
-    #    self.assign_attributes(:admin => true, :confirmed => "true") if self.first_user?
-    #end
     
     def display_details
         if self.admin 

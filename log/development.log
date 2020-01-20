@@ -20084,3 +20084,1436 @@ Please, check the "Autoloading and Reloading Constants" guide for solutions.
   [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "1d9268adb4f723bd96f5204f04026ef9c65ea492"], ["created_at", "2020-01-20 05:54:36.881374"], ["updated_at", "2020-01-20 05:54:36.881374"]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-20 00:55:37 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (16.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1491ms (Views: 1427.2ms | ActiveRecord: 45.9ms | Allocations: 1383642)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 00:55:44 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 17.5ms | ActiveRecord: 5.4ms | Allocations: 17208)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 00:55:54 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"t7Qs7hdL+MUXsgSgLRSguLyEylYptkw4n8yTe9m7t5PnSvaieW7QPIG6XvjXxf2zkjM/EdVsi3WSesV/tFnz0Q==", "agency"=>{"name"=>"Davis Spylios", "email"=>"dsm@dsm.com"}, "commit"=>"Register Agency"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (4.7ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Davis Spylios"], ["email", "dsm@dsm.com"], ["created_at", "2020-01-20 05:55:54.033418"], ["updated_at", "2020-01-20 05:55:54.033418"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 23ms (ActiveRecord: 13.7ms | Allocations: 3055)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:55:54 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 214)
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 6416)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 32.0ms | ActiveRecord: 0.4ms | Allocations: 26447)
+
+
+Started POST "/users" for ::1 at 2020-01-20 00:56:08 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"kgqkHuL1adOS83ugoworR/T3hrjHRu+nzeYZ0jUIT5kMYAWbIA0vFu75hCr6HbX7QKIT8jNgHm8mQSoKiO3Dbw==", "user"=>{"agency_id"=>"1", "email"=>"eugene.white@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"scapino8", "password_confirmation"=>"scapino8"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.white@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/models/user.rb:37:in `admin_if_first_user'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "admin", "confirmed", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Thomas"], ["last_name", "White"], ["admin", true], ["confirmed", true], ["agency_id", 1], ["created_at", "2020-01-20 05:56:16.724182"], ["updated_at", "2020-01-20 05:56:16.724182"], ["email", "eugene.white@gmail.com"], ["encrypted_password", "$2a$11$UMZLp.QISIAO/03HEZkyNevd6f9j4v18cjlD5l6JGAiq7AkXTkC4e"]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7921ms (ActiveRecord: 11.5ms | Allocations: 29626)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:56:16 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 29.4ms | ActiveRecord: 2.0ms | Allocations: 11999)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-01-20 00:56:38 -0500
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NxBh89OtROJnlbG3uKQ3pXhNsZxmVHtFGkm0wTMeH/ypesB2EVUCJxufTj3hs6kZzBgk1pJyio3x7ocZjvuTCg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37:in `admin_if_first_user'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/models/user.rb:37:in `admin_if_first_user'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.5ms | Allocations: 6113)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:56:38 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 10363)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 00:56:41 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies"[0m
+  ↳ app/helpers/users_helper.rb:5:in `agency_id_field'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1780)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.9ms | Allocations: 12336)
+
+
+Started POST "/users" for ::1 at 2020-01-20 00:57:06 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"NUJoQ0ZjuE7EoJcK5qMgf/5MBzO/93g4H+cjckkNpCl/Y/Bc9uRfs/aF44TbRjkd9koFcNrCoGIfVkqEPTiU+Q==", "user"=>{"agency_id"=>"1", "email"=>"dsmtest@test.com", "first_name"=>"t", "last_name"=>"t", "password"=>"aaaaaa", "password_confirmation"=>"aaaaaa"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dsmtest@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/models/user.rb:37:in `admin_if_first_user'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "t"], ["last_name", "t"], ["agency_id", 1], ["created_at", "2020-01-20 05:57:33.466979"], ["updated_at", "2020-01-20 05:57:33.466979"], ["email", "dsmtest@test.com"], ["encrypted_password", "$2a$11$chKKUR7hSg4KVbJ6PFBndunztP0zJzMb4nzXJCb/W3Zwt7Tqe/PN."]]
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:15:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 26705ms (ActiveRecord: 5.0ms | Allocations: 20888)
+
+
+Started GET "/" for ::1 at 2020-01-20 00:57:33 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 19.6ms | ActiveRecord: 17.2ms | Allocations: 25709)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-20 01:25:52 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2190ms (Views: 2120.6ms | ActiveRecord: 17.3ms | Allocations: 1399263)
+
+
+Started GET "/users/edit" for ::1 at 2020-01-20 01:25:58 -0500
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 215)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 20.0ms | Allocations: 4789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 39.5ms | ActiveRecord: 0.8ms | Allocations: 18986)
+
+
+Started GET "/casting_offices" for ::1 at 2020-01-20 01:26:06 -0500
+Processing by CastingOfficesController#index as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (9.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+Completed 406 Not Acceptable in 38ms (ActiveRecord: 16.7ms | Allocations: 8054)
+
+
+  
+ActionController::MissingExactTemplate (CastingOfficesController#index is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/edit" for ::1 at 2020-01-20 01:26:09 -0500
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1391)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 16.8ms | ActiveRecord: 1.1ms | Allocations: 14045)
+
+
+Started GET "/appointments" for ::1 at 2020-01-20 01:26:11 -0500
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+Completed 406 Not Acceptable in 31ms (ActiveRecord: 17.2ms | Allocations: 6384)
+
+
+  
+ActionController::MissingExactTemplate (AppointmentsController#index is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/edit" for ::1 at 2020-01-20 01:26:17 -0500
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 18.3ms | ActiveRecord: 3.6ms | Allocations: 14032)
+
+
+Started GET "/projects" for ::1 at 2020-01-20 01:26:21 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  Rendered projects/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 2501)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 22.8ms | ActiveRecord: 19.6ms | Allocations: 19331)
+
+
+Started GET "/actors" for ::1 at 2020-01-20 01:26:24 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 16.7ms | ActiveRecord: 0.8ms | Allocations: 13315)
+
+
+Started GET "/projects" for ::1 at 2020-01-20 01:26:26 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  Rendered projects/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 920)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 19.8ms | ActiveRecord: 14.5ms | Allocations: 13529)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-20 01:26:27 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (2.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 9178)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 28.5ms | ActiveRecord: 9.0ms | Allocations: 27575)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:26:30 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (16.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 19.3ms | ActiveRecord: 17.3ms | Allocations: 11977)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-01-20 01:26:35 -0500
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8/sgRqgFGW/Isr8zGkIEQsp4dB1OxNtUL1EnaAnXyPCb4tpo596OOe0YIRgwnzM+X4NY31T6pdSq61rcoeY0OA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 2.1ms | Allocations: 6864)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:26:35 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 10384)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:27:00 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.0ms | Allocations: 10346)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 01:27:14 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 665)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 11711)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 01:27:20 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"vH0yCd4p8u3GriT2RCykmj/mB06F8q06RWBDOR2jhuv8KZTaAfQEk0iAgaxkQ7qcjSF5EVExutBPyb6Pi5jZ5Q==", "agency"=>{"name"=>"Test", "email"=>"test"}, "commit"=>"Register Agency"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (4.9ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test"], ["email", "test"], ["created_at", "2020-01-20 06:27:20.320125"], ["updated_at", "2020-01-20 06:27:20.320125"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 26ms (ActiveRecord: 16.9ms | Allocations: 2901)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 01:27:20 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2364)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 13053)
+
+
+Started POST "/users" for ::1 at 2020-01-20 01:27:38 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"vgGJE+FDqVZoZx9QWImJ+G8jZ/LRo41JFlF8QWi6fPHzsEw3ULDBbAa+AD4p/UVuGSK0oKIUuFZ8Mfxd1TD9tA==", "user"=>{"agency_id"=>"2", "email"=>"tom@tom.com", "first_name"=>"k", "last_name"=>"k", "password"=>"pppppp", "password_confirmation"=>"pppppp"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@tom.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "admin", "confirmed", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "k"], ["last_name", "k"], ["admin", true], ["confirmed", true], ["agency_id", 2], ["created_at", "2020-01-20 06:27:39.004963"], ["updated_at", "2020-01-20 06:27:39.004963"], ["email", "tom@tom.com"], ["encrypted_password", "$2a$11$bp79qqAKf4svStFzZgpDJehIblTqadYgF4181lbAPfjHgx17UlsNK"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 152ms (ActiveRecord: 3.8ms | Allocations: 8600)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:27:39 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.5ms | Allocations: 12001)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-01-20 01:40:42 -0500
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 218)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/thattomwhite/Development/code/talent-shepherd/public/packs
+[Webpacker] Hash: 53154d7baad00c6a1252
+Version: webpack 4.41.5
+Time: 1367ms
+Built at: 01/20/2020 1:40:52 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-0b67a3cc2fcde6055024.js    124 KiB  application  [emitted] [immutable]  application
+js/application-0b67a3cc2fcde6055024.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-0b67a3cc2fcde6055024.js js/application-0b67a3cc2fcde6055024.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 10280ms (Views: 10223.0ms | ActiveRecord: 15.2ms | Allocations: 3551630)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:40:52 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (62.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (1.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 39.0ms | ActiveRecord: 63.2ms | Allocations: 14891)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-01-20 01:41:03 -0500
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VxZ7AoAa08iQItWeudj9P+YVZxOtVF6hyTVl4Qoxcjkap74mMem78v77yvDIrDGpkBS0Qd7ja76jVeX9t7vzfA=="}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 7.7ms | Allocations: 9313)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:41:03 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 12102)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:41:09 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms | Allocations: 12070)
+
+
+Started GET "/agencies/new" for ::1 at 2020-01-20 01:41:12 -0500
+Processing by AgenciesController#new as HTML
+  Rendering agencies/new.html.erb within layouts/application
+  Rendered agencies/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 977)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 13751)
+
+
+Started POST "/agencies" for ::1 at 2020-01-20 01:41:25 -0500
+Processing by AgenciesController#create as HTML
+  Parameters: {"authenticity_token"=>"ZapwJrEsDMsdB5c7bibjZTcOZ08Y+tUncZimCeHvYQ0LMkmQGmWBny6X3Mnr+d78Thkxki4pCuTg/HULG9vlRg==", "agency"=>{"name"=>"David Sptititi", "email"=>"fifjijirrr"}, "commit"=>"Register Agency"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[36mAgency Create (3.6ms)[0m  [1m[32mINSERT INTO "agencies" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "David Sptititi"], ["email", "fifjijirrr"], ["created_at", "2020-01-20 06:41:25.606305"], ["updated_at", "2020-01-20 06:41:25.606305"]]
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/agencies_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 17ms (ActiveRecord: 6.0ms | Allocations: 2913)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-20 01:41:25 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 214)
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `agency_if_any'
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 87.7ms | ActiveRecord: 0.4ms | Allocations: 16918)
+
+
+Started POST "/users" for ::1 at 2020-01-20 01:41:39 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"qb2iiiTXqP1rG/wHNlmLbQPRw7iCjjlI1FJFDTneaPaRwYxdggLizUsSMAHuSMKI2WqJvuiFePseLNRMGHqIZA==", "user"=>{"agency_id"=>"3", "email"=>"eugene.white@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"ffffff", "password_confirmation"=>"ffffff"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.white@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 223)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 208ms (Views: 22.3ms | ActiveRecord: 4.6ms | Allocations: 23164)
+
+
+Started POST "/users" for ::1 at 2020-01-20 01:44:59 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"qb2iiiTXqP1rG/wHNlmLbQPRw7iCjjlI1FJFDTneaPaRwYxdggLizUsSMAHuSMKI2WqJvuiFePseLNRMGHqIZA==", "user"=>{"agency_id"=>"3", "email"=>"eugene.white@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"ffffff", "password_confirmation"=>"ffffff"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.white@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 400)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2077)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 206ms (Views: 37.5ms | ActiveRecord: 1.6ms | Allocations: 23113)
+
+
+Started GET "/users" for ::1 at 2020-01-20 01:45:55 -0500
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.2.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-01-20 01:46:07 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"qb2iiiTXqP1rG/wHNlmLbQPRw7iCjjlI1FJFDTneaPaRwYxdggLizUsSMAHuSMKI2WqJvuiFePseLNRMGHqIZA==", "user"=>{"agency_id"=>"3", "email"=>"eugene.white@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"aaa", "password_confirmation"=>"aaa"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.white@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 343)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 212ms (Views: 33.0ms | ActiveRecord: 1.1ms | Allocations: 19044)
+
+
+Started GET "/users" for ::1 at 2020-01-20 01:48:28 -0500
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.2.1) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.2.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-01-20 01:48:45 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"qb2iiiTXqP1rG/wHNlmLbQPRw7iCjjlI1FJFDTneaPaRwYxdggLizUsSMAHuSMKI2WqJvuiFePseLNRMGHqIZA==", "user"=>{"agency_id"=>"3", "email"=>"eugene.white@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"ffffff", "password_confirmation"=>"ffffff"}, "commit"=>"Sign up"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.white@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 402)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2077)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 209ms (Views: 37.2ms | ActiveRecord: 2.9ms | Allocations: 23142)
+
+
+Started POST "/users" for ::1 at 2020-01-20 01:49:20 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"TgYT93tdS5S7oMVR8OuDyqmFZAxsxYgZpg+IICVueR92ej0g3YgBpJupCVco+sovcz4uCgbOyapscRlhBMqZjQ==", "user"=>{"agency_id"=>"3", "email"=>"eugene.white2@gmail.com", "first_name"=>"Thomas", "last_name"=>"White", "password"=>"aaaaaa", "password_confirmation"=>"aaaaaa"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene.white2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 3]]
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "admin", "confirmed", "agency_id", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Thomas"], ["last_name", "White"], ["admin", true], ["confirmed", true], ["agency_id", 3], ["created_at", "2020-01-20 06:49:20.687959"], ["updated_at", "2020-01-20 06:49:20.687959"], ["email", "eugene.white2@gmail.com"], ["encrypted_password", "$2a$11$1nx/qki1rCTLTRN9EIt9beKttUsgcZRMDX31fnMt6XdWxZWML/olG"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 186ms (ActiveRecord: 2.7ms | Allocations: 6695)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:49:20 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.3ms | ActiveRecord: 0.7ms | Allocations: 14489)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:49:31 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (1.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 23.8ms | ActiveRecord: 1.7ms | Allocations: 13704)
+
+
+Started GET "/users/edit" for ::1 at 2020-01-20 01:49:33 -0500
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAgency Load (2.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 19.4ms | Allocations: 4648)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 33.7ms | ActiveRecord: 5.1ms | Allocations: 19069)
+
+
+Started GET "/actors" for ::1 at 2020-01-20 01:49:38 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 19.4ms | ActiveRecord: 6.9ms | Allocations: 15071)
+
+
+Started GET "/projects" for ::1 at 2020-01-20 01:49:40 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 3], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  Rendered projects/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 17.8ms | ActiveRecord: 11.4ms | Allocations: 23134)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:49:43 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (12.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 17.5ms | ActiveRecord: 13.1ms | Allocations: 13702)
+
+
+Started GET "/casting_offices" for ::1 at 2020-01-20 01:49:44 -0500
+Processing by CastingOfficesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+Completed 406 Not Acceptable in 17ms (ActiveRecord: 5.4ms | Allocations: 5240)
+
+
+  
+ActionController::MissingExactTemplate (CastingOfficesController#index is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-20 01:49:46 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (3.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 3.7ms | Allocations: 13682)
+
+
+Started GET "/users/edit" for ::1 at 2020-01-20 01:49:47 -0500
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 18.4ms | ActiveRecord: 1.7ms | Allocations: 15773)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-01-20 01:49:49 -0500
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XQ20VPRpiYoWt3uhe8maVqKON9UT2TFaZRAicim7wAllcZqDUrzDuja+t6ej2NOzeDV903nScOmvbrMzCB8gmw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."agency_id" = $1[0m  [["agency_id", 3]]
+  ↳ app/models/user.rb:34:in `admin_if_first_user'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.6ms | Allocations: 5551)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:49:49 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 12082)
+
+
+Started GET "/" for ::1 at 2020-01-20 01:49:52 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 12067)
+
+
+Started GET "/" for ::1 at 2020-01-20 02:01:14 -0500
+Processing by StaticController#home as HTML
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 12070)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-20 02:01:18 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 2.4ms | Allocations: 638)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 21.5ms | Allocations: 4850)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 71.3ms | ActiveRecord: 0.0ms | Allocations: 18147)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-01-20 02:01:28 -0500
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y3VzS/sPShyAizQtyDvKQOMV71SVEzlKmNqd5xCxLeBTY4UOqcBf742xs54jjrcQiiyJeD0ZFZYyAkUBMwPb/g==", "user"=>{"email"=>"eugene.white@gmail.com", "password"=>"scapino8", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "eugene.white@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 2.6ms | Allocations: 4100)
+
+
+Started GET "/" for ::1 at 2020-01-20 02:01:28 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 13730)
+
+
+Started GET "/" for ::1 at 2020-01-20 02:01:34 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (2.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 3.5ms | Allocations: 13685)
+
+
+Started GET "/projects" for ::1 at 2020-01-20 02:01:37 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (2.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  Rendered projects/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 21.7ms | ActiveRecord: 5.7ms | Allocations: 15251)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-20 02:01:39 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 9163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 27.4ms | ActiveRecord: 18.9ms | Allocations: 29245)
+
+
+Started POST "/projects" for ::1 at 2020-01-20 02:02:29 -0500
+Processing by ProjectsController#create as HTML
+  Parameters: {"authenticity_token"=>"32RLtT43RU2FNkwfVFA9uKFDx+eSUuCWy3C6nbjSpjYGdnhDGZxg90BgsBykymRgQxMPgmxmshYomp14unYU7w==", "project"=>{"agency_id"=>"1", "name"=>"Ice Cream Project", "media_type"=>"Feature Film", "start_date(1i)"=>"2020", "start_date(2i)"=>"2", "start_date(3i)"=>"4", "union"=>"SAG-AFTRA", "notes"=>"NDA included", "casting_office_id"=>"", "casting_office_attributes"=>{"agency_id"=>"1", "name"=>"Carmen Cuba"}}, "commit"=>"Create Project"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."name" = $2 LIMIT $3[0m  [["agency_id", 1], ["name", "Carmen Cuba"], ["LIMIT", 1]]
+  ↳ app/models/project.rb:15:in `casting_office_attributes='
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/project.rb:15:in `casting_office_attributes='
+  [1m[36mCastingOffice Create (3.1ms)[0m  [1m[32mINSERT INTO "casting_offices" ("name", "created_at", "updated_at", "agency_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Carmen Cuba"], ["created_at", "2020-01-20 07:02:29.341907"], ["updated_at", "2020-01-20 07:02:29.341907"], ["agency_id", 1]]
+  ↳ app/models/project.rb:15:in `casting_office_attributes='
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/project.rb:15:in `casting_office_attributes='
+  [1m[36mCastingOffice Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:12:in `create'
+  [1m[36mCACHE CastingOffice Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[36mProject Create (2.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "media_type", "start_date", "union", "notes", "casting_office_id", "created_at", "updated_at", "agency_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Ice Cream Project"], ["media_type", "Feature Film"], ["start_date", "2020-02-04"], ["union", "SAG-AFTRA"], ["notes", "NDA included"], ["casting_office_id", 1], ["created_at", "2020-01-20 07:02:29.361157"], ["updated_at", "2020-01-20 07:02:29.361157"], ["agency_id", 1]]
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/projects_controller.rb:13:in `create'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 42ms (ActiveRecord: 14.3ms | Allocations: 11127)
+
+
+Started GET "/projects/1" for ::1 at 2020-01-20 02:02:29 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:21:in `show'
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8:in `casting_office'
+  Rendered projects/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 17.0ms | ActiveRecord: 1.5ms | Allocations: 17054)
+
+
+Started GET "/actors" for ::1 at 2020-01-20 02:02:34 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered actors/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 23.8ms | ActiveRecord: 1.7ms | Allocations: 14292)
+
+
+Started GET "/actors/new" for ::1 at 2020-01-20 02:02:39 -0500
+Processing by ActorsController#new as HTML
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered actors/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3814)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 27.2ms | ActiveRecord: 26.8ms | Allocations: 31846)
+
+
+Started POST "/actors" for ::1 at 2020-01-20 02:03:12 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"sb3xyNItTOVa6dUEvaFmhbpu6PQwpG6hgk6pL054s2jua8PSgMpHN/SNyMW/SfvnJbd9/39bmoYykBVZG/ZZ6w==", "actor"=>{"agency_id"=>"1", "first_name"=>"Tom", "last_name"=>"White", "dob(2i)"=>"11", "dob(3i)"=>"16", "dob(1i)"=>"1981", "email"=>"eugene.milk@tom.com", "gender_portrayal"=>"Male", "sag_aftra"=>"1", "aea"=>"1", "location"=>"NYC", "notes"=>"Up and up"}, "commit"=>"Register Actor"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[36mActor Create (3.6ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "email", "gender_portrayal", "sag_aftra", "aea", "dob", "location", "notes", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["first_name", "Tom"], ["last_name", "White"], ["email", "eugene.milk@tom.com"], ["gender_portrayal", "Male"], ["sag_aftra", true], ["aea", true], ["dob", "1981-11-16 00:00:00"], ["location", "NYC"], ["notes", "Up and up"], ["agency_id", 1], ["created_at", "2020-01-20 07:03:12.644783"], ["updated_at", "2020-01-20 07:03:12.644783"]]
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+Redirected to http://localhost:3000/actors/1
+Completed 302 Found in 22ms (ActiveRecord: 7.1ms | Allocations: 5680)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-20 02:03:12 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:21:in `show'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:22:in `show'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 15.7ms | ActiveRecord: 1.0ms | Allocations: 16163)
+
+
+Started GET "/projects" for ::1 at 2020-01-20 02:03:27 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "projects" WHERE "projects"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/index.html.erb:2
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2437)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 23.1ms | ActiveRecord: 6.9ms | Allocations: 16684)
+
+
+Started GET "/projects/1" for ::1 at 2020-01-20 02:03:35 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (4.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mProject Load (2.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:21:in `show'
+  [1m[36mCACHE Project Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."agency_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:22:in `show'
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.9ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1 AND "casting_offices"."id" = $2 LIMIT $3[0m  [["agency_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8:in `casting_office'
+  Rendered projects/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 18.0ms | ActiveRecord: 12.1ms | Allocations: 16666)
+
+
+Started GET "/projects/1/appointments/new" for ::1 at 2020-01-20 02:03:37 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+Completed 406 Not Acceptable in 33ms (ActiveRecord: 6.6ms | Allocations: 14606)
+
+
+  
+ActionController::MissingExactTemplate (AppointmentsController#new is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.8) lib/rack/etag.rb:25:in `call'
+rack (2.0.8) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.8) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.8) lib/rack/session/abstract/id.rb:259:in `context'
+rack (2.0.8) lib/rack/session/abstract/id.rb:253:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.5.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
