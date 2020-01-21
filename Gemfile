@@ -25,6 +25,7 @@ gem 'pry',  '~> 0.12.2'
 gem 'acts_as_tenant'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
