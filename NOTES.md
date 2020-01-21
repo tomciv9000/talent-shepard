@@ -10,6 +10,8 @@ possibly update all form_for to form_with
 
 possibly remove users as a nested resource to agencyies or attempt to make nested resoure users devise users
 
+move nav bar to partial
+
 
 <nav>
     <%= link_to "Home |  ", root_path %>
