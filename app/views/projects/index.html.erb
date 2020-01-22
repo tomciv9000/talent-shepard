@@ -8,18 +8,18 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <th class="text-center">Project Title</th>
-          <th class="text-center">Media</th>
-          <th class="text-center">Start Date</th>
+          <th class="text-left">Project Title</th>
+          <th class="text-left">Media</th>
+          <th class="text-left">Start Date</th>
           <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
       <% current_agency.projects.each do |project| %>
         <tr>
-          <td><%= project.name %></td>
-          <td><%= project.media_type %></td>
-          <td><%= project.start_date %></td>
+          <td class="text-left"><%= project.name %></td>
+          <td class="text-left"><%= project.media_type %></td>
+          <td class="text-left"><%= project.start_date %></td>
           <td class="text-center">
             <%= link_to "Details", project_path(project), class: 'text-primary'%> | 
             <%= link_to "Make Appointment", new_project_appointment_path(project), class: 'text-success'%> 

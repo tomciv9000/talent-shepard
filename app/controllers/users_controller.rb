@@ -1,5 +1,5 @@
 #require 'pry'
-#class UsersController < ApplicationController
+class UsersController < ApplicationController
 #  skip_before_action :authenticate_user!, only: [:new, :create]
 #  before_action :find_user_or_redirect, :only => [:show, :edit, ]
 #  #before_filter :find_post, :only => [:show, :edit, :update, :destroy]
@@ -24,13 +24,13 @@
 #    end
 #  end
 #  
-#  #def show
-#  #  if User.find_by(id: params[:id])
-#  #    @user = User.find_by(id: params[:id])
-#  #  else
-#  #    redirect_to '/'
-#  #  end
-#  #end
+    def show
+      if User.find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
+      else
+        redirect_to '/'
+      end
+    end
 #
 #  #def edit
 #  #  if User.find_by(id: params[:id])
@@ -61,5 +61,5 @@
 #    end
 #  end
 #
-#end
+end
 #
