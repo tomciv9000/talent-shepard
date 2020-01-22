@@ -1,43 +1,54 @@
 <h2>New Project</h2>
 
 <%= form_for @project do |f| %>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <%= f.hidden_field :agency_id %>
-      <%= f.label :name, "Project Title:" %>
-      <%= f.text_field :name, class: 'form-control' %>    
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :media_type, "Media:" %>
-      <%= f.text_field :media_type, class: 'form-control' %>
-    </div>
-    <div class="form-group col-md-2">
-    <%= f.date_select(:start_date, class: 'form-control', prompt: true) %>
-    </div>
+  <div class="form-group">
+    <%= f.hidden_field :agency_id %>
+    
+    <%= f.label :name, "Project Title:" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Enter Project Title" %> 
   </div>
 
   <div class="form-group">
-    <%= f.label :union, "Union:" %>
-    <%= f.text_field :union, class: 'form-control' %>
+    <%= f.label :media_type, "Media:" %>
+    <%= f.select :media_type, ['Stage', 'TV', 'Film', 'Short', 'Commercial', 'Industrial', 'New Media'], class: 'form-control' %>
   </div>
 
-  <div class="form-row">
-    <div class="col">
-      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office or Add New'}, {:class => 'form-control'} %>
-    </div>
-    <div class="col">
+  <div class="form-group">
+    <%= f.label :media_type, "Project Start Date:" %>
+    <%= f.date_select(:start_date, class: 'form-control', prompt: true) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :union, "Union Status:" %>
+    <%= f.select :union, ['AEA', 'SAG-AFTRA', 'Non-Union'], class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :casting_office_id, "Project Casting:" %>
+    <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office'}, {:class => 'form-control'} %>
+  </div>
+  <br>
+  
+  <p><em>Casting Office Not Listed?</em></p>
+
+  <div class="form-group">
     <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
       <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
-      <%= casting_office_fields.label :name, "Casting Office" %>
-      <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: 'Associated Email Account' %>
-    <% end %>
-    </div>
+      <%= casting_office_fields.label :name, "Register New Casting Office:" %>
+      <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: "Enter New Casting Office Name" %>
+      <small class="form-text text-muted">
+        If the casting office for this project is not available to select, enter the office name here.
+      </small>
+      <% end %>
   </div>
 
+  <br>
   <div class="form-group">
-    <%= f.label :notes, "Notes:" %>
-    <%= f.text_field :notes, class: 'form-control' %>
+    <%= f.label :notes, "Project Notes:" %>
+    <%= f.text_area :notes, class: 'form-control' %>
   </div>
+
 
     <%= f.submit "Create Project", class: 'btn btn-primary' %>
+    
 <% end %>

@@ -26684,3 +26684,941 @@ puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
 puma (3.12.2) lib/puma/server.rb:476:in `process_client'
 puma (3.12.2) lib/puma/server.rb:334:in `block in run'
 puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/projects/new" for ::1 at 2020-01-21 18:58:20 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (6.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.1ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:26
+  Rendered projects/new.html.erb within layouts/application (Duration: 40.4ms | Allocations: 11755)
+Completed 200 OK in 182ms (Views: 38.7ms | ActiveRecord: 53.0ms | Allocations: 46908)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:00:53 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (3.6ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:27
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3236)
+Completed 200 OK in 34ms (Views: 20.1ms | ActiveRecord: 4.3ms | Allocations: 8535)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:03:15 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 6391)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.0ms | Allocations: 10052)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:03:16 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1377)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.1ms | Allocations: 4186)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>New Project</h2>
+
+<%= form_for @project do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.hidden_field :agency_id %>
+      <%= f.label :name, "Project Title:" %>
+      <%= f.text_field :name, class: 'form-control' %>    
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :media_type, "Media:" %>
+      <%= f.text_field :media_type, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.date_select(:start_date, , "Project Start Date:" class: 'form-control', prompt: true) %>
+  </div>
+  
+
+  <div class="form-group">
+    <%= f.label :union, "Union:" %>
+    <%= f.text_field :union, class: 'form-control' %>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office or Add New'}, {:class => 'form-control'} %>
+    </div>
+    <div class="col">
+    <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+      <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+      <%= casting_office_fields.label :name, "Casting Office" %>
+      <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: 'Associated Email Account' %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_field :notes, class: 'form-control' %>
+  </div>
+
+    <%= f.submit "Create Project", class: 'btn btn-primary' %>
+<% end %>
+
+):
+1:    <h2>New Project</h2>
+2:    
+3:    <%= form_for @project do |f| %>
+4:      <div class="form-row">
+5:        <div class="form-group col-md-6">
+6:          <%= f.hidden_field :agency_id %>
+7:          <%= f.label :name, "Project Title:" %>
+8:          <%= f.text_field :name, class: 'form-control' %>    
+9:        </div>
+10:        <div class="form-group col-md-6">
+11:          <%= f.label :media_type, "Media:" %>
+12:          <%= f.text_field :media_type, class: 'form-control' %>
+13:        </div>
+14:      </div>
+15:      <div class="form-group">
+16:        <%= f.date_select(:start_date, , "Project Start Date:" class: 'form-control', prompt: true) %>
+17:      </div>
+18:      
+19:    
+20:      <div class="form-group">
+21:        <%= f.label :union, "Union:" %>
+22:        <%= f.text_field :union, class: 'form-control' %>
+23:      </div>
+24:    
+25:      <div class="form-row">
+26:        <div class="col">
+27:          <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office or Add New'}, {:class => 'form-control'} %>
+28:        </div>
+29:        <div class="col">
+30:        <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+31:          <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+32:          <%= casting_office_fields.label :name, "Casting Office" %>
+33:          <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: 'Associated Email Account' %>
+34:        <% end %>
+35:        </div>
+36:      </div>
+37:    
+38:      <div class="form-group">
+39:        <%= f.label :notes, "Notes:" %>
+40:        <%= f.text_field :notes, class: 'form-control' %>
+41:      </div>
+42:    
+43:        <%= f.submit "Create Project", class: 'btn btn-primary' %>
+44:    <% end %>
+  
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+Started GET "/projects/new" for ::1 at 2020-01-21 19:03:32 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1384)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms | Allocations: 5019)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>New Project</h2>
+
+<%= form_for @project do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.hidden_field :agency_id %>
+      <%= f.label :name, "Project Title:" %>
+      <%= f.text_field :name, class: 'form-control' %>    
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :media_type, "Media:" %>
+      <%= f.text_field :media_type, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.date_select(:start_date, , "Project Start Date:", class: 'form-control', prompt: true) %>
+  </div>
+  
+
+  <div class="form-group">
+    <%= f.label :union, "Union:" %>
+    <%= f.text_field :union, class: 'form-control' %>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office or Add New'}, {:class => 'form-control'} %>
+    </div>
+    <div class="col">
+    <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+      <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+      <%= casting_office_fields.label :name, "Casting Office" %>
+      <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: 'Associated Email Account' %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_field :notes, class: 'form-control' %>
+  </div>
+
+    <%= f.submit "Create Project", class: 'btn btn-primary' %>
+<% end %>
+
+):
+1:    <h2>New Project</h2>
+2:    
+3:    <%= form_for @project do |f| %>
+4:      <div class="form-row">
+5:        <div class="form-group col-md-6">
+6:          <%= f.hidden_field :agency_id %>
+7:          <%= f.label :name, "Project Title:" %>
+8:          <%= f.text_field :name, class: 'form-control' %>    
+9:        </div>
+10:        <div class="form-group col-md-6">
+11:          <%= f.label :media_type, "Media:" %>
+12:          <%= f.text_field :media_type, class: 'form-control' %>
+13:        </div>
+14:      </div>
+15:      <div class="form-group">
+16:        <%= f.date_select(:start_date, , "Project Start Date:", class: 'form-control', prompt: true) %>
+17:      </div>
+18:      
+19:    
+20:      <div class="form-group">
+21:        <%= f.label :union, "Union:" %>
+22:        <%= f.text_field :union, class: 'form-control' %>
+23:      </div>
+24:    
+25:      <div class="form-row">
+26:        <div class="col">
+27:          <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office or Add New'}, {:class => 'form-control'} %>
+28:        </div>
+29:        <div class="col">
+30:        <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+31:          <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+32:          <%= casting_office_fields.label :name, "Casting Office" %>
+33:          <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: 'Associated Email Account' %>
+34:        <% end %>
+35:        </div>
+36:      </div>
+37:    
+38:      <div class="form-group">
+39:        <%= f.label :notes, "Notes:" %>
+40:        <%= f.text_field :notes, class: 'form-control' %>
+41:      </div>
+42:    
+43:        <%= f.submit "Create Project", class: 'btn btn-primary' %>
+44:    <% end %>
+  
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:16: syntax error, unexpected ',', expecting ')'
+app/views/projects/new.html.erb:46: syntax error, unexpected end, expecting end-of-input
+Started GET "/projects/new" for ::1 at 2020-01-21 19:03:47 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2633)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.4ms | Allocations: 6267)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "Project Start Date:":String):
+    13:     </div>
+    14:   </div>
+    15:   <div class="form-group">
+    16:     <%= f.date_select(:start_date, "Project Start Date:", class: 'form-control', prompt: true) %>
+    17:   </div>
+    18:   
+    19: 
+  
+app/views/projects/new.html.erb:16
+app/views/projects/new.html.erb:3
+Started GET "/projects/new" for ::1 at 2020-01-21 19:04:04 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.6ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:27
+  Rendered projects/new.html.erb within layouts/application (Duration: 30.0ms | Allocations: 3234)
+Completed 200 OK in 52ms (Views: 35.8ms | ActiveRecord: 5.8ms | Allocations: 8566)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:05:46 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3286)
+Completed 200 OK in 27ms (Views: 17.5ms | ActiveRecord: 1.3ms | Allocations: 8573)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:08:37 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (5.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 3290)
+Completed 200 OK in 34ms (Views: 14.7ms | ActiveRecord: 8.4ms | Allocations: 8563)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:25:32 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3375)
+Completed 200 OK in 27ms (Views: 15.1ms | ActiveRecord: 2.8ms | Allocations: 8783)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:31:30 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (4.1ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 28.8ms | Allocations: 6073)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 5.7ms | Allocations: 11495)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:15 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 28.4ms | Allocations: 3410)
+Completed 200 OK in 52ms (Views: 36.6ms | ActiveRecord: 7.3ms | Allocations: 8686)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:16 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2893)
+Completed 200 OK in 17ms (Views: 6.0ms | ActiveRecord: 3.9ms | Allocations: 6197)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:33 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (4.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3409)
+Completed 200 OK in 27ms (Views: 15.8ms | ActiveRecord: 4.7ms | Allocations: 8701)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:34 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2893)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 1.1ms | Allocations: 6200)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:35 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2889)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 5.1ms | Allocations: 6189)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:35 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (5.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2889)
+Completed 200 OK in 27ms (Views: 12.7ms | ActiveRecord: 5.8ms | Allocations: 6193)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:35:35 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (3.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2889)
+Completed 200 OK in 23ms (Views: 7.6ms | ActiveRecord: 6.9ms | Allocations: 6197)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:36:30 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (4.8ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:18
+  Rendered projects/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3413)
+Completed 200 OK in 31ms (Views: 15.1ms | ActiveRecord: 8.4ms | Allocations: 8695)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:39:00 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.2ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:23
+  Rendered projects/new.html.erb within layouts/application (Duration: 30.6ms | Allocations: 3599)
+Completed 200 OK in 54ms (Views: 38.1ms | ActiveRecord: 4.3ms | Allocations: 8881)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:40:13 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.0ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:24
+  Rendered projects/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3412)
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 4.2ms | Allocations: 8687)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:44:20 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:29
+  Rendered projects/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3555)
+Completed 200 OK in 24ms (Views: 13.8ms | ActiveRecord: 1.3ms | Allocations: 8831)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:55:57 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (7.2ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3559)
+Completed 200 OK in 38ms (Views: 14.9ms | ActiveRecord: 9.7ms | Allocations: 8965)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:59:06 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3540)
+Completed 200 OK in 34ms (Views: 19.4ms | ActiveRecord: 3.2ms | Allocations: 8820)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 19:59:34 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3525)
+Completed 200 OK in 36ms (Views: 26.7ms | ActiveRecord: 1.2ms | Allocations: 8805)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:00:26 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1443)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.0ms | Allocations: 5072)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>New Project</h2>
+
+<%= form_for @project do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :agency_id %>
+    
+    <%= f.label :name, "Project Title:" %>
+    <%= f.text_field :name, {:prompt => 'Sample Project Title'}class: 'form-control' %> 
+  </div>
+
+  <div class="form-group">
+    <%= f.label :media_type, "Media:" %>
+    <%= f.select :media_type, ['Stage', 'TV', 'Film', 'Short', 'Commercial', 'Industrial', 'New Media'], class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :media_type, "Project Start Date:" %>
+    <%= f.date_select(:start_date, class: 'form-control', prompt: true) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :union, "Union Status:" %>
+    <%= f.select :union, ['AEA', 'SAG-AFTRA', 'Non-Union'], class: 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+      <%= f.label :casting_office_id, "Casting Office:" %>
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office'}, {:class => 'form-control'} %>
+  </div>
+  
+
+
+  <div class="form-group">
+    <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+      <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+      <em><%= casting_office_fields.label :name, "Create New Casting Office" %></em>
+      <%= casting_office_fields.text_field :name, class: 'form-control' %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notes, "Notes:" %>
+    <%= f.text_field :notes, class: 'form-control' %>
+  </div>
+
+
+    <%= f.submit "Create Project", class: 'btn btn-primary' %>
+<% end %>
+
+):
+1:    <h2>New Project</h2>
+2:    
+3:    <%= form_for @project do |f| %>
+4:      <div class="form-group">
+5:        <%= f.hidden_field :agency_id %>
+6:        
+7:        <%= f.label :name, "Project Title:" %>
+8:        <%= f.text_field :name, {:prompt => 'Sample Project Title'}class: 'form-control' %> 
+9:      </div>
+10:    
+11:      <div class="form-group">
+12:        <%= f.label :media_type, "Media:" %>
+13:        <%= f.select :media_type, ['Stage', 'TV', 'Film', 'Short', 'Commercial', 'Industrial', 'New Media'], class: 'form-control' %>
+14:      </div>
+15:    
+16:      <div class="form-group">
+17:        <%= f.label :media_type, "Project Start Date:" %>
+18:        <%= f.date_select(:start_date, class: 'form-control', prompt: true) %>
+19:      </div>
+20:    
+21:      <div class="form-group">
+22:        <%= f.label :union, "Union Status:" %>
+23:        <%= f.select :union, ['AEA', 'SAG-AFTRA', 'Non-Union'], class: 'form-control' %>
+24:      </div>
+25:      
+26:      <div class="form-group">
+27:          <%= f.label :casting_office_id, "Casting Office:" %>
+28:          <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office'}, {:class => 'form-control'} %>
+29:      </div>
+30:      
+31:    
+32:    
+33:      <div class="form-group">
+34:        <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+35:          <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+36:          <em><%= casting_office_fields.label :name, "Create New Casting Office" %></em>
+37:          <%= casting_office_fields.text_field :name, class: 'form-control' %>
+38:        <% end %>
+39:      </div>
+40:    
+41:      <div class="form-group">
+42:        <%= f.label :notes, "Notes:" %>
+43:        <%= f.text_field :notes, class: 'form-control' %>
+44:      </div>
+45:    
+46:    
+47:        <%= f.submit "Create Project", class: 'btn btn-primary' %>
+48:    <% end %>
+  
+app/views/projects/new.html.erb:8: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:8: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:8: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:8: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:8: syntax error, unexpected class, expecting ')'
+app/views/projects/new.html.erb:8: syntax error, unexpected class, expecting ')'
+Started GET "/projects/new" for ::1 at 2020-01-21 20:01:38 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1615)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.9ms | Allocations: 5244)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+     5:     <%= f.hidden_field :agency_id %>
+     6:     
+     7:     <%= f.label :name, "Project Title:" %>
+     8:     <%= f.text_field :name, {:prompt => 'Sample Project Title'}, class: 'form-control' %> 
+     9:   </div>
+    10: 
+    11:   <div class="form-group">
+  
+app/views/projects/new.html.erb:8
+app/views/projects/new.html.erb:3
+Started GET "/projects/new" for ::1 at 2020-01-21 20:01:40 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1081)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 4.3ms | Allocations: 3857)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+     5:     <%= f.hidden_field :agency_id %>
+     6:     
+     7:     <%= f.label :name, "Project Title:" %>
+     8:     <%= f.text_field :name, {:prompt => 'Sample Project Title'}, class: 'form-control' %> 
+     9:   </div>
+    10: 
+    11:   <div class="form-group">
+  
+app/views/projects/new.html.erb:8
+app/views/projects/new.html.erb:3
+Started GET "/projects/new" for ::1 at 2020-01-21 20:02:28 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3535)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 8815)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:05:24 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:27
+  Rendered projects/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 3494)
+Completed 200 OK in 29ms (Views: 16.7ms | ActiveRecord: 3.7ms | Allocations: 8770)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:06:38 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3546)
+Completed 200 OK in 25ms (Views: 16.5ms | ActiveRecord: 1.4ms | Allocations: 8825)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:07:36 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (5.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (3.9ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3554)
+Completed 200 OK in 57ms (Views: 17.2ms | ActiveRecord: 10.5ms | Allocations: 8843)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:07:51 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (2.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (3.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3549)
+Completed 200 OK in 31ms (Views: 16.3ms | ActiveRecord: 6.6ms | Allocations: 8825)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:08:12 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (5.6ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3549)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 6.5ms | Allocations: 8824)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:10:30 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3551)
+Completed 200 OK in 23ms (Views: 12.6ms | ActiveRecord: 1.8ms | Allocations: 8825)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:12:46 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3551)
+Completed 200 OK in 25ms (Views: 13.9ms | ActiveRecord: 1.6ms | Allocations: 8832)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:15:27 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (2.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3550)
+Completed 200 OK in 36ms (Views: 20.2ms | ActiveRecord: 7.3ms | Allocations: 8828)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:24:12 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3581)
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 2.0ms | Allocations: 8996)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:27:35 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (4.1ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3558)
+Completed 200 OK in 36ms (Views: 22.5ms | ActiveRecord: 5.0ms | Allocations: 8835)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:29:30 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3557)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 1.3ms | Allocations: 8833)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:30:33 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.7ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3556)
+Completed 200 OK in 29ms (Views: 17.6ms | ActiveRecord: 1.9ms | Allocations: 8830)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:37:05 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.1ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3577)
+Completed 200 OK in 23ms (Views: 9.9ms | ActiveRecord: 4.8ms | Allocations: 8981)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:38:22 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (2.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.8ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3562)
+Completed 200 OK in 26ms (Views: 17.4ms | ActiveRecord: 3.6ms | Allocations: 8846)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:38:39 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (3.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (1.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3558)
+Completed 200 OK in 28ms (Views: 16.4ms | ActiveRecord: 5.3ms | Allocations: 8837)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:38:57 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.9ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.3ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3559)
+Completed 200 OK in 27ms (Views: 15.9ms | ActiveRecord: 1.6ms | Allocations: 8834)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:39:10 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (1.0ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (0.5ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3558)
+Completed 200 OK in 24ms (Views: 15.3ms | ActiveRecord: 1.9ms | Allocations: 8837)
+
+
+Started GET "/projects/new" for ::1 at 2020-01-21 20:40:08 -0500
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mCastingOffice Load (4.4ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 1]]
+  ↳ app/views/projects/new.html.erb:28
+  Rendered projects/new.html.erb within layouts/application (Duration: 23.8ms | Allocations: 6175)
+Completed 200 OK in 43ms (Views: 27.5ms | ActiveRecord: 5.4ms | Allocations: 11448)
+
+
