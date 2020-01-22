@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
   
   get '/projects/:id/confirm_delete', to: 'projects#confirm_delete', as: 'confirm_project_delete'
+  get '/actors/:id/confirm_delete', to: 'actors#confirm_delete', as: 'confirm_actor_delete'
   
 
 

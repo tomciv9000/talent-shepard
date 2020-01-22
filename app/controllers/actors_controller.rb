@@ -26,9 +26,29 @@ class ActorsController < ApplicationController
   end
 
   def index
+    @actors = Actor.all
   end
 
   def edit
+    if Actor.find_by(id: params[:id])
+      @actor = Actor.find_by(id: params[:id])
+    else
+      redirect_to actors_path
+    end
+  end
+
+  def destroy
+    @actor = Actor.find(params[:id])
+    @actor.destroy
+    redirect_to actors_path
+  end
+
+  def confirm_delete
+    if Actor.find_by(id: params[:id])
+      @actor = Actor.find_by(id: params[:id])
+    else
+      redirect_to actors_path
+    end
   end
 
   private

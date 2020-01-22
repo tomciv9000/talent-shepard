@@ -1,2 +1,35 @@
-<h1>Actors#index</h1>
-<p>Find me in app/views/actors/index.html.erb</p>
+<h3> Actors </h3>
+  <%= link_to "Register New Actor!", new_actor_path, class: 'text-primary' %>
+<br>
+  <% if current_agency.actors.empty? %>
+    <p>There are currently no actors associated with your agency.<p>
+  <% else %>
+  <br>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="text-left">Last Name</th>
+          <th class="text-left">First Name</th>
+          <th class="text-left">Unions</th>
+          <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% current_agency.actors.each do |actor| %>
+        <tr>
+          <td class="text-left"><%= actor.last_name %></td>
+          <td class="text-left"><%= actor.first_name %></td>
+          <td class="text-left"><%= union_status(actor) %></td>
+          <td class="text-center">
+            <%= link_to "Details", actor_path(actor), class: 'text-primary'%> | 
+            <%= link_to "Make Appointment", new_actor_appointment_path(actor), class: 'text-success'%> 
+            <% if current_user.admin? %>
+               | <%= link_to "Edit", edit_actor_path(actor), class: 'text-warning'%> |
+                 <%= link_to "Delete", confirm_actor_delete_path(actor), class: 'text-danger'%>
+              <% end %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

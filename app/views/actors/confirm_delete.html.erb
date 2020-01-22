@@ -1,0 +1,10 @@
+<h3>Confirm Delete</h3>
+<p class="text-danger">Are you sure you want to delete <strong><%= @actor.full_name.upcase %></strong>?</p>
+
+
+
+
+<%= link_to "Cancel", actor_path(@actor), class: 'text-primary'%>
+<br>
+<br>
+<%= button_to "Delete", actor_path(@actor), :method => "delete", :class => "btn btn-danger btn-sm" %>

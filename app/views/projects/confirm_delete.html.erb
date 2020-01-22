@@ -1,7 +1,10 @@
-<h4>Confirm Delete</h4>
-<p>Are you sure you want to delete : <%= @project.name %>?  This can't be undone.</p>
+<h3>Confirm Delete</h3>
+<p class="text-danger">Are you sure you want to delete <strong><%= @project.name.upcase %></strong>?</p>
 
 
-<%= link_to "Oh Dear God, I made a mistake.", project_path(@project), class: 'text-primary'%>
+
+
+<%= link_to "Cancel", project_path(@project), class: 'text-primary'%>
 <br>
-<%= button_to "Delete", project_path(@project), :method => "delete", :class => "btn btn-danger" %>
+<br>
+<%= button_to "Delete", project_path(@project), :method => "delete", :class => "btn btn-danger btn-sm" %>

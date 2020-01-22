@@ -1,0 +1,55 @@
+<%= form_for @actor do |f| %>
+    <div class="form-group">
+      <%= f.hidden_field :agency_id %>
+      
+      <%= f.label :first_name, "First Name:" %>
+      <%= f.text_field :first_name, class: 'form-control', placeholder: "First Name" %> 
+    </div>
+  
+    <div class="form-group">
+     <%= f.label :last_name, "Last Name:" %>
+     <%= f.text_field :last_name, class: 'form-control', placeholder: "Last Name" %> 
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :dob, "Birthdate:" %>
+      <%= f.date_select :dob, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {required: true} %>
+    </div>
+  
+    <div class="form-group">
+        <%= f.label :email, "Email:" %>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Enter email address', aria: { describedby: 'emailHelp'} %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :location, "Location:" %>
+        <%= f.select :location, ['New York', 'Los Angeles', 'Bi-Coastal'], class: 'form-control' %>
+    </div>
+
+    <div class="field form-group">
+        <div class="checkbox-inline">
+        <%= f.label :sag_aftra, "SAG-AFTRA" %>
+        <%= f.check_box :sag_aftra %>
+        </div>
+        <div class="checkbox-inline">
+            <%= f.label :aea, "AEA" %>
+            <%= f.check_box :aea %>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :gender_portrayal, "Gender Portrayal:" %>
+        <%= f.select :gender_portrayal, ['Female', 'Male', 'Fluid'], class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :notes, "Actor Notes:" %>
+      <%= f.text_area :notes, class: 'form-control' %>
+    </div>
+
+    <br>
+  
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+      
+  <% end %>
+  
