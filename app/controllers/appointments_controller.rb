@@ -11,9 +11,21 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    @appointment = Appointment.new(project_params)
+    if @appointment.valid?
+      @appointment.save
+      redirect_to appointment_path(@appointment)
+    else
+      redirect_to new_appointment_path
+    end
   end
 
   def edit
+    if Appointment.find_by(id: params[:id])
+      @appointment = Appointment.find_by(id: params[:id])
+    else
+      redirect_to appointments_path
+    end
   end
 
   def index
@@ -21,7 +33,25 @@ class AppointmentsController < ApplicationController
   end
  
   def show
-    
+    if Appointment.find_by(id: params[:id])
+      @appointment = Appointment.find_by(id: params[:id])
+    else
+      redirect_to appointments_path
+    end
+  end
+
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to appointments_path
+  end
+
+  def confirm_delete
+    if Appointment.find_by(id: params[:id])
+      @appointment = Appointment.find_by(id: params[:id])
+    else
+      redirect_to appointments_path
+    end
   end
 
 
