@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   
   get '/projects/:id/confirm_delete', to: 'projects#confirm_delete', as: 'confirm_project_delete'
   get '/actors/:id/confirm_delete', to: 'actors#confirm_delete', as: 'confirm_actor_delete'
-  
+  get '/appointments/:id/confirm_delete', to: 'appointments#confirm_delete', as: 'confirm_appointment_delete'
 
 
   resources :casting_offices

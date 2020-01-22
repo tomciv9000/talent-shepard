@@ -6,7 +6,15 @@ module AppointmentsHelper
         else
           select_tag "appointment[actor_id]", appointment.actor_id
         end
-      end
+    end
+
+    def callback_alert(appointment)
+      appointment.callback ? "CALLBACK!" : nil
+    end
+
+    def appointment_time(appointment)
+      appointment.time.strftime("%b %e, %l:%M %p - %A")
+    end
 
 
 

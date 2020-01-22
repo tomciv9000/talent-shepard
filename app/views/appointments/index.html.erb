@@ -1,31 +1,34 @@
 <h3> Projects for <%= current_agency.name %> </h3>
-  <%= link_to "Create New Project!", new_project_path, class: 'text-primary' %>
+  <%= link_to "Create New Appointment!", new_appointment_path, class: 'text-primary' %>
 <br>
-  <% if current_agency.projects.empty? %>
+  <% if current_agency.appointments.empty? %>
     <p>There are currently no open projects associated with your agency.<p>
   <% else %>
   <br>
   <table class="table table-striped">
     <thead>
         <tr>
-          <th class="text-left">Project Title</th>
-          <th class="text-left">Media</th>
-          <th class="text-left">Start Date</th>
+          <th class="text-left">Actor</th>
+          <th class="text-left">Role</th>
+          <th class="text-left">Project</th>
+          <th class="text-left">Casting</th>
+          <th class="text-left">Time</th>
           <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
-      <% current_agency.projects.each do |project| %>
+      <% current_agency.appointments.each do |appointment| %>
         <tr>
-          <td class="text-left"><%= project.name %></td>
-          <td class="text-left"><%= project.media_type %></td>
-          <td class="text-left"><%= project.start_date %></td>
+          <td class="text-left"><%= appointment.actor.full_name %></td>
+          <td class="text-left"><%= appointment.role %></td>
+          <td class="text-left"><%= appointment.project.name %></td>
+          <td class="text-left"><%= appointment.casting_office.name %></td>
+          <td class="text-left"><%= appointment.time %></td>
           <td class="text-center">
-            <%= link_to "Details", project_path(project), class: 'text-primary'%> | 
-            <%= link_to "Make Appointment", new_project_appointment_path(project), class: 'text-success'%> 
+            <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%> |  
             <% if current_user.admin? %>
-               | <%= link_to "Edit", edit_project_path(project), class: 'text-warning'%> |
-                 <%= link_to "Delete", confirm_project_delete_path(project), class: 'text-danger'%>
+               | <%= link_to "Edit", edit_appointment_path(appointment), class: 'text-warning'%> |
+                 <%= link_to "Delete", confirm_appointment_delete_path(appointment), class: 'text-danger'%>
               <% end %> 
           </td>
         </tr>

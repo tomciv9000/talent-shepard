@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(project_params)
+    @appointment = Appointment.new(appointment_params)
     if @appointment.valid?
       @appointment.save
       redirect_to appointment_path(@appointment)
@@ -26,6 +26,12 @@ class AppointmentsController < ApplicationController
     else
       redirect_to appointments_path
     end
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(appointment_params)
+    redirect_to appointment_path(@appointment)
   end
 
   def index
@@ -58,7 +64,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-      params.require(:appointment).permit(:role, :time, :address, :callback, :booking_status, :notes, actor_id, casting_office_id, project_id, :agency_id)
+      params.require(:appointment).permit(:role, :time, :address, :callback, :booking_status, :notes, :actor_id, :casting_office_id, :project_id, :agency_id)
   end
 
 end
