@@ -1,0 +1,53 @@
+<%= form_for @project do |f| %>
+    <div class="form-group">
+      <%= f.hidden_field :agency_id %>
+      
+      <%= f.label :name, "Project Title:" %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter Project Title" %> 
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :media_type, "Media:" %>
+      <%= f.select :media_type, ['Stage', 'TV', 'Film', 'Short', 'Commercial', 'Industrial', 'New Media'], class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :start_date, "Project Start Date:" %>
+      <%= f.date_select(:start_date, class: 'form-control', prompt: true) %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :union, "Union Status:" %>
+      <%= f.select :union, ['AEA', 'SAG-AFTRA', 'Non-Union'], class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :casting_office_id, "Project Casting:" %>
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office'}, {:class => 'form-control'} %>
+    </div>
+    <br>
+    
+    <p><em>Casting Office Not Listed?</em></p>
+  
+    <div class="form-group">
+      <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
+        <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
+        <%= casting_office_fields.label :name, "Register New Casting Office:" %>
+        <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: "Enter New Casting Office Name" %>
+        <small class="form-text text-muted">
+          If the casting office for this project is not available to select, enter the office name here.
+        </small>
+        <% end %>
+    </div>
+  
+    <br>
+    <div class="form-group">
+      <%= f.label :notes, "Project Notes:" %>
+      <%= f.text_area :notes, class: 'form-control' %>
+    </div>
+  
+  
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+      
+  <% end %>
+  

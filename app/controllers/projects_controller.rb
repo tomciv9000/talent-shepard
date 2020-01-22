@@ -1,5 +1,5 @@
 require 'pry'
-
+#add a find project method before action
 class ProjectsController < ApplicationController
 
   def new
@@ -21,12 +21,34 @@ class ProjectsController < ApplicationController
     if Project.find_by(id: params[:id])
       @project = Project.find_by(id: params[:id])
     else
-      redirect_to '/'
+      redirect_to projects_path
+    end
+  end
+
+  def edit
+    if Project.find_by(id: params[:id])
+      @project = Project.find_by(id: params[:id])
+    else
+      redirect_to projects_path
     end
   end
 
   def index
     @projects = Project.all
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path
+  end
+
+  def confirm_delete
+    if Project.find_by(id: params[:id])
+      @project = Project.find_by(id: params[:id])
+    else
+      redirect_to projects_path
+    end
   end
 
 

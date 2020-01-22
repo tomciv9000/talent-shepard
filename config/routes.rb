@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :appointments
   end
   
+  get '/projects/:id/confirm_delete', to: 'projects#confirm_delete', as: 'confirm_project_delete'
+  
+
+
   resources :casting_offices
   resources :bookings
   resources :users
