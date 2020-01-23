@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    @appointment.assign_casting
+    #@appointment.assign_casting
     if @appointment.valid?
       @appointment.save
       redirect_to appointment_path(@appointment)

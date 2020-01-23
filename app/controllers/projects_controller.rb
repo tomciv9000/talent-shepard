@@ -43,6 +43,12 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def update
+    @project = Project.find(params[:id])
+    @project.update(project_params)
+    redirect_to project_path(@project)
+  end
+
   def confirm_delete
     if Project.find_by(id: params[:id])
       @project = Project.find_by(id: params[:id])

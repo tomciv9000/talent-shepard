@@ -1,8 +1,15 @@
-<h3><%= full_name(@user) %></h3>
-<p><%= @user.email %></p>
+<h3><%= full_name(@user) %>
+<%= render 'layouts/agency_brand' %>
+</h3>
 
-<br>
-<%= @user.display_details %>
+
+<dl class="row">
+    <dt class="col-sm-3">Email:</dt>
+    <dd class="col-sm-9"><%= @user.email %></dd>
+
+    <dt class="col-sm-3">Acccount Type:</dt>
+    <dd class="col-sm-9"><%= @user.display_details %></dd>
+
+</dl>
 <br>
 <%= edit_if_allowed(@user) %>
-     
