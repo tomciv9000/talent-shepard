@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/actors/:id/confirm_delete', to: 'actors#confirm_delete', as: 'confirm_actor_delete'
   get '/appointments/:id/confirm_delete', to: 'appointments#confirm_delete', as: 'confirm_appointment_delete'
   get '/casting_offices/:id/confirm_delete', to: 'casting_offices#confirm_delete', as: 'confirm_casting_office_delete'
+  get '/bookings/:id/confirm_delete', to: 'bookings#confirm_delete', as: 'confirm_booking_delete'
   
   resources :casting_offices
   resources :bookings

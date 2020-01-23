@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    binding.pry
+  
     if @booking.valid?
       @booking.save
       redirect_to booking_path(@booking)
@@ -35,6 +35,12 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to booking_path(@booking)
   end
 
   def destroy
