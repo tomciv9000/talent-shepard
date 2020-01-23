@@ -1,0 +1,24 @@
+<h3>Booking Details</h3>
+
+
+<dl class="row">
+    <dt class="col-sm-3">Actor:</dt>
+    <dd class="col-sm-9"><%= @booking.actor.full_name %></dd>
+
+    <dt class="col-sm-3">Role:</dt>
+    <dd class="col-sm-9"><%= @booking.role.upcase %></dd>
+
+    <dt class="col-sm-3">Project:</dt>
+    <dd class="col-sm-9"><%= @booking.project.name %></dd>
+
+    <dt class="col-sm-3">Rate:</dt>
+    <dd class="col-sm-9"><%= @booking.rate %></dd>
+
+    <dt class="col-sm-3">Offer Accepted?</dt>
+    <dd class="col-sm-9"><%= accepted_status(@booking) %></dd>
+
+    <dt class="col-sm-3">Contract Signed?:</dt>
+    <dd class="col-sm-9"><%= contract_status(@booking) %></dd>
+
+</dl>
+

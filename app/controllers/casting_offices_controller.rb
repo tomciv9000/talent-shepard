@@ -25,8 +25,35 @@ class CastingOfficesController < ApplicationController
   def index
     @casting_offices = CastingOffice.all
   end
+#############
 
+  def edit
+    if CastingOffice.find_by(id: params[:id])
+      @casting_office = CastingOffice.find_by(id: params[:id])
+    else
+      redirect_to casting_offices_path
+    end
+  end
 
+  def update
+    @casting_office = CastingOffice.find(params[:id])
+    @casting_office.update(casting_office_params)
+    redirect_to casting_office_path(@casting_office)
+  end
+
+  def destroy
+    @casting_office = CastingOffice.find(params[:id])
+    @casting_office.destroy
+    redirect_to casting_offices_path
+  end
+
+  def confirm_delete
+    if CastingOffice.find_by(id: params[:id])
+      @casting_office = CastingOffice.find_by(id: params[:id])
+    else
+      redirect_to casting_offices_path
+    end
+  end
 
   private
 

@@ -1,2 +1,16 @@
-<h1>CastingOffices#show</h1>
-<p>Find me in app/views/casting_offices/show.html.erb</p>
+<h3><%= @casting_office.name %></h3>
+
+<dl class="row">
+    <dt class="col-sm-2">Email: </dt>
+    <dd class="col-sm-9"><%= @casting_office.email %></dd>
+
+    <dt class="col-sm-2">Phone:</dt>
+    <dd class="col-sm-9"><%= @casting_office.office_number %></dd>
+
+    <dt class="col-sm-2">Location:</dt>
+    <dd class="col-sm-9"><%= @casting_office.location %></dd>
+
+    <dt class="col-sm-2">Notes:</dt>
+    <dd class="col-sm-9"><%= @casting_office.notes %></dd>
+
+</dl>

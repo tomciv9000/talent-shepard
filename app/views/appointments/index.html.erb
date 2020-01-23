@@ -1,8 +1,8 @@
-<h3> Projects for <%= current_agency.name %> </h3>
+<h3> Appointments for <%= current_agency.name %> </h3>
   <%= link_to "Create New Appointment!", new_appointment_path, class: 'text-primary' %>
 <br>
   <% if current_agency.appointments.empty? %>
-    <p>There are currently no open projects associated with your agency.<p>
+    <p>There are currently no appointments associated with your agency.<p>
   <% else %>
   <br>
   <table class="table table-striped">
@@ -23,11 +23,11 @@
           <td class="text-left"><%= appointment.role %></td>
           <td class="text-left"><%= appointment.project.name %></td>
           <td class="text-left"><%= appointment.casting_office.name %></td>
-          <td class="text-left"><%= appointment.time %></td>
+          <td class="text-left"><%= appointment_time(appointment) %></td>
           <td class="text-center">
-            <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%> |  
+            <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%>   
             <% if current_user.admin? %>
-               | <%= link_to "Edit", edit_appointment_path(appointment), class: 'text-warning'%> |
+            |  <%= link_to "Edit", edit_appointment_path(appointment), class: 'text-warning'%> |
                  <%= link_to "Delete", confirm_appointment_delete_path(appointment), class: 'text-danger'%>
               <% end %> 
           </td>

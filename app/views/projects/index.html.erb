@@ -1,4 +1,7 @@
-<h3> Projects for <%= current_agency.name %> </h3>
+<h3>Projects
+    <small class="text-muted"> | <%= current_agency.name %></small>
+</h3>
+  
   <%= link_to "Create New Project!", new_project_path, class: 'text-primary' %>
 <br>
   <% if current_agency.projects.empty? %>

@@ -13,7 +13,7 @@ module AppointmentsHelper
     end
 
     def appointment_time(appointment)
-      appointment.time.strftime("%b %e, %l:%M %p - %A")
+      appointment.time.strftime("%b %e, %l:%M %p")
     end
 
 

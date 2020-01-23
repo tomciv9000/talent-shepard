@@ -1,0 +1,31 @@
+<%= form_for @booking do |f| %>
+    <%= f.hidden_field :agency_id %>
+    
+  <div class="form-group">
+    <%= f.label :actor_id, "Select Actor:" %>
+    <%= f.collection_select :actor_id, Actor.all, :id, :full_name, {:class => 'form-control'} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :project_id, "Select Project:" %>
+    <%= f.collection_select :project_id, Project.all, :id, :name, {:class => 'form-control'} %>
+  </div>
+   
+  <div class="form-group">
+    <%= f.label :role, "Role:" %>
+    <%= f.text_field :role, class: 'form-control' %> 
+  </div>
+
+  <div class="form-group">
+      <%= f.label :accepted, "Accepted?" %>
+      <%= f.check_box :accepted %>
+  </div>
+  
+  <div class="form-group">
+      <%= f.label :contract_signed, "Contract Signed?" %>
+      <%= f.check_box :contract_signed %>
+  </div>
+
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+    
+<% end %>

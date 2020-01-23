@@ -1,0 +1,38 @@
+<h3> Bookings for <%= current_agency.name %> </h3>
+  <%= link_to "Create New Booking", new_booking_path, class: 'text-primary' %>
+<br>
+  <% if current_agency.bookings.empty? %>
+    <p>There are currently no bookings associated with your agency.<p>
+  <% else %>
+  <br>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="text-left">Actor</th>
+          <th class="text-left">Role</th>
+          <th class="text-left">Project</th>
+          <th class="text-left">Accepted</th>
+          <th class="text-left">Contract Signed</th>
+          <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% current_agency.bookings.each do |booking| %>
+        <tr>
+          <td class="text-left"><%= booking.actor.full_name %></td>
+          <td class="text-left"><%= booking.role %></td>
+          <td class="text-left"><%= booking.project.name %></td>
+          <td class="text-left"><%= accepted_status(booking) %></td>
+          <td class="text-left"><%= contract_status(booking) %></td>
+          <td class="text-center">
+            <%= link_to "Details", booking_path(booking), class: 'text-primary'%>   
+            <% if current_user.admin? %>
+            |  <%= link_to "Edit", edit_booking_path(booking), class: 'text-warning'%> |
+                 <%= link_to "Delete", confirm_booking_delete_path(booking), class: 'text-danger'%>
+              <% end %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
