@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
       @project.save
       redirect_to project_path(@project)
     else
-      redirect_to new_project_path
+      render :new
     end
   end
   
@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.by_start_date
   end
 
   def destroy

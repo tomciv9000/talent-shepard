@@ -18,11 +18,11 @@
         </tr>
     </thead>
     <tbody>
-      <% current_agency.projects.each do |project| %>
+      <% @projects.each do |project| %>
         <tr>
           <td class="text-left"><%= project.name %></td>
           <td class="text-left"><%= project.media_type %></td>
-          <td class="text-left"><%= project.start_date %></td>
+          <td class="text-left"><%= start_date(project) %></td>
           <td class="text-center">
             <%= link_to "Details", project_path(project), class: 'text-primary'%> | 
             <%= link_to "Make Appointment", new_project_appointment_path(project), class: 'text-success'%> 

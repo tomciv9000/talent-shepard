@@ -7,6 +7,9 @@ class Project < ApplicationRecord
     has_many :actors, through: :bookings
    
     validates :name, :media_type, :casting_office_id, presence: true
+
+    scope :by_start_date, -> { order(start_date: :asc) }
+   
     
     
     accepts_nested_attributes_for :casting_office

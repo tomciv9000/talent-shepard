@@ -1,9 +1,10 @@
+<%= render "devise/shared/error_messages", resource: @project %>
 <%= form_for @project do |f| %>
     <div class="form-group">
       <%= f.hidden_field :agency_id %>
       
       <%= f.label :name, "Project Title:" %>
-      <%= f.text_field :name, class: 'form-control', placeholder: "Enter Project Title" %> 
+      <%= f.text_field :name, class: 'form-control' %> 
     </div>
   
     <div class="form-group">
@@ -13,7 +14,7 @@
   
     <div class="form-group">
       <%= f.label :start_date, "Project Start Date:" %>
-      <%= f.date_select(:start_date, class: 'form-control', prompt: true) %>
+      <%= f.date_select(:start_date, class: 'form-control', start_year: 2020, prompt: true) %>
     </div>
   
     <div class="form-group">
@@ -23,19 +24,22 @@
     
     <div class="form-group">
       <%= f.label :casting_office_id, "Project Casting:" %>
-      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:prompt => 'Select Casting Office'}, {:class => 'form-control'} %>
+      <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:include_blank => true}, {:class => 'form-control'} %>
+      <small class="form-text text-muted">
+        Select project casting office from dropdown list.
+      </small>
     </div>
     <br>
     
-    <p><em>Casting Office Not Listed?</em></p>
+    <p class="text-info"><i>Casting Office Not Listed?</i></p>
   
     <div class="form-group">
       <%= f.fields_for :casting_office, CastingOffice.new do |casting_office_fields| %>
         <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
         <%= casting_office_fields.label :name, "Register New Casting Office:" %>
-        <%= casting_office_fields.text_field :name, class: 'form-control', placeholder: "Enter New Casting Office Name" %>
+        <%= casting_office_fields.text_field :name, class: 'form-control' %>
         <small class="form-text text-muted">
-          If the casting office for this project is not available to select, enter the office name here.
+          If the casting office for this project is not available to select, enter the Office Name above.
         </small>
         <% end %>
     </div>
