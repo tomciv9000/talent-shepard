@@ -1,9 +1,27 @@
-<h1><%= full_name(@actor) %></h1>
-<p><%= union_status(@actor) %></p>
-<p><%= birthdate(@actor) %></p>
-<p><%= @actor.email %></p>
-<p><%= @actor.gender_portrayal %></p>
-<p><%= @actor.location %></p>
-<p><%= @actor.notes %></p>
+<h3><%= full_name(@actor) %>
+<%= render 'layouts/agency_brand' %> 
+</h3>
+<br>
+<dl class="row">
+    <dt class="col-sm-3">Email:</dt>
+    <dd class="col-sm-9"><%= @actor.email %></dd>
 
-<%= link_to "Create Appointment", new_actor_appointment_path(@actor) %>
+    <dt class="col-sm-3">Union Affiliation:</dt>
+    <dd class="col-sm-9"><%= union_status(@actor) %></dd>
+
+    <dt class="col-sm-3">Birthdate:</dt>
+    <dd class="col-sm-9"><%= birthdate(@actor) %></dd>
+
+    <dt class="col-sm-3">Email:</dt>
+    <dd class="col-sm-9"><%= @actor.email %></dd>
+
+    <dt class="col-sm-3">Gender Portrayal:</dt>
+    <dd class="col-sm-9"><%= @actor.gender_portrayal %></dd>
+
+    <dt class="col-sm-3">Notes:</dt>
+    <dd class="col-sm-9"><%= @actor.notes %></dd>
+</dl>
+
+<%= button_to "Create Appointment", new_actor_appointment_path(@actor), :method => "get", :class => "btn btn-success" %>
+<br>
+<%= link_to "Back to Actors", actors_path, class: 'text-primary'%>

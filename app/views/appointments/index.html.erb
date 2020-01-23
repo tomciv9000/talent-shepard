@@ -1,4 +1,6 @@
-<h3> Appointments for <%= current_agency.name %> </h3>
+<h3> Appointments
+<%= render 'layouts/agency_brand' %> 
+</h3>
   <%= link_to "Create New Appointment!", new_appointment_path, class: 'text-primary' %>
 <br>
   <% if current_agency.appointments.empty? %>

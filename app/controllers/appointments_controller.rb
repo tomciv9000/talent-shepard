@@ -12,11 +12,12 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.assign_casting
     if @appointment.valid?
       @appointment.save
       redirect_to appointment_path(@appointment)
     else
-      redirect_to new_appointment_path
+      render :new
     end
   end
 
@@ -66,5 +67,8 @@ class AppointmentsController < ApplicationController
   def appointment_params
       params.require(:appointment).permit(:role, :time, :address, :callback, :booking_status, :notes, :actor_id, :casting_office_id, :project_id, :agency_id)
   end
+
+  
+
 
 end
