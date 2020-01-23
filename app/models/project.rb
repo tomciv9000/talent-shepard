@@ -19,3 +19,4 @@ class Project < ApplicationRecord
 
 
 end
+
