@@ -2,11 +2,12 @@ class Project < ApplicationRecord
     belongs_to :casting_office
     belongs_to :agency
     acts_as_tenant(:agency)
-    has_many :appointments
-    has_many :bookings
+    has_many :appointments, dependent: :destroy
+    has_many :bookings, dependent: :destroy
     has_many :actors, through: :bookings
-    has_many :comments, as: :commentable
    
+    validates :name, :media_type, :casting_office_id, presence: true
+    
     
     accepts_nested_attributes_for :casting_office
 

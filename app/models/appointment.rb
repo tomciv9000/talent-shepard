@@ -5,5 +5,8 @@ class Appointment < ApplicationRecord
     belongs_to :actor 
     belongs_to :casting_office
     belongs_to :project
-    has_many :comments, as: :commentable
+    
+
+    validates :role, :actor_id, :casting_office_id, :project_id, presence: true
+
 end

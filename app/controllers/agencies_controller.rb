@@ -12,7 +12,7 @@ class AgenciesController < ApplicationController
         session[:agency_id] = @agency.id
         redirect_to new_user_registration_path
       else
-        redirect_to '/'
+        render :new
       end
   end
 

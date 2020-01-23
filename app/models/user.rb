@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  
   before_save :admin_if_first_user
  
 
@@ -8,11 +7,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     belongs_to :agency
     acts_as_tenant(:agency)
-   
 
-    #def first_user?
-    #    !self.agency.nil? && self.agency.users.count == 0
-    #end
+    validates :first_name, :last_name, presence: true
+    
 
     def agency_if_any
         self.agency.name if self.agency
