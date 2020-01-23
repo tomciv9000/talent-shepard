@@ -1,4 +1,6 @@
+<%= render "devise/shared/error_messages", resource: @actor %>
 <%= form_for @actor do |f| %>
+  
     <div class="form-group">
       <%= f.hidden_field :agency_id %>
       
@@ -13,7 +15,7 @@
   
     <div class="form-group">
       <%= f.label :dob, "Birthdate:" %>
-      <%= f.date_select :dob, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {required: true} %>
+      <%= f.date_select :dob, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100} %>
     </div>
   
     <div class="form-group">

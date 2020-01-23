@@ -12,10 +12,11 @@ class Actor < ApplicationRecord
     scope :aea, -> { by_last_name.where(aea: true) }
     scope :non_union, -> { by_last_name.where(aea: false, sag_aftra: false  ) }
     
-    
+    validates :first_name, :last_name, :email, presence: true
+    validates_uniqueness_of :email
 
     def full_name
-        self.first_name + " " + self.last_name
+       self.first_name.capitalize + " " + self.last_name.capitalize
     end
 
 end
