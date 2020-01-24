@@ -13,7 +13,7 @@ class Actor < ApplicationRecord
     scope :aea, -> { by_last_name.where(aea: true) }
     scope :non_union, -> { by_last_name.where(aea: false, sag_aftra: false  ) }
     
-    validates :first_name, :last_name, :email, presence: true
+    validates :first_name, :last_name, :email, :dob, presence: true
     validates_uniqueness_of :email
 
     def full_name

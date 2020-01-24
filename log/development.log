@@ -55111,3 +55111,288 @@ Processing by ProjectsController#new as HTML
 Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 2.1ms | Allocations: 8396)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+Started GET "/projects/new" for ::1 at 2020-01-24 16:50:21 -0500
+  [1m[35m (14.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering projects/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 215)
+  [1m[36mCastingOffice Load (1.0ms)[0m  [1m[34mSELECT "casting_offices".* FROM "casting_offices" WHERE "casting_offices"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/views/projects/_form.html.erb:27
+  Rendered projects/_form.html.erb (Duration: 45.6ms | Allocations: 12846)
+  Rendered projects/new.html.erb within layouts/application (Duration: 48.4ms | Allocations: 13274)
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 1448)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 241)
+Completed 200 OK in 214ms (Views: 51.8ms | ActiveRecord: 42.4ms | Allocations: 50134)
+
+
+Started GET "/" for ::1 at 2020-01-24 16:50:23 -0500
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `find_current_tenant'
+  [1m[36mAgency Load (0.4ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 90)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 534)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 0.8ms | Allocations: 3631)
+
+
+Started GET "/actors" for ::1 at 2020-01-24 16:50:24 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.9ms | Allocations: 112)
+  [1m[36mActor Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 2], ["LIMIT", 1]]
+  ↳ app/views/actors/index.html.erb:6
+  [1m[36mActor Load (0.7ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/views/actors/index.html.erb:20
+  Rendered actors/index.html.erb within layouts/application (Duration: 45.8ms | Allocations: 12121)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 523)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 80ms (Views: 43.3ms | ActiveRecord: 15.6ms | Allocations: 19971)
+
+
+Started GET "/actors/1" for ::1 at 2020-01-24 16:50:27 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:62:in `find_actor'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:63:in `find_actor'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered actors/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 680)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 504)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 20ms (Views: 3.7ms | ActiveRecord: 1.5ms | Allocations: 5682)
+
+
+Started GET "/actors" for ::1 at 2020-01-24 16:50:29 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.1ms | Allocations: 12)
+  [1m[36mActor Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 2], ["LIMIT", 1]]
+  ↳ app/views/actors/index.html.erb:6
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/views/actors/index.html.erb:20
+  Rendered actors/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2286)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 514)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 30ms (Views: 8.3ms | ActiveRecord: 1.8ms | Allocations: 5738)
+
+
+Started GET "/actors/new" for ::1 at 2020-01-24 16:50:30 -0500
+Processing by ActorsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered actors/_form.html.erb (Duration: 7.8ms | Allocations: 4166)
+  Rendered actors/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 4462)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 504)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 22ms (Views: 11.5ms | ActiveRecord: 1.0ms | Allocations: 8056)
+
+
+Started POST "/actors" for ::1 at 2020-01-24 16:50:47 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"4g8GsfE0yjD4thE91m2ZJCG4PwQr0X3ZIgnqdC7WdpjrBHmNjyAZe4VYOlaOPpbForPARci+jGjeleKTAcqqbA==", "actor"=>{"agency_id"=>"2", "first_name"=>"Controller", "last_name"=>"Test", "dob(2i)"=>"", "dob(3i)"=>"", "dob(1i)"=>"", "email"=>"test@test.org", "location"=>"Bi-Coastal", "sag_aftra"=>"0", "aea"=>"1", "gender_portrayal"=>"Male", "notes"=>"testestest"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.2ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Exists? (12.7ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."email" = $1 LIMIT $2[0m  [["email", "test@test.org"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[36mCACHE Actor Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."email" = $1 LIMIT $2[0m  [["email", "test@test.org"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[36mActor Create (7.8ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "email", "gender_portrayal", "sag_aftra", "aea", "location", "notes", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Controller"], ["last_name", "Test"], ["email", "test@test.org"], ["gender_portrayal", "Male"], ["sag_aftra", false], ["aea", true], ["location", "Bi-Coastal"], ["notes", "testestest"], ["agency_id", 2], ["created_at", "2020-01-24 21:50:47.200424"], ["updated_at", "2020-01-24 21:50:47.200424"]]
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+Redirected to http://localhost:3000/actors/4
+Completed 302 Found in 42ms (ActiveRecord: 24.8ms | Allocations: 7451)
+
+
+Started GET "/actors/4" for ::1 at 2020-01-24 16:50:47 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Load (6.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:62:in `find_actor'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:63:in `find_actor'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered actors/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1783)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 7.1ms | Allocations: 5942)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+     5: <dl class="row">
+     6:     <%= description_row("Email:", @actor.email) %>
+     7:     <%= description_row("Union Affiliation:", union_status(@actor)) %>
+     8:     <%= description_row("Birthdate:", birthdate(@actor)) %>
+     9:     <%= description_row("Gender Portrayal:", @actor.gender_portrayal) %>
+    10:     <%= description_row("Notes:", @actor.notes) %>
+    11: </dl>
+  
+app/helpers/actors_helper.rb:16:in `birthdate'
+app/views/actors/show.html.erb:8
+Started POST "/actors" for ::1 at 2020-01-24 16:52:18 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"4g8GsfE0yjD4thE91m2ZJCG4PwQr0X3ZIgnqdC7WdpjrBHmNjyAZe4VYOlaOPpbForPARci+jGjeleKTAcqqbA==", "actor"=>{"agency_id"=>"2", "first_name"=>"Controller", "last_name"=>"Test", "dob(2i)"=>"", "dob(3i)"=>"", "dob(1i)"=>"", "email"=>"test@test.org", "location"=>"Bi-Coastal", "sag_aftra"=>"0", "aea"=>"1", "gender_portrayal"=>"Male", "notes"=>"testestest"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."email" = $1 LIMIT $2[0m  [["email", "test@test.org"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  Rendering actors/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 356)
+  Rendered actors/_form.html.erb (Duration: 5.8ms | Allocations: 3644)
+  Rendered actors/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3707)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 458)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 121ms (Views: 9.4ms | ActiveRecord: 25.2ms | Allocations: 36520)
+
+
+Started POST "/actors" for ::1 at 2020-01-24 16:52:42 -0500
+Processing by ActorsController#create as HTML
+  Parameters: {"authenticity_token"=>"vluF7poGv1xf2HWbkBGiP82FdGqcKZSFTVGhgL69Fxq3UPrS5BJsFyI2XvDIQq3eTo6LK39GZTSxzalnkaHL7g==", "actor"=>{"agency_id"=>"2", "first_name"=>"Controller", "last_name"=>"Test", "dob(2i)"=>"4", "dob(3i)"=>"6", "dob(1i)"=>"1992", "email"=>"test@test.net", "location"=>"Bi-Coastal", "sag_aftra"=>"0", "aea"=>"1", "gender_portrayal"=>"Male", "notes"=>"testestest"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."email" = $1 LIMIT $2[0m  [["email", "test@test.net"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:13:in `create'
+  [1m[36mCACHE Actor Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."email" = $1 LIMIT $2[0m  [["email", "test@test.net"], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[36mActor Create (0.6ms)[0m  [1m[32mINSERT INTO "actors" ("first_name", "last_name", "email", "gender_portrayal", "sag_aftra", "aea", "dob", "location", "notes", "agency_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["first_name", "Controller"], ["last_name", "Test"], ["email", "test@test.net"], ["gender_portrayal", "Male"], ["sag_aftra", false], ["aea", true], ["dob", "1992-04-06 00:00:00"], ["location", "Bi-Coastal"], ["notes", "testestest"], ["agency_id", 2], ["created_at", "2020-01-24 21:52:42.573243"], ["updated_at", "2020-01-24 21:52:42.573243"]]
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:14:in `create'
+Redirected to http://localhost:3000/actors/5
+Completed 302 Found in 21ms (ActiveRecord: 3.7ms | Allocations: 7194)
+
+
+Started GET "/actors/5" for ::1 at 2020-01-24 16:52:42 -0500
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Load (1.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:62:in `find_actor'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:63:in `find_actor'
+  Rendering actors/show.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered actors/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 401)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 495)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 16ms (Views: 2.4ms | ActiveRecord: 2.2ms | Allocations: 5230)
+
+
+Started GET "/actors" for ::1 at 2020-01-24 16:52:44 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.7ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.3ms | Allocations: 12)
+  [1m[36mActor Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 2], ["LIMIT", 1]]
+  ↳ app/views/actors/index.html.erb:6
+  [1m[36mActor Load (0.3ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/views/actors/index.html.erb:20
+  Rendered actors/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3781)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 514)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 1.8ms | Allocations: 7207)
+
+
+Started GET "/actors/4/confirm_delete" for ::1 at 2020-01-24 16:52:48 -0500
+Processing by ActorsController#confirm_delete as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.5ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:62:in `find_actor'
+  [1m[36mCACHE Actor Load (0.0ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:63:in `find_actor'
+  Rendering actors/confirm_delete.html.erb within layouts/application
+  Rendered actors/confirm_delete.html.erb within layouts/application (Duration: 1.3ms | Allocations: 378)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 516)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 3.6ms | ActiveRecord: 1.8ms | Allocations: 5348)
+
+
+Started DELETE "/actors/4" for ::1 at 2020-01-24 16:52:50 -0500
+Processing by ActorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"t2vi2pIMSzp9i9P+ZlqcB265iI2HOPZnW8vhBBxKhi5TCpZ/u8PsjttXpQ+IVzeONIaZ3/GorbUUFUcAfq+SJg==", "id"=>"4"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.3ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  [1m[36mActor Load (0.6ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1 AND "actors"."id" = $2 LIMIT $3[0m  [["agency_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/actors_controller.rb:42:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/actors_controller.rb:43:in `destroy'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."agency_id" = $1 AND "appointments"."actor_id" = $2[0m  [["agency_id", 2], ["actor_id", 4]]
+  ↳ app/controllers/actors_controller.rb:43:in `destroy'
+  [1m[36mBooking Load (1.3ms)[0m  [1m[34mSELECT "bookings".* FROM "bookings" WHERE "bookings"."agency_id" = $1 AND "bookings"."actor_id" = $2[0m  [["agency_id", 2], ["actor_id", 4]]
+  ↳ app/controllers/actors_controller.rb:43:in `destroy'
+  [1m[36mActor Destroy (15.0ms)[0m  [1m[31mDELETE FROM "actors" WHERE "actors"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/actors_controller.rb:43:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/actors_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/actors
+Completed 302 Found in 79ms (ActiveRecord: 31.0ms | Allocations: 14759)
+
+
+Started GET "/actors" for ::1 at 2020-01-24 16:52:50 -0500
+Processing by ActorsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAgency Load (0.8ms)[0m  [1m[34mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `find_current_tenant'
+  Rendering actors/index.html.erb within layouts/application
+  Rendered layouts/_agency_brand.html.erb (Duration: 0.2ms | Allocations: 13)
+  [1m[36mActor Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "actors" WHERE "actors"."agency_id" = $1 LIMIT $2[0m  [["agency_id", 2], ["LIMIT", 1]]
+  ↳ app/views/actors/index.html.erb:6
+  [1m[36mActor Load (0.4ms)[0m  [1m[34mSELECT "actors".* FROM "actors" WHERE "actors"."agency_id" = $1[0m  [["agency_id", 2]]
+  ↳ app/views/actors/index.html.erb:20
+  Rendered actors/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2454)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 514)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 19ms (Views: 9.5ms | ActiveRecord: 2.1ms | Allocations: 5883)
+
+
