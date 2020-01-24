@@ -1,5 +1,5 @@
 class Appointment < ApplicationRecord
-
+    include ResourceNames
     belongs_to :agency
     acts_as_tenant(:agency)
     
@@ -14,4 +14,7 @@ class Appointment < ApplicationRecord
         self.casting_office_id = self.project.casting_office_id
     end
    
+    def display_time
+        self.time.strftime("%b %e, %l:%M %p")
+    end
 end

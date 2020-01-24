@@ -21,3 +21,18 @@ ADMIN USERS CAN EDIT AGECENY - DROPDOWN LINK
 INDEX PAGES MAYBE TABLES?
 
 DELETE UNUSED VALUS (IE USERNAME ON USERS)
+
+
+content_tag(:p, "Hello world!")
+ # => <p>Hello world!</p>
+content_tag(:div, content_tag(:p, "Hello world!"), class: "strong")
+ # => <div class="strong"><p>Hello world!</p></div>
+content_tag(:div, "Hello world!", class: ["strong", "highlight"])
+ # => <div class="strong highlight">Hello world!</div>
+content_tag("select", options, multiple: true)
+ # => <select multiple="multiple">...options...</select>
+
+<%= content_tag :div, class: "strong" do -%>
+  Hello world!
+<% end -%>
+ # => <div class="strong">Hello world!</div>

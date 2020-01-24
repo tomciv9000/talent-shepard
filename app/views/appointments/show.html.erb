@@ -4,29 +4,14 @@
 <strong class="text-success"><%= callback_alert(@appointment) %></strong>
 
 <dl class="row">
-    <dt class="col-sm-3">Actor:</dt>
-    <dd class="col-sm-9"><%= @appointment.actor.full_name %></dd>
-
-    <dt class="col-sm-3">Role:</dt>
-    <dd class="col-sm-9"><%= @appointment.role.upcase %></dd>
-
-    <dt class="col-sm-3">Project:</dt>
-    <dd class="col-sm-9"><%= @appointment.project.name %></dd>
-
-    <dt class="col-sm-3">Time:</dt>
-    <dd class="col-sm-9"><%= appointment_time(@appointment) %></dd>
-
-    <dt class="col-sm-3">Casting Office:</dt>
-    <dd class="col-sm-9"><%= @appointment.casting_office.name %></dd>
-
-    <dt class="col-sm-3">Address:</dt>
-    <dd class="col-sm-9"><%= @appointment.address %></dd>
-
-    <dt class="col-sm-3">Booking Status:</dt>
-    <dd class="col-sm-9"><%= @appointment.booking_status %></dd>
-
-    <dt class="col-sm-3">Notes:</dt>
-    <dd class="col-sm-9"><%= @appointment.notes %></dd>
-
+    <%= description_row("Actor:", @appointment.actor_name) %>
+    <%= description_row("Project:", @appointment.project_name) %>
+    <%= description_row("Role:", @appointment.role) %>
+    <%= description_row("Time:", @appointment.display_time) %>
+    <%= description_row("Casting Office:", @appointment.casting_name) %>
+    <%= description_row("Address:", @appointment.address) %>
+    <%= description_row("Booking Status:", @appointment.booking_status) %>
+    <%= description_row("Notes:", @appointment.notes) %>
 </dl>
 
+<%= link_to "Back to Appointments", appointments_path, class: 'text-primary'%>

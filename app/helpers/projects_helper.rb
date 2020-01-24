@@ -7,12 +7,3 @@ module ProjectsHelper
 
 
 end
-
-
-#With try
-#
-#@person.try(:name)
-#try also accepts arguments and/or a block, for the method it is trying
-#
-#Person.try(:find, 1)
-#@people.try(:collect) {|p| p.name}

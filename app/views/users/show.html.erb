@@ -2,14 +2,10 @@
 <%= render 'layouts/agency_brand' %>
 </h3>
 
-
 <dl class="row">
-    <dt class="col-sm-3">Email:</dt>
-    <dd class="col-sm-9"><%= @user.email %></dd>
-
-    <dt class="col-sm-3">Acccount Type:</dt>
-    <dd class="col-sm-9"><%= @user.display_details %></dd>
-
+    <%= description_row("Email:", @user.email) %>
+    <%= description_row("Acccount Type:", @user.display_details) %>
 </dl>
+
 <br>
 <%= edit_if_allowed(@user) %>

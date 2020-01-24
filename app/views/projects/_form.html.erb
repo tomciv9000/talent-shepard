@@ -25,9 +25,7 @@
     <div class="form-group">
       <%= f.label :casting_office_id, "Project Casting:" %>
       <%= f.collection_select :casting_office_id, CastingOffice.all, :id, :name, {:include_blank => true}, {:class => 'form-control'} %>
-      <small class="form-text text-muted">
-        Select project casting office from dropdown list.
-      </small>
+      <%= small_text("Select the Casting Office for this project.") %>
     </div>
     <br>
     
@@ -38,9 +36,7 @@
         <%= casting_office_fields.hidden_field :agency_id, :value => @project.agency_id %>  
         <%= casting_office_fields.label :name, "Register New Casting Office:" %>
         <%= casting_office_fields.text_field :name, class: 'form-control' %>
-        <small class="form-text text-muted">
-          If the casting office for this project is not available to select, enter the Office Name above.
-        </small>
+        <%= small_text("If the appropriate casting office is not available to select, manually enter it here.") %>
         <% end %>
     </div>
   

@@ -1,26 +1,15 @@
-<h3><%= full_name(@actor) %>
+<h3><%= @actor.full_name %>
 <%= render 'layouts/agency_brand' %> 
 </h3>
-<br>
+
 <dl class="row">
-    <dt class="col-sm-3">Email:</dt>
-    <dd class="col-sm-9"><%= @actor.email %></dd>
-
-    <dt class="col-sm-3">Union Affiliation:</dt>
-    <dd class="col-sm-9"><%= union_status(@actor) %></dd>
-
-    <dt class="col-sm-3">Birthdate:</dt>
-    <dd class="col-sm-9"><%= birthdate(@actor) %></dd>
-
-    <dt class="col-sm-3">Email:</dt>
-    <dd class="col-sm-9"><%= @actor.email %></dd>
-
-    <dt class="col-sm-3">Gender Portrayal:</dt>
-    <dd class="col-sm-9"><%= @actor.gender_portrayal %></dd>
-
-    <dt class="col-sm-3">Notes:</dt>
-    <dd class="col-sm-9"><%= @actor.notes %></dd>
+    <%= description_row("Email:", @actor.email) %>
+    <%= description_row("Union Affiliation:", union_status(@actor)) %>
+    <%= description_row("Birthdate:", birthdate(@actor)) %>
+    <%= description_row("Gender Portrayal:", @actor.gender_portrayal) %>
+    <%= description_row("Notes:", @actor.notes) %>
 </dl>
+
 
 <%= button_to "Create Appointment", new_actor_appointment_path(@actor), :method => "get", :class => "btn btn-success" %>
 <br>

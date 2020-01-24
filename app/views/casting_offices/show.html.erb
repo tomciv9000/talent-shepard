@@ -1,16 +1,13 @@
-<h3><%= @casting_office.name %></h3>
+<h3><%= @casting_office.name %>
+<%= render 'layouts/agency_brand' %>
+</h3>
 
 <dl class="row">
-    <dt class="col-sm-2">Email: </dt>
-    <dd class="col-sm-9"><%= @casting_office.email %></dd>
-
-    <dt class="col-sm-2">Phone:</dt>
-    <dd class="col-sm-9"><%= @casting_office.office_number %></dd>
-
-    <dt class="col-sm-2">Location:</dt>
-    <dd class="col-sm-9"><%= @casting_office.location %></dd>
-
-    <dt class="col-sm-2">Notes:</dt>
-    <dd class="col-sm-9"><%= @casting_office.notes %></dd>
-
+    <%= description_row("Email:", @casting_office.email) %>
+    <%= description_row("Phone:", @casting_office.office_number) %>
+    <%= description_row("Location:", @casting_office.location) %>
+    <%= description_row("Union:", @project.union) %>
+    <%= description_row("Notes:", @casting_office.notes) %>
 </dl>
+
+<%= link_to "Back to Casting Offices", casting_offices_path, class: 'text-primary'%>

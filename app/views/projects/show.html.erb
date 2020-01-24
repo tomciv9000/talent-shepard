@@ -4,21 +4,11 @@
 
 
 <dl class="row">
-    <dt class="col-sm-3">Casting Office:</dt>
-    <dd class="col-sm-9"><%= casting_office(@project) %></dd>
-
-    <dt class="col-sm-3">Media:</dt>
-    <dd class="col-sm-9"><%= @project.media_type %></dd>
-
-    <dt class="col-sm-3">Start Date:</dt>
-    <dd class="col-sm-9"><%= start_date(@project) %></dd>
-
-    <dt class="col-sm-3">Union:</dt>
-    <dd class="col-sm-9"><%= @project.union %></dd>
-
-    <dt class="col-sm-3">Notes:</dt>
-    <dd class="col-sm-9"><%= @project.notes %></dd>
-
+    <%= description_row("Casting Office:", @project.casting_name) %>
+    <%= description_row("Media:", @project.media_type) %>
+    <%= description_row("Start Date:", start_date(@project)) %>
+    <%= description_row("Union:", @project.union) %>
+    <%= description_row("Notes:", @project.notes) %>
 </dl>
 
 <%= button_to "Create Appointment", new_project_appointment_path(@project), :method => "get", :class => "btn btn-success" %>

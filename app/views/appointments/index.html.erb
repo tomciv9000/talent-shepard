@@ -21,11 +21,11 @@
     <tbody>
       <% current_agency.appointments.each do |appointment| %>
         <tr>
-          <td class="text-left"><%= appointment.actor.full_name %></td>
+          <td class="text-left"><%= appointment.actor_name %></td>
           <td class="text-left"><%= appointment.role %></td>
-          <td class="text-left"><%= appointment.project.name %></td>
-          <td class="text-left"><%= appointment.casting_office.name %></td>
-          <td class="text-left"><%= appointment_time(appointment) %></td>
+          <td class="text-left"><%= appointment.project_name %></td>
+          <td class="text-left"><%= appointment.casting_name %></td>
+          <td class="text-left"><%= appointment.display_time %></td>
           <td class="text-center">
             <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%>   
             <% if current_user.admin? %>

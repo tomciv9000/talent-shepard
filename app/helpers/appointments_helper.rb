@@ -8,17 +8,14 @@ module AppointmentsHelper
         end
     end
 
+
+
     def callback_alert(appointment)
       appointment.callback ? "CALLBACK!" : nil
     end
 
-    def appointment_time(appointment)
-      appointment.time.strftime("%b %e, %l:%M %p")
-    end
+    
 
 
 
 end
-# This might be useful later on when I have enums for certain values
-#     f.select :projtype_type, options_for_select([['Service Request', 1], ['Log Entry', 2]], selected: @project.projtype || nil),
-#         include_blank: true, class:'form-control m-b'

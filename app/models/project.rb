@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+    include ResourceNames
     belongs_to :casting_office
     belongs_to :agency
     acts_as_tenant(:agency)

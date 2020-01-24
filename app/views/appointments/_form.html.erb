@@ -3,27 +3,21 @@
       <%= f.hidden_field :agency_id %>
       
     <div class="form-group">
-      <%= f.label :actor_id, "Select Actor:" %>
+      <%= f.label :actor_id, "Actor:" %>
       <%= f.collection_select :actor_id, Actor.all, :id, :full_name, {:include_blank => true}, {:class => 'form-control'} %>
-      <small class="form-text text-muted">
-        Select an actor for this appointment.
-      </small>
+      <%= small_text("Select an actor.") %>
     </div>
 
     <div class="form-group">
-      <%= f.label :project_id, "Select Project:" %>
+      <%= f.label :project_id, "Project:" %>
       <%= f.collection_select :project_id, Project.all, :id, :name, {:include_blank => true}, {:class => 'form-control'} %>
-      <small class="form-text text-muted">
-        Select a project for this appointment.
-      </small>
+      <%= small_text("Select the project.") %>
    </div>
      
     <div class="form-group">
       <%= f.label :role, "Role:" %>
       <%= f.text_field :role, class: 'form-control' %> 
-      <small class="form-text text-muted">
-        Example: <strong>Hamlet</strong>
-      </small>
+      <%= small_text("Example: Hamlet") %>
     </div>
   
     <div class="form-group">
@@ -34,9 +28,7 @@
     <div class="form-group">
       <%= f.label :address, "Address:" %>
       <%= f.text_field :address, class: 'form-control' %>
-      <small class="form-text text-muted">
-        List the address for this appointment.
-      </small>
+      <%= small_text("List the specific location for this audition appointment.") %>
     </div>
     
     <div class="form-group">

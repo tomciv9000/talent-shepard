@@ -13,7 +13,7 @@ module ActorsHelper
     end
 
     def birthdate(actor)
-        actor.dob.strftime("Birthday: %B %e, %Y")
+        actor.dob.strftime("%B %e, %Y")
     end
 
 end
