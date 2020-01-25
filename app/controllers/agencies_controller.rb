@@ -1,3 +1,4 @@
+require 'pry'
 class AgenciesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
   
@@ -7,6 +8,7 @@ class AgenciesController < ApplicationController
 
   def create
     @agency = Agency.new(agency_params)
+    #binding.pry
       if @agency.valid?
         @agency.save
         session[:agency_id] = @agency.id

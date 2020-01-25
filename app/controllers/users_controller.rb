@@ -1,9 +1,13 @@
 #require 'pry'
 class UsersController < ApplicationController
-#  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create, :agency_for_facebook]
 #  before_action :find_user_or_redirect, :only => [:show, :edit, ]
 #  #before_filter :find_post, :only => [:show, :edit, :update, :destroy]
-#
+  def agency_for_facebook
+    #@user = User.new
+  end
+
+
 #  #def new
 #  #  if params[:agency_id] && !Agency.exists?(params[:agency_id])
 #  #    redirect_to agencies_path, alert: "Agency not found."
@@ -23,6 +27,8 @@ class UsersController < ApplicationController
 #      redirect_to '/'
 #    end
 #  end
+
+    
 #  
     def show
       if User.find_by(id: params[:id])

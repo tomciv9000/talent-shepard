@@ -1,5 +1,10 @@
 <h2>User Sign up</h2>
 <%= render "devise/shared/error_messages", resource: resource %>
+<% if @user.agency_id == nil %>
+  <%= link_to "Select agency for Facebook sign in", agency_for_facebook_path %>
+<% end %>
+<br>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path(agency: @user.agency_id) %>
 <%= form_for @user do |f| %>
   
   

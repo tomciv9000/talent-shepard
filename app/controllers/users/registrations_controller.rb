@@ -6,7 +6,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    @user = User.new(agency_id: session[:agency_id])
+    #binding.pry
+    if params[:fb_agency]
+      @user = User.new(agency_id: params[:fb_agency])
+      session[:fb_agency_id] = @user.agency_id
+    elsif session[:agency_id]
+      @user = User.new(agency_id: session[:agency_id])
+      #the below method should clear the session value out for the next time
+      #session.delete[:agency_id]
+    else
+      @user = User.new
+    end
   end
 
   # POST /resource
@@ -22,7 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #    redirect_to user_path(@user)
   #  else
   #    redirect_to '/'
-  #  end
+  #  endexit
    end
 
   # GET /resource/edit

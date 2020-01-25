@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions'}
+  devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions', omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_scope :user do
     get "/users/sign_out" => 'users/sessions#destroy'
   end
@@ -24,11 +24,12 @@ Rails.application.routes.draw do
   get '/appointments/:id/confirm_delete', to: 'appointments#confirm_delete', as: 'confirm_appointment_delete'
   get '/casting_offices/:id/confirm_delete', to: 'casting_offices#confirm_delete', as: 'confirm_casting_office_delete'
   get '/bookings/:id/confirm_delete', to: 'bookings#confirm_delete', as: 'confirm_booking_delete'
-  
+  get '/users/agency_for_facebook', to: 'users#agency_for_facebook', as: 'agency_for_facebook'
   resources :casting_offices
   resources :bookings
   resources :users
   resources :appointments, only: [:index, :new, :create, :show, :edit]
+  
   
 
 end
