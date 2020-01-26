@@ -5,7 +5,7 @@
 
 <dl class="row">
     <dt class="col-sm-3">Actor:</dt>
-    <dd class="col-sm-9"><%= @booking.actor.full_name %></dd>
+    <dd class="col-sm-9"><%= full_name(@booking.actor) %></dd>
 
     <dt class="col-sm-3">Role:</dt>
     <dd class="col-sm-9"><%= @booking.role.upcase %></dd>

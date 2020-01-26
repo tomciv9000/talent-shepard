@@ -1,5 +1,7 @@
 class ActorsController < ApplicationController
   before_action :find_actor, only: [:show, :edit, :confirm_delete]
+  before_action :check_confirmation_status
+  before_action :admin_only, only: [:confirm_delete, :destroy]
 
   def new
     @actor = Actor.new 

@@ -36,3 +36,7 @@ content_tag("select", options, multiple: true)
   Hello world!
 <% end -%>
  # => <div class="strong">Hello world!</div>
+
+
+ ONE FULL NAME METHOD
+ 

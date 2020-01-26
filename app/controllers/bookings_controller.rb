@@ -1,6 +1,8 @@
 require 'pry'
 #add a find booking method before action
 class BookingsController < ApplicationController
+  before_action :check_confirmation_status
+  before_action :admin_only, only: [:confirm_delete, :destroy]
 
   def new
       @booking = Booking.new

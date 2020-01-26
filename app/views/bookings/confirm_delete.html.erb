@@ -1,6 +1,6 @@
 <h3>Confirm Delete</h3>
 <p class="text-danger">Are you sure you want to delete 
-<strong><%= @booking.actor.full_name.upcase %>'S</strong> booking for
+<strong><%= full_name(@booking.actor).upcase %>'S</strong> booking for
 <strong><%= @booking.project.name.upcase %></strong>?</p>
 
 

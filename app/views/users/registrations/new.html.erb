@@ -42,10 +42,10 @@
     <%= f.submit "Sign up", class: 'btn btn-primary' %>
   </div>
 <% end %>
-<br>
+<br><br>
 
 <% if @user.agency_id == nil %>
-  <%= link_to "Click here to sign up with Facebook (not recommended)", agency_for_facebook_path %>
+  <%= link_to "Click here if you would prefer to sign up with Facebook (not recommended)", agency_for_facebook_path %>
 <% else @user.agency_id %>
   <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path(agency: @user.agency_id) %>
   <small class="form-text text-muted">The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.</small>

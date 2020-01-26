@@ -12,14 +12,14 @@ class User < ApplicationRecord
   acts_as_tenant(:agency)
 
     #validates :first_name, :last_name, presence: true
-    def self.new_with_session(params, session)
-      super.tap do |user|
-        if data = session[:fb_agency_id]
-          user.agency_id = data if user.agency.blank?
-        end
-      end
-      binding.pry
-    end
+    #def self.new_with_session(params, session)
+    #  super.tap do |user|
+    #    if data = session[:fb_agency_id]
+    #      user.agency_id = data if user.agency.blank?
+    #    end
+    #  end
+    #  binding.pry
+    #end
 
     def self.from_omniauth(auth, extra)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

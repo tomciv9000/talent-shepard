@@ -1,0 +1,33 @@
+<h3><%= full_name(@user) %>
+<%= render 'layouts/agency_brand' %>
+</h3>
+
+<dl class="row">
+    <%= description_row("Email:", @user.email) %>
+    <%= description_row("Acccount Type:", @user.display_details) %>
+</dl>
+
+<%= render "devise/shared/error_messages", resource: @user %>
+
+<%= form_for @user do |f| %>
+  
+    <div class="field form-group">
+        <div class="checkbox-inline">
+        <%= f.label :confirmed, "Confirmed?" %>
+        <%= f.check_box :confirmed %>
+        </div>
+        <div class="checkbox-inline">
+            <%= f.label :admin, "Admin?" %>
+            <%= f.check_box :admin %>
+        </div>
+    </div>
+
+    <br>
+  
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+      
+  <% end %>
+
+
+<br>
+<%= link_to "Back to Users", users_path, class: 'text-primary'%>

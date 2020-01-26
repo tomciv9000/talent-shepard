@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
     before_action :authenticate_user!
     before_action :find_current_tenant
+    #before_action :check_confirmation_status
     
     helper_method :current_user
     helper_method :current_agency
@@ -26,6 +27,21 @@ class ApplicationController < ActionController::Base
       set_current_tenant(@current_user.agency)
     end
   end
+  
+  def check_confirmation_status
+    if current_user && !current_user.confirmed
+      flash[:alert] = "This account has not been confirmed by your agency's administrator."
+      redirect_to '/'
+    end
+  end
+
+  def admin_only
+    if !current_user.admin
+      flash[:alert] = "You do not have permission to access that page."
+      redirect '/'
+    end
+  end
+  
 
 #### verified user is replaced by authenticate_user! from devise
   #  def verified_user

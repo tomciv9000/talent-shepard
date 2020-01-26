@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  before_action :check_confirmation_status
+  before_action :admin_only, only: [:confirm_delete, :destroy]
   
   def new
     if params[:actor_id]

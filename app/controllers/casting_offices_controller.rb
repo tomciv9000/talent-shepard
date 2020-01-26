@@ -1,4 +1,7 @@
 class CastingOfficesController < ApplicationController
+  before_action :check_confirmation_status
+  before_action :admin_only, only: [:confirm_delete, :destroy]
+  
   def new
     @casting_office = CastingOffice.new
   end

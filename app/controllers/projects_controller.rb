@@ -1,6 +1,8 @@
 require 'pry'
 #add a find project method before action
 class ProjectsController < ApplicationController
+  before_action :check_confirmation_status
+  before_action :admin_only, only: [:confirm_delete, :destroy]
 
   def new
       @project = Project.new

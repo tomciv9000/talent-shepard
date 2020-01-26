@@ -1,0 +1,34 @@
+<h3> Users 
+<%= render 'layouts/agency_brand' %>
+</h3>
+  
+<br>
+ 
+  <br>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="text-left">Last Name</th>
+          <th class="text-left">First Name</th>
+          <th class="text-left">User Info</th>
+          <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% current_agency.users.each do |user| %>
+        <tr>
+          <td class="text-left"><%= user.last_name %></td>
+          <td class="text-left"><%= user.first_name %></td>
+          <td class="text-left"><%= user.display_details %></td>
+          <td class="text-center">
+            <%= link_to "Details", user_path(user), class: 'text-primary'%> |  
+            <% if current_user.admin? %>
+                <%= link_to "Edit Permissions", edit_user_permissions_path(user), class: 'text-warning'%> |
+                <%= link_to "Delete", confirm_user_delete_path(user), class: 'text-danger'%>
+              <% end %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
