@@ -8,4 +8,9 @@ class Booking < ApplicationRecord
     
     validates :role, :actor_id, :project_id, presence: true
 
+    scope :accepted, -> { where(accepted: true) }
+    scope :signed, -> { where(contract_signed: true) }
+    scope :done_deals, -> { where(accepted: true, contract_signed: true  ) }
+    
+
 end
