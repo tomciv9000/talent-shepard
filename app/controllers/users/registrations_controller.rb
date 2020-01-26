@@ -4,13 +4,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
    before_action :configure_sign_up_params, only: [:create]
    before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-  def new
-    #binding.pry
+   def agency_for_facebook
+   end
+
+  def facebook_new
     if params[:fb_agency]
       @user = User.new(agency_id: params[:fb_agency])
       session[:fb_agency_id] = @user.agency_id
-    elsif session[:agency_id]
+    else
+      @user = User.new
+    end
+  end
+  # GET /resource/sign_up
+  def new
+    #binding.pry
+    #if params[:fb_agency]
+    #  @user = User.new(agency_id: params[:fb_agency])
+    #  session[:fb_agency_id] = @user.agency_id
+    if session[:agency_id]
       @user = User.new(agency_id: session[:agency_id])
       #the below method should clear the session value out for the next time
       #session.delete[:agency_id]

@@ -1,10 +1,18 @@
 #require 'pry'
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :agency_for_facebook]
+  skip_before_action :authenticate_user!, only: [:new, :create, :agency_for_facebook, :facebook_new]
 #  before_action :find_user_or_redirect, :only => [:show, :edit, ]
 #  #before_filter :find_post, :only => [:show, :edit, :update, :destroy]
-  def agency_for_facebook
-    #@user = User.new
+  #def agency_for_facebook
+  #end
+
+  def facebook_new
+    if params[:fb_agency]
+      @user = User.new(agency_id: params[:fb_agency])
+      session[:fb_agency_id] = @user.agency_id
+    else
+      @user = User.new
+    end
   end
 
 

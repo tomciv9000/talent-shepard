@@ -1,0 +1,19 @@
+<h2>User Sign up via Facebook</h2>
+
+<%= render "devise/shared/error_messages", resource: resource %>
+  
+  <div class="form-group">
+  Agency: <%= @user.agency_if_any %>
+  </div>
+
+  
+<% if @user.agency_id == nil %>
+  <p class="text-info"><i>To sign up with Facebook, you must first select your agency.</i></p>
+  <%= link_to "Select Agency to Sign Up with Facebook", agency_for_facebook_path %>
+<% elsif @user.agency_id %>
+  <%= link_to "Sign up for TalentShepherd with Facebook", user_facebook_omniauth_authorize_path(agency: @user.agency_id) %>
+  <small class="form-text text-muted">The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.</small>
+  <% else %>
+<%= link_to "Back to Standard Sign up", new_user_registration_path, class: 'text-primary'%>
+<% end %>
+  

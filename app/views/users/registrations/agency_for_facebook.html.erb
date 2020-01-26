@@ -1,0 +1,12 @@
+<h2>User Sign up via Facebook</h2>
+<p class="text-info"><i>To sign up with Facebook, you must select your associated agency.</i></p>
+<%= form_tag( facebook_user_registration_path, :method => :get ) do |f| %>
+  
+    <div class="form-group">
+      <%= select_tag "fb_agency", options_from_collection_for_select(Agency.all, :id, :name), prompt: "Please select your Agency" %>
+    </div>
+  
+    <div class="actions">
+      <%= submit_tag "Submit Agency", class: 'btn btn-primary' %>
+    </div>
+  <% end %>

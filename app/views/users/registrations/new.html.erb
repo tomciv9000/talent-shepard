@@ -1,10 +1,6 @@
 <h2>User Sign up</h2>
 <%= render "devise/shared/error_messages", resource: resource %>
-<% if @user.agency_id == nil %>
-  <%= link_to "Select agency for Facebook sign in", agency_for_facebook_path %>
-<% end %>
-<br>
-  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path(agency: @user.agency_id) %>
+
 <%= form_for @user do |f| %>
   
   
@@ -14,19 +10,19 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, class: 'form-control', placeholder: 'Enter email address', aria: { describedby: 'emailHelp'} %>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control',  aria: { describedby: 'emailHelp'} %>
+    <small id="emailHelp" class="form-text text-muted"> We'll never share your email with anyone else.</small>
+  </div>
 
   <div class="form-group">
     <%= f.label :first_name, "First Name:" %><br />
-    <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name' %>
+    <%= f.text_field :first_name, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :last_name, "Last Name:" %><br />
-    <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name' %>
+    <%= f.text_field :last_name, class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -34,15 +30,24 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password'  %>
+    <%= f.password_field :password_confirmation, class: 'form-control'  %>
   </div>
 
   <div class="actions">
     <%= f.submit "Sign up", class: 'btn btn-primary' %>
   </div>
 <% end %>
+<br>
+
+<% if @user.agency_id == nil %>
+  <%= link_to "Click here to sign up with Facebook (not recommended)", agency_for_facebook_path %>
+<% else @user.agency_id %>
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path(agency: @user.agency_id) %>
+  <small class="form-text text-muted">The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.</small>
+<% end %>
+<br>
