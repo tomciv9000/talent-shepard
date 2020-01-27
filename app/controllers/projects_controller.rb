@@ -1,5 +1,3 @@
-require 'pry'
-#add a find project method before action
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :confirm_delete]
   before_action :check_confirmation_status
@@ -21,11 +19,9 @@ class ProjectsController < ApplicationController
   end
   
   def show
-  
   end
 
   def edit
- 
   end
 
   def index
@@ -69,7 +65,6 @@ class ProjectsController < ApplicationController
   end
 
   def confirm_delete
- 
   end
 
 

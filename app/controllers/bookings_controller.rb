@@ -1,6 +1,5 @@
-require 'pry'
-#add a find booking method before action
 class BookingsController < ApplicationController
+  before_action :find_booking, only: [:show, :edit, :confirm_delete]
   before_action :check_confirmation_status
   before_action :admin_only, only: [:confirm_delete, :destroy]
 
@@ -20,19 +19,9 @@ class BookingsController < ApplicationController
   end
   
   def show
-    if Booking.find_by(id: params[:id])
-      @booking = Booking.find_by(id: params[:id])
-    else
-      redirect_to bookings_path
-    end
   end
 
   def edit
-    if Booking.find_by(id: params[:id])
-      @booking = Booking.find_by(id: params[:id])
-    else
-      redirect_to bookings_path
-    end
   end
 
   def index
@@ -52,11 +41,6 @@ class BookingsController < ApplicationController
   end
 
   def confirm_delete
-    if Booking.find_by(id: params[:id])
-      @booking = Booking.find_by(id: params[:id])
-    else
-      redirect_to bookings_path
-    end
   end
 
 
@@ -65,6 +49,14 @@ class BookingsController < ApplicationController
 
   def booking_params
       params.require(:booking).permit(:role, :rate, :contract_signed, :accepted, :actor_id, :project_id, :agency_id)
+  end
+
+  def find_booking
+    if Booking.find_by(id: params[:id])
+      @booking = Booking.find_by(id: params[:id])
+    else
+      redirect_to bookings_path
+    end
   end
 
 

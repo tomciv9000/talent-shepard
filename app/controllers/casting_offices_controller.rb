@@ -1,4 +1,5 @@
 class CastingOfficesController < ApplicationController
+  before_action :find_casting_office, only: [:show, :edit, :confirm_delete]
   before_action :check_confirmation_status
   before_action :admin_only, only: [:confirm_delete, :destroy]
   
@@ -8,7 +9,6 @@ class CastingOfficesController < ApplicationController
 
   def create
     @casting_office = CastingOffice.new(casting_office_params)
-
     if @casting_office.valid?
       @casting_office.save
       redirect_to casting_office_path(@casting_office)
@@ -18,24 +18,13 @@ class CastingOfficesController < ApplicationController
   end
 
   def show
-    if CastingOffice.find_by(id: params[:id])
-      @casting_office = CastingOffice.find_by(id: params[:id])
-    else
-      redirect_to '/'
-    end
   end
 
   def index
     @casting_offices = CastingOffice.all
   end
-#############
 
   def edit
-    if CastingOffice.find_by(id: params[:id])
-      @casting_office = CastingOffice.find_by(id: params[:id])
-    else
-      redirect_to casting_offices_path
-    end
   end
 
   def update
@@ -51,14 +40,17 @@ class CastingOfficesController < ApplicationController
   end
 
   def confirm_delete
-    if CastingOffice.find_by(id: params[:id])
-      @casting_office = CastingOffice.find_by(id: params[:id])
-    else
-      redirect_to casting_offices_path
-    end
   end
 
   private
+
+  def find_casting_office
+    if CastingOffice.find_by(id: params[:id])
+      @casting_office = CastingOffice.find_by(id: params[:id])
+    else
+      redirect_to '/'
+    end
+  end
 
   def casting_office_params
       params.require(:casting_office).permit(:name, :email, :office_number, :location, :notes, :agency_id)
