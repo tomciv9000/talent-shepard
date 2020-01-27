@@ -4,8 +4,6 @@ module ApplicationHelper
         person.first_name.capitalize + " " + person.last_name.capitalize
     end
 
-
-
     def description_row(label, content)
         description_label(label) + description_content(content)
     end
@@ -15,8 +13,6 @@ module ApplicationHelper
     end
 
   
-
-
     private
     
     def description_label(label)
