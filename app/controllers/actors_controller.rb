@@ -24,6 +24,18 @@ class ActorsController < ApplicationController
     @actors = Actor.all
   end
 
+  def sag
+    @actors = Actor.sag_aftra
+  end
+
+  def aea
+    @actors = Actor.aea
+  end
+
+  def nonunion
+    @actors = Actor.non_union
+  end
+
   def edit
   end
 
@@ -49,6 +61,7 @@ class ActorsController < ApplicationController
       redirect_to actors_path
     end
   end
+  
 
 
 end

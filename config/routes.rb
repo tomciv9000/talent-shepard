@@ -12,8 +12,17 @@ Rails.application.routes.draw do
   root to: 'static#home'
 
   resources :actors do
+    collection do
+      get 'sag'
+      get 'aea'
+      get 'nonunion'
+    end
     resources :appointments
   end
+
+  #resources :actors do
+  #  resources :appointments
+  #end
   
   resources :agencies, only: [:index, :new, :create, :show, :edit] do
     resources :users
