@@ -1,40 +1,42 @@
 <h3> Appointments
 <%= render 'layouts/agency_brand' %> 
 </h3>
-  <%= link_to "Create New Appointment!", new_appointment_path, class: 'text-primary' %>
+<%= link_to "Create New Appointment!", new_appointment_path, class: 'text-primary' %>
+
 <br>
-  <% if current_agency.appointments.empty? %>
-    <p>There are currently no appointments associated with your agency.<p>
-  <% else %>
+
+<% if current_agency.appointments.empty? %>
+  <p>There are currently no appointments associated with your agency.<p>
+<% else %>
   <br>
   <table class="table table-striped">
     <thead>
-        <tr>
-          <th class="text-left">Actor</th>
-          <th class="text-left">Role</th>
-          <th class="text-left">Project</th>
-          <th class="text-left">Casting</th>
-          <th class="text-left">Time</th>
-          <th class="text-center">Actions</th>
-        </tr>
+      <tr>
+        <th class="text-left">Actor</th>
+        <th class="text-left">Role</th>
+        <th class="text-left">Project</th>
+        <th class="text-left">Casting</th>
+        <th class="text-left">Time</th>
+        <th class="text-center">Actions</th>
+      </tr>
     </thead>
-    <tbody>
-      <% current_agency.appointments.each do |appointment| %>
-        <tr>
-          <td class="text-left"><%= appointment.actor_name %></td>
-          <td class="text-left"><%= appointment.role %></td>
-          <td class="text-left"><%= appointment.project_name %></td>
-          <td class="text-left"><%= appointment.casting_name %></td>
-          <td class="text-left"><%= appointment.display_time %></td>
-          <td class="text-center">
-            <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%>   
-            <% if current_user.admin? %>
-            |  <%= link_to "Edit", edit_appointment_path(appointment), class: 'text-warning'%> |
-                 <%= link_to "Delete", confirm_appointment_delete_path(appointment), class: 'text-danger'%>
-              <% end %> 
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <tbody>
+  <% current_agency.appointments.each do |appointment| %>
+    <tr>
+      <td class="text-left"><%= appointment.actor_name %></td>
+      <td class="text-left"><%= appointment.role %></td>
+      <td class="text-left"><%= appointment.project_name %></td>
+      <td class="text-left"><%= appointment.casting_name %></td>
+      <td class="text-left"><%= appointment.display_time %></td>
+      <td class="text-center">
+        <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%>   
+        <% if current_user.admin? %>
+        |  <%= link_to "Edit", edit_appointment_path(appointment), class: 'text-warning'%> |
+             <%= link_to "Delete", confirm_appointment_delete_path(appointment), class: 'text-danger'%>
+        <% end %> 
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 <% end %>

@@ -1,6 +1,6 @@
 <%= render "devise/shared/error_messages", resource: @appointment %>
 <%= form_for @appointment do |f| %>
-      <%= f.hidden_field :agency_id %>
+    <%= f.hidden_field :agency_id %>
       
     <div class="form-group">
       <%= f.label :actor_id, "Actor:" %>
@@ -41,14 +41,14 @@
         <%= f.select :booking_status, ['None', 'On-Hold', 'Booked'], class: 'form-control' %>
     </div>
     
-   
     <br>
+
     <div class="form-group">
       <%= f.label :notes, "Appointment Notes:" %>
       <%= f.text_area :notes, class: 'form-control' %>
     </div>
   
   
-      <%= f.submit "Submit", class: 'btn btn-primary' %>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
       
   <% end %>

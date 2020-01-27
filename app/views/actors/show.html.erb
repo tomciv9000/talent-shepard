@@ -10,7 +10,6 @@
     <%= description_row("Notes:", @actor.notes) %>
 </dl>
 
-
 <%= button_to "Create Appointment", new_actor_appointment_path(@actor), :method => "get", :class => "btn btn-success" %>
 <br>
 <%= link_to "Back to Actors", actors_path, class: 'text-primary'%>
