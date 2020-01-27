@@ -10,6 +10,12 @@ class Project < ApplicationRecord
     validates :name, :media_type, :casting_office_id, presence: true
 
     scope :by_start_date, -> { order(start_date: :asc) }
+    scope :stage, -> { by_start_date.where(media_type: 'Stage') }
+    scope :film, -> { by_start_date.where(media_type: 'Film') }
+    scope :commercial, -> { by_start_date.where(media_type: 'Commercial') }
+    scope :industrial, -> { by_start_date.where(media_type: 'Industrial') }
+    scope :short, -> { by_start_date.where(media_type: 'Short') }
+    scope :new_media, -> { by_start_date.where(media_type: 'New Media') }
    
     
     

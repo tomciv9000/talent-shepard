@@ -1,0 +1,38 @@
+<h3>Projects
+<%= render 'layouts/agency_brand' %>
+</h3>
+  
+  <%= link_to "Create New Project!", new_project_path, class: 'text-primary' %>
+<br>
+  <% if current_agency.projects.empty? %>
+    <p>There are currently no open projects associated with your agency.<p>
+  <% else %>
+  <br>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="text-left">Project Title</th>
+          <th class="text-left">Media</th>
+          <th class="text-left">Start Date</th>
+          <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td class="text-left"><%= project.name %></td>
+          <td class="text-left"><%= project.media_type %></td>
+          <td class="text-left"><%= start_date(project) %></td>
+          <td class="text-center">
+            <%= link_to "Details", project_path(project), class: 'text-primary'%> | 
+            <%= link_to "Make Appointment", new_project_appointment_path(project), class: 'text-success'%> 
+            <% if current_user.admin? %>
+               | <%= link_to "Edit", edit_project_path(project), class: 'text-warning'%> |
+                 <%= link_to "Delete", confirm_project_delete_path(project), class: 'text-danger'%>
+              <% end %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

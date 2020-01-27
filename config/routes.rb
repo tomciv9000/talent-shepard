@@ -5,8 +5,6 @@ Rails.application.routes.draw do
     get "/users/sign_out" => 'users/sessions#destroy'
     get '/users/registrations/agency_for_facebook', to: 'users/registrations#agency_for_facebook', as: 'agency_for_facebook'
     get '/users/registrations/facebook_new', to: 'users/registrations#facebook_new', as: 'facebook_user_registration'
-    
-  
   end
 
   root to: 'static#home'
@@ -19,16 +17,20 @@ Rails.application.routes.draw do
     end
     resources :appointments
   end
-
-  #resources :actors do
-  #  resources :appointments
-  #end
   
   resources :agencies, only: [:index, :new, :create, :show, :edit] do
     resources :users
   end
 
   resources :projects do
+    collection do
+      get 'stage'
+      get 'film'
+      get 'commercial'
+      get 'industrial'
+      get 'short'
+      get 'new_media'
+    end
     resources :appointments
   end
   

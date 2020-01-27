@@ -17,11 +17,17 @@ class ActorsController < ApplicationController
     end
   end
 
+  def update
+    @actor = Actor.find(params[:id])
+    @actor.update(actor_params)
+    redirect_to actor_path(@actor)
+  end
+
   def show
   end
 
   def index
-    @actors = Actor.all
+    @actors = Actor.by_last_name
   end
 
   def sag

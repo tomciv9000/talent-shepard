@@ -25,11 +25,21 @@
       </li>
   <% end %>
   <% if current_user %>
-      <li class="<%= 'nav-item active' if current_page?(projects_path) %>">
-        <%= link_to projects_path, :class => "nav-link" do %>Projects
-          <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(projects_path) %>
-        <% end %>
-      </li>
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Projects
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <%= link_to "Stage", stage_projects_path, :class => "dropdown-item" %>
+      <%= link_to "Film", film_projects_path, :class => "dropdown-item" %> 
+      <%= link_to "Commercial", commercial_projects_path, :class => "dropdown-item" %> 
+      <%= link_to "Industrial", industrial_projects_path, :class => "dropdown-item" %>
+      <%= link_to "Short", short_projects_path, :class => "dropdown-item" %> 
+      <%= link_to "New Media", new_media_projects_path, :class => "dropdown-item" %>
+      <div class="dropdown-divider"></div>
+      <%= link_to "All Projects", projects_path, :class => "dropdown-item" %>
+      </div>
+      </li>    
       <li class="<%= 'nav-item active' if current_page?(appointments_path) %>">
         <%= link_to appointments_path, :class => "nav-link" do %>Appointments
           <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(appointments_path) %>
