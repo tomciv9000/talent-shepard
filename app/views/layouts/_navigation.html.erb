@@ -8,21 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
   <% if !current_user %>
-      <li class="<%= 'nav-item active' if current_page?(new_agency_path) %>">
-        <%= link_to new_agency_path, :class => "nav-link" do %>Register Agency
-          <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(new_agency_path) %>
-        <% end %>
-      </li>
-      <li class="<%= 'nav-item active' if current_page?(new_user_registration_path) %>">
-        <%= link_to new_user_registration_path, :class => "nav-link" do %>User Sign Up
-          <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(new_user_registration_path) %>
-        <% end %>
-      </li>
-      <li class="<%= 'nav-item active' if current_page?(new_user_session_path) %>">
-        <%= link_to new_user_session_path, :class => "nav-link" do %>Log In
-          <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(new_user_session_path) %>
-        <% end %>
-      </li>
+    <%= render 'layouts/navigation/not_authenticated' %>
   <% end %>
   <% if current_user %>
   <li class="nav-item dropdown">

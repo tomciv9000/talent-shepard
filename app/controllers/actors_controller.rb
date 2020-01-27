@@ -67,7 +67,5 @@ class ActorsController < ApplicationController
       redirect_to actors_path
     end
   end
-  
-
 
 end

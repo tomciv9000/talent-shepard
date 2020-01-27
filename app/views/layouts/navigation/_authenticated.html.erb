@@ -1,0 +1,62 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Projects
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%= link_to "Stage", stage_projects_path, :class => "dropdown-item" %>
+        <%= link_to "Film", film_projects_path, :class => "dropdown-item" %> 
+        <%= link_to "Commercial", commercial_projects_path, :class => "dropdown-item" %> 
+        <%= link_to "Industrial", industrial_projects_path, :class => "dropdown-item" %>
+        <%= link_to "Short", short_projects_path, :class => "dropdown-item" %> 
+        <%= link_to "New Media", new_media_projects_path, :class => "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "All Projects", projects_path, :class => "dropdown-item" %>
+    </div>
+</li>    
+
+<li class="<%= 'nav-item active' if current_page?(appointments_path) %>">
+    <%= link_to appointments_path, :class => "nav-link" do %>
+        Appointments
+        <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(appointments_path) %>
+    <% end %>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Talent
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%= link_to "SAG-AFTRA", sag_actors_path, :class => "dropdown-item" %>
+        <%= link_to "AEA", aea_actors_path, :class => "dropdown-item" %> 
+        <%= link_to "Non-Union", nonunion_actors_path, :class => "dropdown-item" %> 
+        <div class="dropdown-divider"></div>
+        <%= link_to "All Actors", actors_path, :class => "dropdown-item" %>
+    </div>
+</li>
+
+<li class="<%= 'nav-item active' if current_page?(casting_offices_path) %>">
+    <%= link_to casting_offices_path, :class => "nav-link" do %>Casting Offices
+        <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(casting_offices_path) %>
+    <% end %>
+</li>
+
+<li class="<%= 'nav-item active' if current_page?(bookings_path) %>">
+    <%= link_to bookings_path, :class => "nav-link" do %>Bookings
+        <%= (content_tag :span, "(current)", :class => "sr-only") if current_page?(bookings_path) %>
+    <% end %>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= current_user.first_name %>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%= link_to "Account Info", user_path(current_user), :class => "dropdown-item" %>
+        <%= link_to "Edit Details", edit_user_registration_path(current_user), :class => "dropdown-item" %>
+        <% if current_user.admin %>
+          <%= link_to "Agency Permissions", users_path, :class => "dropdown-item" %>
+        <% end %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => "dropdown-item" %>
+    </div>
+</li>

@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :find_appointment, only: [:show, :edit, :confirm_delete]
   before_action :check_confirmation_status
   before_action :admin_only, only: [:confirm_delete, :destroy]
   
@@ -14,7 +15,6 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    #@appointment.assign_casting
     if @appointment.valid?
       @appointment.save
       redirect_to appointment_path(@appointment)
@@ -24,11 +24,6 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    if Appointment.find_by(id: params[:id])
-      @appointment = Appointment.find_by(id: params[:id])
-    else
-      redirect_to appointments_path
-    end
   end
 
   def update
@@ -42,11 +37,6 @@ class AppointmentsController < ApplicationController
   end
  
   def show
-    if Appointment.find_by(id: params[:id])
-      @appointment = Appointment.find_by(id: params[:id])
-    else
-      redirect_to appointments_path
-    end
   end
 
   def destroy
@@ -56,11 +46,6 @@ class AppointmentsController < ApplicationController
   end
 
   def confirm_delete
-    if Appointment.find_by(id: params[:id])
-      @appointment = Appointment.find_by(id: params[:id])
-    else
-      redirect_to appointments_path
-    end
   end
 
 
@@ -70,6 +55,13 @@ class AppointmentsController < ApplicationController
       params.require(:appointment).permit(:role, :time, :address, :callback, :booking_status, :notes, :actor_id, :casting_office_id, :project_id, :agency_id)
   end
 
+  def find_appointment
+    if Appointment.find_by(id: params[:id])
+      @appointment = Appointment.find_by(id: params[:id])
+    else
+      redirect_to appointments_path
+    end
+  end
   
 
 

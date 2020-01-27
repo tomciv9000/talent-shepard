@@ -28,6 +28,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'omniauth-facebook'
+gem 'htmlbeautifier'
 
 
 # Use Active Storage variant
