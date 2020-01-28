@@ -22,7 +22,7 @@
   
     <div class="form-group">
       <%= f.label :time, "Appointment Time:" %>
-      <%= f.datetime_select(:time, class: 'form-control', ampm: true, prompt: true) %>
+      <%= f.datetime_select(:time, order: [:hour, :minute, :month, :day, :year], class: 'form-control', start_year: 2020, end_year: 2021, ampm: true, prompt: true) %>
     </div>
   
     <div class="form-group">

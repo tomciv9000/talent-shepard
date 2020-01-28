@@ -33,7 +33,7 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.by_time
   end
  
   def show

@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :casting_offices
   resources :bookings
   resources :users
-  resources :appointments, only: [:index, :new, :create, :show, :edit]
+  resources :appointments
   
   get '/projects/:id/confirm_delete', to: 'projects#confirm_delete', as: 'confirm_project_delete'
   get '/actors/:id/confirm_delete', to: 'actors#confirm_delete', as: 'confirm_actor_delete'
