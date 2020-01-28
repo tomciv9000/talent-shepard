@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root to: 'static#home'
 
+  get '/static/privacy_policy', to: 'static#privacy_policy', as: :privacy_policy
+
   resources :actors do
     collection do
       get 'sag'

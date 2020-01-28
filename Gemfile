@@ -27,8 +27,11 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'dotenv-rails'
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'htmlbeautifier'
+gem 'thin'
+
 
 
 # Use Active Storage variant
