@@ -14,7 +14,9 @@ class Appointment < ApplicationRecord
     
 
     def assign_casting
-        self.casting_office_id = self.project.casting_office_id
+        if self.project
+            self.casting_office_id = self.project.casting_office_id
+        end
     end
    
     def display_time
