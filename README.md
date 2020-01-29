@@ -1,24 +1,12 @@
-# README
+# Talent Shepherd
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Talent Shepherd is a multi-tenant content management system designed to assist with the workflow for a standard talent agency or talent management office.
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* Create an Agency with multiple Users.  This agency serves as the 'tenant', or umbrella account.
+* Manage the data associated with Actors, Projects, Audition Appointments, Bookings, and Casting Offices.
+* Utilize Admin functions to restrict access to unconfirmed users.
 
-* System dependencies
+To begin, create an Agency from which all Users will operate.  Upon creation, a form to create a new User will prompt for more specific information.  Every Agency's first User account will automatically be label as an 'Admin'.  Admin have edit and delete privledges whereas regular Users do not.  Admin also have the ability to confirm new Users as 'confirmed users' which enables read and write privledges.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
