@@ -20,13 +20,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry',  '~> 0.12.2'
 gem 'acts_as_tenant'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'dotenv-rails'
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'htmlbeautifier'
