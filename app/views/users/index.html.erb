@@ -24,7 +24,7 @@
             <%= link_to "Details", user_path(user), class: 'text-primary'%> |  
             <% if current_user.admin? %>
                 <%= link_to "Edit Permissions", edit_user_permissions_path(user), class: 'text-warning'%> |
-                <%= link_to "Delete", confirm_user_delete_path(user), class: 'text-danger'%>
+                <%= link_to "Delete", confirm_delete_user_path(user), class: 'text-danger'%>
               <% end %> 
           </td>
         </tr>

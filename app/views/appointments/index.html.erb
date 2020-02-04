@@ -32,7 +32,7 @@
         <%= link_to "Details", appointment_path(appointment), class: 'text-primary'%>   
         <% if current_user.admin? %>
         |  <%= link_to "Edit", edit_appointment_path(appointment), class: 'text-warning'%> |
-             <%= link_to "Delete", confirm_appointment_delete_path(appointment), class: 'text-danger'%>
+             <%= link_to "Delete", confirm_delete_appointment_path(appointment), class: 'text-danger'%>
         <% end %> 
       </td>
     </tr>

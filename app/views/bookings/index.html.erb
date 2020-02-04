@@ -30,7 +30,7 @@
             <%= link_to "Details", booking_path(booking), class: 'text-primary'%>   
             <% if current_user.admin? %>
             |  <%= link_to "Edit", edit_booking_path(booking), class: 'text-warning'%> |
-                 <%= link_to "Delete", confirm_booking_delete_path(booking), class: 'text-danger'%>
+                 <%= link_to "Delete", confirm_delete_booking_path(booking), class: 'text-danger'%>
               <% end %> 
           </td>
         </tr>

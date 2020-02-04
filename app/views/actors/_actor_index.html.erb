@@ -27,7 +27,7 @@
             <%= link_to "Make Appointment", new_actor_appointment_path(actor), class: 'text-success'%> 
             <% if current_user.admin? %>
                | <%= link_to "Edit", edit_actor_path(actor), class: 'text-warning'%> |
-                 <%= link_to "Delete", confirm_actor_delete_path(actor), class: 'text-danger'%>
+                 <%= link_to "Delete", confirm_delete_actor_path(actor), class: 'text-danger'%>
               <% end %> 
           </td>
         </tr>

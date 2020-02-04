@@ -27,7 +27,7 @@
           <%= link_to "Details", casting_office_path(casting_office), class: 'text-primary'%> |  
           <% if current_user.admin? %>
             <%= link_to "Edit", edit_casting_office_path(casting_office), class: 'text-warning'%> |
-            <%= link_to "Delete", confirm_casting_office_delete_path(casting_office), class: 'text-danger'%>
+            <%= link_to "Delete", confirm_delete_casting_office_path(casting_office), class: 'text-danger'%>
           <% end %> 
           </td>
         </tr>

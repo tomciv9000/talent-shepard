@@ -10,13 +10,14 @@ Rails.application.routes.draw do
 
   root to: 'static#home'
 
-  get '/static/privacy_policy', to: 'static#privacy_policy', as: :privacy_policy
-
   resources :actors do
     collection do
       get 'sag'
       get 'aea'
       get 'nonunion'
+    end
+    member do
+      get 'confirm_delete'
     end
     resources :appointments
   end
@@ -34,23 +35,44 @@ Rails.application.routes.draw do
       get 'short'
       get 'new_media'
     end
+    member do
+      get 'confirm_delete'
+    end
     resources :appointments
   end
   
+  resources :appointments do
+    member do
+      get 'confirm_delete'
+    end
+  end
   
   
-  resources :casting_offices
-  resources :bookings
-  resources :users
-  resources :appointments
+  resources :casting_offices do
+    member do
+      get 'confirm_delete'
+    end
+  end
+
+
+  resources :bookings do
+    member do
+      get 'confirm_delete'
+    end
+  end
+
+
+  resources :users do
+    member do
+      get 'confirm_delete'
+    end
+  end
+
   
-  get '/projects/:id/confirm_delete', to: 'projects#confirm_delete', as: 'confirm_project_delete'
-  get '/actors/:id/confirm_delete', to: 'actors#confirm_delete', as: 'confirm_actor_delete'
-  get '/appointments/:id/confirm_delete', to: 'appointments#confirm_delete', as: 'confirm_appointment_delete'
-  get '/casting_offices/:id/confirm_delete', to: 'casting_offices#confirm_delete', as: 'confirm_casting_office_delete'
-  get '/bookings/:id/confirm_delete', to: 'bookings#confirm_delete', as: 'confirm_booking_delete'
-  get '/users/:id/confirm_delete', to: 'users#confirm_delete', as: 'confirm_user_delete'
+
+  
+  
   get '/users/:id/permissions', to: 'users#permissions', as: 'edit_user_permissions'
-  
+  get '/static/privacy_policy', to: 'static#privacy_policy', as: :privacy_policy
 
 end
