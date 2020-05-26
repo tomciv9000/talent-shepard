@@ -1,4 +1,3 @@
-#It all starts here...then moves to boot.rb
 #!/usr/bin/env ruby
 begin
   load File.expand_path('../spring', __FILE__)

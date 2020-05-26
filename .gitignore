@@ -2,3 +2,4 @@ vendor
 storage
 node_modules
 *.env
+master.key

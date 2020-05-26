@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
+  #tells acts_as_tenant that app is using before_action to setup the current tenant.
   set_current_tenant_through_filter
-
+  
   before_action :authenticate_user!
+  #my method to set the current tenant
   before_action :find_current_tenant
   
   helper_method :current_user

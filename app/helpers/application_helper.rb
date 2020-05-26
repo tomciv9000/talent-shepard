@@ -12,6 +12,7 @@ module ApplicationHelper
         content_tag(:small, content, class: ["form-text", "text-muted"])
     end
 
+
   
     private
     

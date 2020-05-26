@@ -9,5 +9,4 @@ class Agency < ApplicationRecord
     validates :name, :email, presence: true
     validates_uniqueness_of :email, :name
   
-
 end

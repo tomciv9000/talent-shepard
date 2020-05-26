@@ -69,9 +69,6 @@ Rails.application.routes.draw do
   end
 
   
-
-  
-  
   get '/users/:id/permissions', to: 'users#permissions', as: 'edit_user_permissions'
   get '/static/privacy_policy', to: 'static#privacy_policy', as: :privacy_policy
 
