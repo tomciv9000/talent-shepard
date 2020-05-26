@@ -27,6 +27,7 @@ gem 'acts_as_tenant'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem "activesupport", ">= 6.0.3.1"
 
 gem 'omniauth'
 gem 'omniauth-facebook'
