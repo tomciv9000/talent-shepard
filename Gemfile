@@ -28,6 +28,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'htmlbeautifier'
