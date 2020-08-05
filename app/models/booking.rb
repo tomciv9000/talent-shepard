@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
     belongs_to :actor 
     belongs_to :project
     
-    validates :role, :actor_id, :project_id, presence: true
+    validates :role, :rate, :actor_id, :project_id, presence: true
 
     scope :accepted, -> { where(accepted: true) }
     scope :signed, -> { where(contract_signed: true) }
