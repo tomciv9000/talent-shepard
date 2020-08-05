@@ -12,7 +12,6 @@ class Appointment < ApplicationRecord
 
     scope :by_time, -> { order(time: :asc) }
     
-
     def assign_casting
         if self.project
             self.casting_office_id = self.project.casting_office_id
