@@ -1,6 +1,5 @@
 module ResourceNames
     
-
     def casting_name
         self.casting_office.name
     end
