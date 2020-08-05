@@ -43,8 +43,6 @@ class BookingsController < ApplicationController
   def confirm_delete
   end
 
-
-
   private
 
   def booking_params
