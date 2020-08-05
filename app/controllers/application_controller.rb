@@ -36,6 +36,4 @@ class ApplicationController < ActionController::Base
     current_user.agency
   end
 
-
-
 end
