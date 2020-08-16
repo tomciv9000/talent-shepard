@@ -3,17 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 gem 'rails', '~> 6.0.0'
-
 gem 'pg', '>= 0.18', '< 2.0'
-
 gem "puma", ">= 3.12.6"
-
 gem 'sass-rails', '~> 5'
-
 gem 'webpacker', '~> 4.0'
-
 gem 'turbolinks', '~> 5'
-
 gem 'jbuilder', '~> 2.7'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'bcrypt', '~> 3.1.7'
@@ -26,7 +20,6 @@ gem "activesupport", ">= 6.0.3.1"
 gem "actionpack", ">= 6.0.3.1"
 gem "activestorage", ">= 6.0.3.1"
 gem "actionview", ">= 6.0.2.2"
-
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'htmlbeautifier'
