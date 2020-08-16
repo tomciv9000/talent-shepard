@@ -21,6 +21,11 @@
   </div>
 
   <div class="form-group">
+        <%= f.label :rate, "Rate:" %>
+        <%= f.select :rate, ['Day', 'Week', 'Session', 'Flat Fee'], class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :rate, "Rate:" %>
     <%= f.text_field :rate, class: 'form-control' %> 
     <%= small_text("Example: $1200 / day") %>
