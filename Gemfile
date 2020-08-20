@@ -23,7 +23,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'htmlbeautifier'
 gem 'thin'
- gem 'rails_12factor', group: :production
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
