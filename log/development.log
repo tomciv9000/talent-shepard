@@ -1,0 +1,39 @@
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/thattomwhite/Development/code/talent-shepherd/config/environment.rb:5)

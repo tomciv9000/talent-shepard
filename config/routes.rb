@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   devise_scope :user do
     get "/users/sign_out" => 'users/sessions#destroy'
-    get '/users/registrations/agency_for_facebook', to: 'users/registrations#agency_for_facebook', as: 'agency_for_facebook'
+    get '/users/registrations/agency_for_', to: 'users/registrations#agency_for_facebook', as: 'agency_for_facebook'
     get '/users/registrations/facebook_new', to: 'users/registrations#facebook_new', as: 'facebook_user_registration'
   end
 
