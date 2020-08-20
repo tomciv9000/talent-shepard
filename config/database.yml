@@ -83,9 +83,3 @@ production:
   database: talent_shepherd_production
   username: talent_shepherd
   password: <%= ENV['TALENT_SHEPHERD_DATABASE_PASSWORD'] %>
-
-
-   production:
-   <<: *default
-   adapter: postgresql
-   database: db/production.sqlite3
